@@ -1,0 +1,130 @@
+body{
+	margin-top: 75px !important;
+}
+
+.box{
+	display: flex;
+	width:100%;
+	height: 92.25vh;
+	background: #ff4e2b;
+}
+
+.box .boxGauche{
+	width: 45%;
+	height:100%;
+	background-size: cover;
+	margin:0;
+	background-image: url("../images/conference.png");
+}
+.box .boxDroite{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 55%;
+}
+.box .boxDroite p{
+	text-align: center;
+	font-size: 1em;
+	color: #fff;
+	padding: 2vh;
+	letter-spacing: 0.2em;
+	font-weight: 500;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.box .boxDroite h2{
+	text-align: center;
+	font-size: 1.5em;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+	font-weight: 500;
+	margin-top: 10vh;
+}
+.box .boxDroite h2 span{
+	font-size: 3em;
+	font-weight: 700;
+}
+.box .boxDroite .countdown{
+	margin-top: 30px;
+	background:rgba(0,0,0,0.2);
+	width: 100%;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.box .boxDroite .countdown div{
+	position: relative;
+	width: 100px;
+	text-align: center;
+	color: #fff;
+	font-size:2.5em;
+	font-weight: 500;
+	margin:0 15px;
+	margin-top: -25px;
+}
+.box .boxDroite .countdown div:before{
+	content: 'text';
+	position: absolute;
+	bottom: -35px;
+	left: 0;
+	width: 100%;
+	height: 35px;
+	color: #fff;
+	font-size: 0.35em;
+	font-weight: 500;
+	line-height: 34px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+.box .boxDroite .countdown div#days:before{
+	content: 'Days';
+}
+.box .boxDroite .countdown div#hours:before{
+	content: 'Hours';
+}
+.box .boxDroite .countdown div#minutes:before{
+	content: 'Minutes';
+}
+@media (max-width: 1000px){
+	.box{
+		flex-direction: column;	
+	}
+
+	.box .boxGauche{
+		width: 100%;
+	}
+	.box .boxDroite{
+		width: 100%;
+	}
+}
+/*.boxGauche p{
+	margin: 0;
+	color: white;
+	font-size: 1.5em;
+}
+
+.boxDroite h1{
+	margin-top: 25vh;
+	color: white;
+	font-size: 10em;
+}
+
+.boxDroite{
+	width: 55%;
+	margin:0;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.boxDroite p{
+	font-size: 2.5em;
+	color: white;
+	text-align: center;
+}
+.boxDroite h2{
+	font-size: 4em;
+	color: white;
+	text-align: center;
+}*/
