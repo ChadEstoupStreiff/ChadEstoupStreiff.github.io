@@ -55,7 +55,7 @@ h2 {
 	
 	top: 25vh;
 	left: 0;
-	width: 100vw;
+	width: 80vw;
 	height: 60vh;
 }
 .container a {
@@ -65,15 +65,21 @@ h2 {
 	align-items: center;
 
 	max-height: 5vh;
-	padding: 1vh 1vw;
-	width: 80vw;
+	width: 100%;
 
 	margin: 1vh;
 
+	padding: 1vh 1vw;
 	background-color: rgba(100, 100, 100, 0.5);
 
 	border: 0.1vw solid rgba(255, 255, 255, 0.7);
 	border-radius: 1vw;
+}
+
+.inline {
+	display: flex;
+	justify-content: center;
+	width: 104%;
 }
 
 p {
