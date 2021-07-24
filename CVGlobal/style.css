@@ -18,7 +18,7 @@ div.content {
 	background: repeat-y url("images/background.jpg");
 	
 	width: 1050px;
-	height: 1485px;
+	min-height: 1485px;
 
 	border: 2px solid;
 	border-radius: 3px;
