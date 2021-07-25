@@ -18,7 +18,7 @@ div.content {
 	background: repeat-y url("images/background.jpg");
 	
 	width: 1050px;
-	min-height: 1485px;
+	height: 1485px;
 
 	border: 2px solid;
 	border-radius: 3px;
@@ -63,7 +63,7 @@ div.column {
 div.xp {
 	margin: 0 5px;
 	padding: 5px;
-	width: 232px;
+	width: 350px;
 
 	border-left: 2px solid;
 	border-right: 2px solid;
@@ -82,7 +82,7 @@ div.xp p {
 
 
 
-p {
+p, li {
 	font-size: 19px;
 	color: black;
 	margin: 10px;
@@ -121,17 +121,12 @@ ul {
 	margin: 0;
 }
 
-li {
-	color: black;
-	margin: 10px;
-}
-
 ol {
 	list-style-type: upper-roman;
 }
 
 div.profil {
-	padding: 5% 0%;
+	padding: 20px 0;
 	display: flex;
 	justify-content: center;
 }
@@ -143,8 +138,8 @@ div.profil>img {
 
 
 h5.bande {
-	margin: 2% 0;
-	padding: 1% 0 1% 10%;
+	margin: 30px 0;
+	padding: 4px 0 4px 40px;
 
 	font-family: 'myFontBis', Fallback , sans-serif;
 	font-size: 32px;
