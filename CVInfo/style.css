@@ -63,7 +63,7 @@ div.column {
 div.xp {
 	margin: 0 5px;
 	padding: 5px;
-	width: 350px;
+	width: 100%;
 
 	border-left: 2px solid;
 	border-right: 2px solid;
