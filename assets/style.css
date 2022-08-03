@@ -1,145 +1,136 @@
 @font-face {
-	font-family: 'myFont';
-	src: url('fonts/coolvetica rg.ttf')  format('truetype');
+    font-family: 'myFont';
+    src: url('fonts/coolvetica rg.ttf')  format('truetype');
 }
 
 body {
-	font-family: 'myFont', Fallback , sans-serif;
-	margin: 0;
-	height: 100vh;
-	width: 100vw;
+    font-family: 'myFont', Fallback , sans-serif;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
 
-	background: url("img/green-font.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-    background-position: center;
+    /*background: linear-gradient(to bottom right, rgb(40, 40, 40), rgb(0, 0, 0));*/
 
     display: flex;
-	flex-direction: column;
+    flex-direction: column;
     justify-content: space-between;
-	align-items: center;
+    align-items: center;
 
-	text-shadow: black 0 0 10px;
-	color: white;
+    text-shadow: black 0 0 10px;
+    color: white;
 }
 
 
-/* TITLE */
+/*basics*/
 
-.title {
-	height: 20vh;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-h1 {
-	margin: 0;
-	font-size: 5em;
-}
-
-h2 {
-	margin: 0;
-	font-size: 3em;
-}
-
-/* CONTENT */
-
-.container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	
-	top: 25vh;
-	left: 0;
-	width: 80vw;
-	height: 60vh;
-}
-.container a {
-	text-decoration: none; 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	max-height: 5vh;
-	width: 100%;
-
-	margin: 1vh;
-
-	padding: 1vh 1vw;
-	background-color: rgba(100, 100, 100, 0.5);
-
-	border: 0.1vw solid rgba(255, 255, 255, 0.7);
-	border-radius: 1vw;
+img {
+    height: 14vh;
+    margin: 5px;
 }
 
 .inline {
-	display: flex;
-	justify-content: center;
-	width: 104%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-p {
-	text-shadow: black 0 0 20px;
-	color: white;
-	letter-spacing: 3px;
-	font-size: 2em;
+
+a {
+    text-decoration: none;
+    color: white;
+    transition-duration: 2s;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
 }
 
-.important {
-	font-size: 4em;
-	color: darkred;
-	background-color: rgba(255, 0, 0, 0.3);
-	padding: 20px;
-	border-radius: 15px;
-	font-weight: bold;
+a:hover {
+    border-bottom: 2px solid white;
 }
 
-.container>img {
-	height: 10vh;
-	margin: 2vh 0;
 
-	border: 0.5vh solid white;
-	border-radius: 100%;
+/*
+SPECIAL
+*/
+
+a.hiddentext h2, a.hiddentext p {
+    font-size: 0;
+    transition-duration: 0.7s;
+    margin: 0;
+}
+a.hiddentext:hover h2 {
+    font-size: 5vh;
 }
 
-.container a:hover {
-	background-color: rgba(255, 255, 255, 0.7);
-}
-
-/* CONTACT */
-.contact {
-	width: 90vw;
-	
-	background-color: rgba(0, 0, 0, 0.9);
-	border-radius: 1em 1em 0 0;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-}
-
-h3 {
-	margin: 1vh 0;
-}
-
-.social {
-	margin: 0;
-	padding: 1vh 0 0 0;
-}
-
-.social img {
-	height: 6vh;
-	margin: 0 3vh;
+a.hiddentext:hover p {
+    font-size: 2vh;
 }
 
 img.github {
-	height: 5.9vh;
-	border: white solid 0.1vh;
-	border-radius: 100%;
-	background-color: white;
+    border: white solid 0.1vh;
+    border-radius: 100%;
+    background-color: white;
+}
+
+
+/*
+TITLE
+*/
+
+h1 {
+    text-align: center;
+    font-size: 5vh;
+    transition-duration: 1s;
+}
+
+@media (min-width: 980px) {
+    body>h1:hover {
+        font-size: 10vh;
+    }
+}
+
+/*
+CENTER
+*/
+
+.center>div {
+    min-width: 40vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 1250px) {
+    .center {
+        flex-direction: column;
+    }
+    .center>div {
+        margin: 100px 0;
+        padding: 70px;
+
+        border-radius: 100px;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/*
+BOTTOM
+*/
+
+.bottom {
+    /*
+    background-color: black;
+    min-width: 40vw;
+    border-radius: 30px 30px 0 0;
+    */
+    padding: 5px;
+}
+
+.bottom img {
+    height: 6vh;
+}
+
+.bottom a.hiddentext:hover h2 {
+    font-size: 2vh;
 }
