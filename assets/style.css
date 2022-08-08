@@ -81,12 +81,6 @@ h1 {
     transition-duration: 1s;
 }
 
-@media (min-width: 980px) {
-    body>h1:hover {
-        font-size: 10vh;
-    }
-}
-
 /*
 CENTER
 */
