@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  chades:
+    image: httpd
+    container_name: chades
+    restart: always
+    volumes:
+      - ./:/usr/local/apache2/htdocs/
+    ports:
+      - 8079:80
