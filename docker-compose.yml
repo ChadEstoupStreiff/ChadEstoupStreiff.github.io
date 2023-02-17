@@ -6,6 +6,7 @@ services:
     container_name: chades
     restart: always
     volumes:
-      - ./:/usr/local/apache2/htdocs/
+      - ./assets:/usr/local/apache2/htdocs/assets
+      - ./index.html:/usr/local/apache2/htdocs/index.html
     ports:
       - 8079:80
