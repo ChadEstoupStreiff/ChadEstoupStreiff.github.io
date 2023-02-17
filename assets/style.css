@@ -34,6 +34,10 @@ img {
     justify-content: center;
 }
 
+.inline>div {
+    margin: 10px 30px;
+}
+
 
 a {
     text-decoration: none;
@@ -70,6 +74,11 @@ img.github {
     background-color: white;
 }
 
+.works img {
+    border: 1px rgba(40, 40, 40, 1) solid;
+    border-radius: 20px;
+}
+
 
 /*
 TITLE
@@ -79,6 +88,10 @@ h1 {
     text-align: center;
     font-size: 5vh;
     transition-duration: 1s;
+}
+
+.subtitle img {
+    height: 9vh;
 }
 
 /*
@@ -112,7 +125,7 @@ CENTER
 BOTTOM
 */
 
-.bottom {
+footer {
     /*
     background-color: black;
     min-width: 40vw;
@@ -121,10 +134,10 @@ BOTTOM
     padding: 5px;
 }
 
-.bottom img {
+footer img {
     height: 6vh;
 }
 
-.bottom a.hiddentext:hover h2 {
+footer a.hiddentext:hover h2 {
     font-size: 2vh;
 }
