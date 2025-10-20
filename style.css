@@ -104,6 +104,7 @@ nav a:hover {
   display: grid;
   place-items: center;
   position: relative;
+  padding-top: 150px;
 }
 .hero__grid {
   display: grid;
@@ -631,7 +632,6 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 .wrap { padding-inline: clamp(12px, 4vw, 24px); }
 
-.hero { padding-top: 64px; }
 .hero__grid { gap: clamp(1rem, 4vw, 3rem); }
 @media (max-width: 920px) { .hero__grid { grid-template-columns: 1fr; } }
 
@@ -647,7 +647,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 920px) {
   .hero {
-    padding-top: 64px;
+    padding-top: 150px;
   }
   .lead {
     font-size: 1rem;
@@ -805,6 +805,22 @@ body {
   justify-content: flex-start;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.centered p {
+  margin: 0 auto;
+  text-align: center;
+}
+
 #work img {  
   border-radius: 8px;
   margin: 0.6rem;
@@ -836,8 +852,8 @@ p {
   text-align: justify;
 }
 
-.card img {
-  width: 25vw;
+figcaption {
+  text-align: center;
 }
 
 #contact a:hover img {
@@ -864,5 +880,21 @@ hr.hidden {
 
   #work img {
     width: 60vw;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4.8vw, 2.88rem);
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 4vw, 1.92rem);
+  }
+
+  h3 {
+    font-size: clamp(0.96rem, 3.2vw, 1.44rem);
+  }
+
+  li, p, .lead {
+    font-size: 0.8rem;
   }
 }

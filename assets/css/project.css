@@ -1,0 +1,42 @@
+.hero {
+  min-height: auto;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.card {
+  padding: 40px;
+  margin: 40px;
+}
+
+img {
+    margin: 10px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 30vw;
+}
+
+.figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+@media (max-width: 860px) {
+  .card {
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  .wrap {
+    width: 100vw;
+  }
+
+  img {
+    max-width: 60vw;
+  }
+}

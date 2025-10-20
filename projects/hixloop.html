@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      HixLoop • Modular AI Platform for Scientific Image Analysis | Chad
+      Estoup-Streiff
+    </title>
+    <meta
+      name="description"
+      content="HixLoop is a highly modular AI platform for scientific image analysis that revolutionizes annotation through human-in-the-loop learning and reusable end-to-end workflows."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../assets/css/project.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="../index.html" aria-label="Homepage">
+          <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
+          <div class="brand__text">
+            Chad Estoup-Streiff <br />
+            <small>AI Engineer & PhD Student</small>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="primary-nav" aria-label="primary">
+          <ul>
+            <li><a href="../index.html#work">💼 Work</a></li>
+            <li><a href="../index.html#education">🎓 Education</a></li>
+            <li><a href="../index.html#projects">🛠️ Projects</a></li>
+            <li><a href="../index.html#contact">📧 Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div
+        class="wrap hero__grid"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div>
+          <span class="badge">🏢 BionomeeX • 2023–2025</span>
+          <h1>HixLoop — Human-in-the-Loop AI Platform</h1>
+          <p class="lead">
+            HixLoop is a <strong>massively modular platform</strong> that
+            tackles one of the biggest bottlenecks in computer vision for
+            science: <strong>manual labeling</strong>. By combining
+            <em>active learning</em>, <em>modular pipelines</em>, and a tight
+            <em>human–AI feedback loop</em>, it reduces annotation time by up to
+            <strong>80%</strong> while adapting to any research domain.
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.6rem;
+              margin: 1.5rem 0;
+            "
+          >
+            <span class="chip">Human-in-the-Loop</span>
+            <span class="chip">Active Learning</span>
+            <span class="chip">PyTorch / Detectron2</span>
+            <span class="chip">Segmentation</span>
+            <span class="chip">Object Detection</span>
+            <span class="chip">Classification</span>
+            <span class="chip">Tracking</span>
+            <span class="chip">FastAPI + Streamlit</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Multi-domain ready</span>
+            <span class="chip">Project Management</span>
+            <span class="chip">DevOPS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <article class="card">
+          <h2>🔍 The Challenge</h2>
+          <p>
+            In research and industry alike, high-quality labeled data is the
+            fuel of AI — yet creating it is slow, inconsistent, and expensive.
+            Scientists waste hours labeling cells, insects, or particles,
+            instead of focusing on their analyses. The situation is even worse
+            when datasets are small, heterogeneous, or highly specific, where
+            generic pretrained models fail.
+          </p>
+          <ul style="columns: 2">
+            <li>⏳ 80% of project time spent labeling</li>
+            <li>📦 Complex data (multi-channel, microscopy, aerial, etc.)</li>
+            <li>⚙️ No unified platform for end-to-end pipelines</li>
+            <li>🔁 Re-implementing the same steps in every project</li>
+          </ul>
+          <div class="inline">
+            <div class="figure">
+              <img
+                src="../assets/img/ultim.webp"
+                alt="HixLoop UI screenshot - Ultim"
+              />
+              <figcaption>
+                Object detection of cells<br />Issue of laborious manual
+                labeling because of quantity per image
+              </figcaption>
+            </div>
+            <div class="figure">
+              <img
+                src="../assets/img/hitloop/segmentation_chat.png"
+                alt="HixLoop segmentation"
+              />
+              <figcaption>
+                Segmentation of cats<br />Issue of laborious manual labeling
+                because of precise boundaries
+              </figcaption>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>💡 The HixLoop Concept</h2>
+          <p>
+            HixLoop introduces a <strong>loop-based paradigm</strong>: instead
+            of fully labeling a dataset before training, the model assists the
+            user iteratively. The platform predicts, the human corrects, and the
+            model learns — forming a self-improving feedback cycle.
+          </p>
+          <ol style="margin-left: 1.5rem">
+            <li>Annotate a small subset manually</li>
+            <li>Train the model and auto-label the rest</li>
+            <li>Review only uncertain predictions</li>
+            <li>Retrain — and repeat until performance stabilizes</li>
+          </ol>
+          <p>
+            This <em>active learning loop</em> lets experts spend time only
+            where AI is uncertain, creating exponential labeling efficiency.
+          </p>
+          <div class="figure">
+            <img
+              src="../assets/img/hitloop/diagram.png"
+              alt="HixLoop workflow example"
+            />
+            <figcaption>HixLoop loop and modular workflow structure (in french sorry)</figcaption>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>🧩 Extreme Modularity</h2>
+          <p>
+            Every block in HixLoop — from <strong>data import</strong> to
+            <strong>export</strong> — is a modular component that can be
+            combined freely. This makes it usable in virtually any imaging
+            context:
+          </p>
+
+          <p>
+            Each module can be reused, replaced, or extended — detection,
+            segmentation, tracking, classification, and visualization plug
+            together seamlessly through a unified API.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>⚙️ Technical Architecture</h2>
+          <ul style="margin-left: 1.5rem">
+            <li><strong>Backend:</strong> FastAPI</li>
+            <li>
+              <strong>Frontend:</strong> Streamlit UI with dynamic pipeline
+              editor
+            </li>
+            <li>
+              <strong>Models:</strong> PyTorch, Detectron2 (detection), U-Net
+              (segmentation), custom classifiers
+            </li>
+            <li>
+              <strong>Deployment:</strong> Dockerized stack with GPU
+              auto-balancer
+            </li>
+            <li>
+              <strong>Annotation:</strong> Tight integration with Label Studio
+            </li>
+            <li>
+              <strong>Docs:</strong> Written with Docusaurus for
+              internal/external users
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>📊 Results & Real-World Use</h2>
+          <p>
+            HixLoop has now powerfull and usefull utilities and been deployed in
+            multiple scientific projects, consistently delivering significant
+            reductions in labeling time while maintaining high accuracy.
+          </p>
+          <ul style="columns: 2">
+            <li>🖋️ 50% to 80% manual labeling effort</li>
+            <li>🎯 ≥ 95% accuracy on validated projects</li>
+            <li>🚀 Fully operational within 1 hours (Docker deploy)</li>
+            <li>
+              🧠 Modular application: can work with diverse and complex data
+            </li>
+          </ul>
+          <p>Example of Bionomeex Project where Hitloop where used:</p>
+          <ul style="columns: 2">
+            <li>🦠 Cell detection and segmentation (Ultim)</li>
+            <li>🌾 Plant trait measurement (DeepIron)</li>
+            <li>🐞 Invasive species detection (Laidybug)</li>
+            <li>🔬 Signal detection (Abbelight)</li>
+            <li>🦅 Protected bird species monitoring</li>
+            <li>🐱 Animal behavior analysis (cats, bees)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>🧠 My Role</h2>
+          <p>
+            As the lead developer and architect of HixLoop, I was responsible
+            for the full conception, design, and implementation of the platform
+            — from infrastructure to user experience. Beyond technical delivery,
+            I coordinated interactions between AI engineers, researchers, and
+            designers to ensure that each component aligned with real-world
+            scientific needs.
+          </p>
+
+          <ul style="margin-left: 1.5rem">
+            <li>
+              👷‍♂️ <strong>Technical leadership:</strong> Designed the full
+              modular architecture and coordinated code integration
+            </li>
+            <li>
+              ⚙️ <strong>Engineering:</strong> Developed the backend (FastAPI,
+              PyTorch) and frontend (Streamlit), ensuring robust modular APIs
+            </li>
+            <li>
+              🧩 <strong>R&D integration:</strong> Combined advanced AI models
+              (Detectron2, U-Net) with active learning strategies
+            </li>
+            <li>
+              📊 <strong>Performance & scalability:</strong> Optimized GPU
+              scheduling, multi-threading, and data streaming
+            </li>
+            <li>
+              🧠 <strong>UX & product thinking:</strong> Designed an intuitive
+              interface to make AI accessible to non-programmers
+            </li>
+            <li>
+              🪄 <strong>DevOps:</strong> Built and deployed Dockerized GPU
+              environments across multi-OS infrastructures
+            </li>
+            <li>
+              💬 <strong>Collaboration:</strong> Worked closely with
+              multidisciplinary teams (biology, agronomy, imaging, data science)
+            </li>
+          </ul>
+
+          <p>
+            Throughout this project, I honed key technical and interpersonal
+            skills:
+            <strong
+              >leadership, adaptability, problem-solving, and scientific
+              communication</strong
+            >. I strengthened my expertise in
+            <strong
+              >machine learning, software engineering, MLOps, and workflow
+              orchestration</strong
+            >, while deepening my understanding of domain-specific challenges in
+            <em>microscopy, ecology, and agronomy</em>.
+          </p>
+
+          <p>
+            Technologies mastered or reinforced:
+            <strong
+              >Python, FastAPI, PyTorch, Detectron2, U-Net, Streamlit, Docker,
+              Docusaurus, GitLab CI/CD, Label Studio, REST API design, GPU
+              balancing, data pipelines, and scientific imaging formats (TIF,
+              ND2)</strong
+            >.
+          </p>
+        </article>
+
+        <footer style="padding: 2rem 0; text-align: center">
+          <p>
+            ⚠️ <strong>Disclaimer:</strong> This page summarizes the technical
+            and scientific aspects of HixLoop. Some components are under active
+            development.
+          </p>
+          <p style="margin-top: 1.5rem">
+            © <span id="y"></span> HixLoop — BionomeeX
+          </p>
+        </footer>
+
+        <script>
+          document.getElementById("y").textContent = new Date().getFullYear();
+        </script>
+      </div>
+    </section>
+  </body>
+</html>

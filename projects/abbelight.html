@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abbelight • HD-SMLM Deep Learning Model | Chad Estoup-Streiff</title>
+    <meta name="description"
+        content="Abbelight HD-SMLM: a deep learning model for high-density single-molecule localization microscopy (SMLM), developed with BionomeeX to push the physical limits of emitter detection." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../assets/css/project.css" />
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav">
+            <a class="brand" href="../index.html" aria-label="Homepage">
+                <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
+                <div class="brand__text">
+                    Chad Estoup-Streiff <br />
+                    <small>AI Engineer & PhD Student</small>
+                </div>
+            </a>
+            <button class="nav-toggle" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="primary-nav" aria-label="primary">
+                <ul>
+                    <li><a href="../index.html#work">💼 Work</a></li>
+                    <li><a href="../index.html#education">🎓 Education</a></li>
+                    <li><a href="../index.html#projects">🛠️ Projects</a></li>
+                    <li><a href="../index.html#contact">📧 Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrap hero__grid" style="grid-template-columns: 1fr; text-align:center">
+            <div>
+                <span class="badge">🔬 Abbelight × BionomeeX • 2024–2025</span>
+                <h1>HD-SMLM — Deep Learning for Super-Resolution Microscopy</h1>
+                <p class="lead">
+                    HD-SMLM (High-Density Single-Molecule Localization Microscopy) is an ambitious AI project
+                    built with <strong>Abbelight</strong> to revolutionize <em>super-resolution microscopy</em>.
+                    The goal: enable accurate detection of overlapping fluorescent emitters at extremely high densities,
+                    unlocking faster and denser imaging far beyond classical limits.
+                </p>
+                <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin:1.5rem 0">
+                    <span class="chip">Deep Learning</span>
+                    <span class="chip">3D-UNet</span>
+                    <span class="chip">TensorFlow / Keras</span>
+                    <span class="chip">Tversky Loss</span>
+                    <span class="chip">MLflow</span>
+                    <span class="chip">GPU Balancer</span>
+                    <span class="chip">Docker</span>
+                    <span class="chip">Super-resolution</span>
+                    <span class="chip">Signal-to-Noise Estimation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <article class="card">
+                <h2>🔍 The Challenge</h2>
+                <p>
+                    Single-Molecule Localization Microscopy (SMLM) achieves nanometric resolution by isolating light
+                    emitters
+                    over time. However, <strong>increasing acquisition speed</strong> requires raising emitter density —
+                    which rapidly leads to overlapping blinks that traditional algorithms cannot resolve.
+                    Abbelight needed a model that could detect and count emitters even under these high-density
+                    conditions.
+                </p>
+                <ul style="columns:2">
+                    <li>⚡ Need to accelerate image acquisition</li>
+                    <li>🔬 Emitters overlap at high densities</li>
+                    <li>🧩 Classical algorithms fail in dense regimes</li>
+                    <li>🧠 Deep learning offers a scalable alternative</li>
+                </ul>
+                <div>
+                    <div class="figure">
+                        <img src="../assets/img/abbelight/bins.png" alt="SMLM high-density raw data illustration" />
+                        <figcaption>
+                            SMLM imaging at low vs high emitter densities: overlapping blinks complicate localization.
+                        </figcaption>
+                    </div>
+                    <div class="figure">
+                        <img src="../assets/img/abbelight_emitters.png" alt="HD-SMLM emitter counting illustration" />
+                        <figcaption>
+                            Models prediction outputs visualization.<br /> Red are missed truth, blue are false
+                            positives and purple are correct predictions.
+                        </figcaption>
+                    </div>
+            </article>
+
+            <article class="card">
+  <h2>💡 The HD-SMLM Approach</h2>
+
+  <!-- Model architecture -->
+  <p>
+    We use a <strong>3D-UNet</strong> tailored for SMLM movies: a projection layer → encoder (down-blocks with residual
+    convs + Swish) → bottleneck → decoder (up-blocks with skip connections). The temporal axis (e.g., 3–5 frames) is kept
+    intact so the network learns <em>spatio-temporal</em> blink patterns. The final 1×1×1 conv produces a
+    <strong>4-channel probability map</strong> for per-pixel counts: <code>0/1/2/3+</code>.
+  </p>
+
+  <!-- SNR explanation -->
+  <p>
+    The <strong>Signal-to-Noise Ratio (SNR)</strong> measures how strong the emitter’s signal
+    is compared to background noise. Low-SNR events are nearly indistinguishable from background, while extremely high-SNR
+    events can dominate the loss and bias learning. To ensure consistent and balanced training, we <strong>clip SNR values
+    above 2</strong> — meaning all signals with SNR&nbsp;≥&nbsp;2 are treated as reliable, while weaker ones are excluded
+    from learning. This choice filters out ambiguous detections, stabilizes training, and focuses the model on physically
+    meaningful emitter events.
+  </p>
+  <div class="figure">
+    <img src="../assets/img/abbelight/snr.png" alt="Signal-to-Noise Ratio illustration" />
+    <figcaption>
+      Signal-to-Noise Ratio (SNR) concept: higher SNR means clearer emitter signals over background noise.
+    </figcaption>
+  </div>
+
+  <!-- Intensity clipping / normalization -->
+  <p>
+    Separately, we apply <strong>intensity clipping for normalization</strong> on raw 16-bit TIFF inputs, typically between
+    the 20th and 99th percentiles of the pixel distribution. This removes extreme background noise and saturation peaks
+    while keeping the relevant emitter information. After clipping, intensities are normalized (e.g., scaled to −1…1), which
+    improves gradient flow, speeds up convergence, and allows the same model to handle data from multiple microscopes and
+    illumination conditions.
+  </p>
+  <div class="figure">
+    <img src="../assets/img/abbelight/clipping.png" alt="Intensity clipping illustration" />
+    <figcaption>
+      Intensity clipping for normalization: removing extreme values to focus on relevant emitter signals.
+    </figcaption>
+  </div>
+
+  <!-- kNN metric system -->
+  <p>
+    Traditional pixel-exact metrics are too rigid for microscopy, where emitters may be predicted one pixel away from their
+    ground truth due to diffraction, sampling, or reconstruction variance. We therefore designed a custom
+    <strong>k-nearest-neighbor (kNN) metric system</strong>. For each predicted emitter, we look for the <em>k</em>
+    closest ground-truth emitters (usually k = 8). If a match is found within this neighborhood, it counts as a
+    <strong>true prediction</strong>. This makes evaluation more physically realistic, tolerating natural spatial variance
+    while still penalizing false or missing detections.
+  </p>
+  <div class="figure">
+    <img src="../assets/img/abbelight/knn.png" alt="k-nearest-neighbor metric illustration" />
+    <figcaption>
+      k-nearest-neighbor (kNN) metric concept: allowing spatial tolerance in emitter matching for realistic evaluation.
+    </figcaption>
+  </div>
+
+  <!-- Output usage -->
+  <p>
+    These design choices — SNR curation, normalization clipping, and kNN-based evaluation — make HD-SMLM robust to optical
+    noise, dense emitter overlap, and real-world acquisition variability. The final probability maps serve as priors for
+    Abbelight’s multi-emitter fitting algorithms, combining AI inference with precise optical modeling.
+  </p>
+</article>
+
+            <article class="card">
+                <h2>⚙️ Technical Implementation</h2>
+                <ul style="margin-left:1.5rem">
+                    <li><strong>Architecture:</strong> 3D-UNet with residual blocks and Swish activation</li>
+                    <li><strong>Loss:</strong> Hybrid Tversky</li>
+                    <li><strong>Data:</strong> Simulated + experimental</li>
+                    <li><strong>Training:</strong> Keras 3.0 with MLflow experiment tracking</li>
+                    <li><strong>Optimization:</strong> Adam, WarmupCosineStepLR learning rate scheduler</li>
+                    <li><strong>Hyperparameter exploration:</strong> Trained for all combinations from designated search
+                        space</li>
+                    <li><strong>Deployment:</strong> Docker container (Linux & Windows) + custom GPU-balancer for
+                        multi-GPU training</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>📊 Results</h2>
+                <p>
+                    The best model, <strong>Wolf</strong>, achieved excellent accuracy on simulated datasets
+                    (recall 0.92 / precision 0.84 / F1 ≈ 0.86).
+                    Real biological data (bin5/bin10) revealed challenges linked to
+                    noise, blinking variability, and label uncertainty — confirming the model’s
+                    sensitivity to true emitters even when unseen during training.
+                </p>
+                <ul style="columns:2">
+                    <li>🏆 F1 = 0.87 on simulated data</li>
+                    <li>🎯 Recall > 0.9 on Tier 1 targets</li>
+                    <li>🔬 Robust detection at multiple densities</li>
+                    <li>📈 Scalable UNet architecture with variable input size</li>
+                </ul>
+                <p>
+                    A second model, <strong>Pandas</strong>, jointly trained on real + synthetic data, confirmed the
+                    ability to generalize but highlighted the need for domain-specific fine-tuning.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>🧠 My Role</h2>
+                <p>
+                    I co-led the design and development of the HD-SMLM deep learning pipeline at BionomeeX,
+                    collaborating directly with Abbelight’s R&D team to ensure full integration with their imaging
+                    stack.
+                    My work encompassed both algorithmic design and system engineering.
+                </p>
+                <ul style="margin-left:1.5rem">
+                    <li>🧬 Built and optimized the 3D-UNet architecture (Keras)</li>
+                    <li>⚙️ Worked on the data-generation and decorrelated temporal binning pipelines</li>
+                    <li>📊 Managed MLflow experiment tracking and metrics evaluation</li>
+                    <li>🧩 Implemented GPU balancer and Dockerized training environment</li>
+                    <li>🧠 Tuned and explored hyperparameters for precision/recall optimization</li>
+                    <li>🤝 Collaborated closely with Abbelight researchers for validation and deployment</li>
+                </ul>
+                <p>
+                    Beyond coding, I strengthened my expertise in <strong>scientific AI modeling, resource
+                        orchestration,
+                        and interdisciplinary collaboration</strong> — bridging optical physics, deep learning, and
+                    large-scale data engineering.
+                </p>
+                <p>
+                    Key technologies mastered: <strong>Python, Keras 3, MLflow, NumPy, FastAPI,
+                        Docker, GPU Balancer, and scientific image processing (3D TIFF 32-bit)</strong>.
+                </p>
+            </article>
+
+            <footer style="padding:2rem 0;text-align:center">
+                <p>
+                    ⚠️ <strong>Disclaimer:</strong> This page summarizes the HD-SMLM project results between
+                    Abbelight and BionomeeX (2024-2025). Some experiments are ongoing or confidential.
+                </p>
+                <p style="margin-top:1.5rem">
+                    © <span id="y"></span> HD-SMLM — Abbelight × BionomeeX
+                </p>
+            </footer>
+
+            <script>
+                document.getElementById("y").textContent = new Date().getFullYear();
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>
