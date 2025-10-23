@@ -1,210 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AICET • Official AI Competency Evaluation Test | Chad Estoup-Streiff</title>
-    <meta name="description"
-        content="AICET (Artificial Intelligence Competency Evaluation Test) — a national project led by Université de Montpellier, BionomeeX, and Numalis to build an official AI skills certification pipeline with LLM-based question generation and ontology-driven validation." />
+    <title>
+      AICET • Official AI Competency Evaluation Test | Chad Estoup-Streiff
+    </title>
+    <meta
+      name="description"
+      content="AICET (Artificial Intelligence Competency Evaluation Test) — a national project led by Université de Montpellier, BionomeeX, and Numalis to build an official AI skills certification pipeline with LLM-based question generation and ontology-driven validation."
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../style.css" />
+    <script src="../assets/js/responsive.js" defer></script>
     <link rel="stylesheet" href="../assets/css/project.css" />
-</head>
 
-<body>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JTQH3237V7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JTQH3237V7");
+    </script>
+  </head>
+
+  <body>
     <header>
-        <div class="wrap nav">
-            <a class="brand" href="../index.html" aria-label="Homepage">
-                <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
-                <div class="brand__text">
-                    Chad Estoup-Streiff <br />
-                    <small>AI Engineer & PhD Student</small>
-                </div>
-            </a>
-            <button class="nav-toggle" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-            <nav id="primary-nav" aria-label="primary">
-                <ul>
-                    <li><a href="../index.html#work">💼 Work</a></li>
-                    <li><a href="../index.html#education">🎓 Education</a></li>
-                    <li><a href="../index.html#projects">🛠️ Projects</a></li>
-                    <li><a href="../index.html#contact">📧 Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="wrap nav">
+        <a class="brand" href="../index.html" aria-label="Homepage">
+          <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
+          <div class="brand__text">
+            Chad Estoup-Streiff <br />
+            <small>AI Engineer & PhD Student</small>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="primary-nav" aria-label="primary">
+          <ul>
+            <li><a href="../index.html#work">💼 Work</a></li>
+            <li><a href="../index.html#education">🎓 Education</a></li>
+            <li><a href="../index.html#projects">🛠️ Projects</a></li>
+            <li><a href="../index.html#contact">📧 Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section class="hero">
-        <div class="wrap hero__grid" style="grid-template-columns:1fr;text-align:center">
-            <div>
-                <span class="badge">🏛️ Université de Montpellier × BionomeeX × Numalis</span>
-                <h1>AICET — Artificial Intelligence Competency Evaluation Test</h1>
-                <p>
-                    <strong>AICET</strong> is a large-scale national project aiming to create the first
-                    <em>official AI certification test for professionals</em> in France.
-                    Led by the <strong>Université de Montpellier</strong> with key partners
-                    <strong>BionomeeX</strong> and <strong>Numalis</strong>,
-                    the project combines academic rigor, industrial validation, and AI-assisted content generation
-                    to build a standardized benchmark for AI literacy and technical skills.
-                </p>
-                <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin:1.5rem 0">
-                    <span class="chip">Large Language Models</span>
-                    <span class="chip">Ontology</span>
-                    <span class="chip">Question Generation</span>
-                    <span class="chip">Python</span>
-                    <span class="chip">FastAPI</span>
-                    <span class="chip">Data Quality</span>
-                    <span class="chip">Multi-Validation Workflow</span>
-                    <span class="chip">Pipeline Engineering</span>
-                </div>
-            </div>
+      <div
+        class="wrap hero__grid"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div>
+          <span class="badge"
+            >🏛️ Université de Montpellier × BionomeeX × Numalis</span
+          >
+          <h1>AICET — Artificial Intelligence Competency Evaluation Test</h1>
+          <p>
+            <strong>AICET</strong> is a large-scale national project aiming to
+            create the first
+            <em>official AI certification test for professionals</em> in France.
+            Led by the <strong>Université de Montpellier</strong> with key
+            partners <strong>BionomeeX</strong> and <strong>Numalis</strong>,
+            the project combines academic rigor, industrial validation, and
+            AI-assisted content generation to build a standardized benchmark for
+            AI literacy and technical skills.
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.6rem;
+              margin: 1.5rem 0;
+            "
+          >
+            <span class="chip">Large Language Models</span>
+            <span class="chip">Ontology</span>
+            <span class="chip">Question Generation</span>
+            <span class="chip">Python</span>
+            <span class="chip">FastAPI</span>
+            <span class="chip">Data Quality</span>
+            <span class="chip">Multi-Validation Workflow</span>
+            <span class="chip">Pipeline Engineering</span>
+          </div>
         </div>
+      </div>
     </section>
 
     <section>
-        <div class="wrap">
-            <article class="card">
-                <h2>🎯 The Objective</h2>
-                <p>
-                    The goal of AICET is to design a <strong>trusted, standardized AI test</strong> assessing the
-                    competencies of engineers, researchers, and professionals working with artificial intelligence.
-                    The test must cover the full spectrum of AI knowledge — from ethics and data governance
-                    to algorithmic principles, coding, and model evaluation — while maintaining high scientific
-                    integrity.
-                </p>
-                <p>
-                    To achieve this, the consortium developed an <strong>automated question generation and validation
-                        pipeline</strong>
-                    capable of producing and filtering thousands of questions, all linked to a well-defined ontology and
-                    validated by
-                    domain experts before certification.
-                </p>
-            </article>
+      <div class="wrap">
+        <article class="card">
+          <h2>🎯 The Objective</h2>
+          <p>
+            The goal of AICET is to design a
+            <strong>trusted, standardized AI test</strong> assessing the
+            competencies of engineers, researchers, and professionals working
+            with artificial intelligence. The test must cover the full spectrum
+            of AI knowledge — from ethics and data governance to algorithmic
+            principles, coding, and model evaluation — while maintaining high
+            scientific integrity.
+          </p>
+          <p>
+            To achieve this, the consortium developed an
+            <strong
+              >automated question generation and validation pipeline</strong
+            >
+            capable of producing and filtering thousands of questions, all
+            linked to a well-defined ontology and validated by domain experts
+            before certification.
+          </p>
+        </article>
 
-            <article class="card">
-                <h2>💡 The AICET Pipeline Concept</h2>
-                <p>
-                    BionomeeX was responsible for creating the <strong>data generation and management pipeline</strong>,
-                    the heart
-                    of the AICET system. The pipeline automates the generation of AI-related questions using
-                    <strong>Large Language Models (LLMs)</strong> and ensures their consistency through a
-                    <strong>multi-step validation workflow</strong>.
-                </p>
-                <ol style="margin-left:1.5rem">
-                    <li>🧠 <strong>Question Generation:</strong> AI models generate candidate questions following a
-                        structured ontology.</li>
-                    <li>🏷️ <strong>Ontology Tagging:</strong> Each question is annotated with multiple tags (topic,
-                        difficulty, skill type).</li>
-                    <li>🔍 <strong>Automatic Filtering:</strong> Scripts parse and clean malformed, redundant, or
-                        ambiguous questions.</li>
-                    <li>👩‍🏫 <strong>Expert Review:</strong> Domain specialists validate or reject each question for
-                        accuracy and clarity.</li>
-                    <li>📦 <strong>Dataset Consolidation:</strong> Approved questions are sent to Numalis for
-                        integration and test design.</li>
-                </ol>
-                <div class="figure">
-                    <img src="../assets/img/ai7_main.png" alt="AICET UI" />
-                    <figcaption>
-                        Overview of a part the AICET question generation UI (whole UI is confidential)
-                    </figcaption>
-                </div>
-                <p>
-                    This approach guarantees <strong>diversity, balance, and pedagogical validity</strong> in the
-                    dataset while
-                    dramatically accelerating content creation compared to manual methods.
-                </p>
-            </article>
+        <article class="card">
+          <h2>💡 The AICET Pipeline Concept</h2>
+          <p>
+            BionomeeX was responsible for creating the
+            <strong>data generation and management pipeline</strong>, the heart
+            of the AICET system. The pipeline automates the generation of
+            AI-related questions using
+            <strong>Large Language Models (LLMs)</strong> and ensures their
+            consistency through a
+            <strong>multi-step validation workflow</strong>.
+          </p>
+          <ol style="margin-left: 1.5rem">
+            <li>
+              🧠 <strong>Question Generation:</strong> AI models generate
+              candidate questions following a structured ontology.
+            </li>
+            <li>
+              🏷️ <strong>Ontology Tagging:</strong> Each question is annotated
+              with multiple tags (topic, difficulty, skill type).
+            </li>
+            <li>
+              🔍 <strong>Automatic Filtering:</strong> Scripts parse and clean
+              malformed, redundant, or ambiguous questions.
+            </li>
+            <li>
+              👩‍🏫 <strong>Expert Review:</strong> Domain specialists validate or
+              reject each question for accuracy and clarity.
+            </li>
+            <li>
+              📦 <strong>Dataset Consolidation:</strong> Approved questions are
+              sent to Numalis for integration and test design.
+            </li>
+          </ol>
+          <div class="figure">
+            <img src="../assets/img/ai7_main.png" alt="AICET UI" />
+            <figcaption>
+              Overview of a part the AICET question generation UI (whole UI is
+              confidential)
+            </figcaption>
+          </div>
+          <p>
+            This approach guarantees
+            <strong>diversity, balance, and pedagogical validity</strong> in the
+            dataset while dramatically accelerating content creation compared to
+            manual methods.
+          </p>
+        </article>
 
-            <article class="card">
-                <h2>⚙️ Technical Implementation</h2>
-                <ul style="margin-left:1.5rem">
-                    <li><strong>Backend:</strong> Python + FastAPI API to manage question pipelines and ontology tags
-                    </li>
-                    <li><strong>LLM Integration:</strong> Automated generation through OpenAI-compatible endpoints with
-                        structured prompts</li>
-                    <li><strong>Parsing & Filtering:</strong> Custom text parsers to detect format errors, duplicates,
-                        and incomplete questions</li>
-                    <li><strong>Validation Tools:</strong> Internal review interface for experts to rate and comment on
-                        question quality</li>
-                    <li><strong>Deployment:</strong> Dockerized microservices architecture allowing concurrent workflows
-                    </li>
-                </ul>
-                <p>
-                    The architecture was designed for <strong>scalability and transparency</strong>, allowing real-time
-                    monitoring
-                    of data flow from generation to validation and export to Numalis.
-                </p>
-            </article>
+        <article class="card">
+          <h2>⚙️ Technical Implementation</h2>
+          <ul style="margin-left: 1.5rem">
+            <li>
+              <strong>Backend:</strong> Python + FastAPI API to manage question
+              pipelines and ontology tags
+            </li>
+            <li>
+              <strong>LLM Integration:</strong> Automated generation through
+              OpenAI-compatible endpoints with structured prompts
+            </li>
+            <li>
+              <strong>Parsing & Filtering:</strong> Custom text parsers to
+              detect format errors, duplicates, and incomplete questions
+            </li>
+            <li>
+              <strong>Validation Tools:</strong> Internal review interface for
+              experts to rate and comment on question quality
+            </li>
+            <li>
+              <strong>Deployment:</strong> Dockerized microservices architecture
+              allowing concurrent workflows
+            </li>
+          </ul>
+          <p>
+            The architecture was designed for
+            <strong>scalability and transparency</strong>, allowing real-time
+            monitoring of data flow from generation to validation and export to
+            Numalis.
+          </p>
+        </article>
 
-            <article class="card">
-                <h2>📊 Impact & Results</h2>
-                <p>
-                    The pipeline successfully produced a <strong>large and diverse dataset of AI-related
-                        questions</strong>,
-                    spanning technical, ethical, and applied domains.
-                    The system is capable of generating and processing <strong>over 1,000 questions per week per
-                        engineer at full time</strong>,
-                    with automated quality checks ensuring coherence and coverage across ontology categories.
-                </p>
-                <ul style="columns:2">
-                    <li>⚡ 1,000+ questions generated and curated</li>
-                    <li>🏷️ 5 ontology trees for fine-grained classification</li>
-                    <li>👩‍🏫 Multi-expert validation workflow integrated</li>
-                    <li>📈 Scalable, reproducible generation pipeline</li>
-                </ul>
-                <p>
-                    This dataset forms the foundation of the official AICET certification managed by Numalis,
-                    which will be used nationwide by professional institutions.
-                </p>
-            </article>
+        <article class="card">
+          <h2>📊 Impact & Results</h2>
+          <p>
+            The pipeline successfully produced a
+            <strong>large and diverse dataset of AI-related questions</strong>,
+            spanning technical, ethical, and applied domains. The system is
+            capable of generating and processing
+            <strong
+              >over 1,000 questions per week per engineer at full time</strong
+            >, with automated quality checks ensuring coherence and coverage
+            across ontology categories.
+          </p>
+          <ul style="columns: 2">
+            <li>⚡ 1,000+ questions generated and curated</li>
+            <li>🏷️ 5 ontology trees for fine-grained classification</li>
+            <li>👩‍🏫 Multi-expert validation workflow integrated</li>
+            <li>📈 Scalable, reproducible generation pipeline</li>
+          </ul>
+          <p>
+            This dataset forms the foundation of the official AICET
+            certification managed by Numalis, which will be used nationwide by
+            professional institutions.
+          </p>
+        </article>
 
-            <article class="card">
-                <h2>🧠 My Role</h2>
-                <p>
-                    As part of the BionomeeX engineering team, I was responsible for <strong>developing the backend and
-                        automation
-                        pipeline</strong> that connects LLM generation, ontology tagging, and expert validation.
-                    My focus was on ensuring scalability, consistency, and maintainability in a rapidly evolving,
-                    multi-partner environment.
-                </p>
-                <ul style="margin-left:1.5rem">
-                    <li>🧩 Designed and implemented the multi-stage generation pipeline in Python</li>
-                    <li>⚙️ Developed parsing and validation tools to clean and standardize question outputs</li>
-                    <li>🔗 Created APIs for communication between LLM generation services and expert dashboards</li>
-                    <li>🧠 Worked on ontology-based tagging and automated quality metrics</li>
-                    <li>🤝 Coordinated integration with Numalis and academic reviewers</li>
-                </ul>
-                <p>
-                    This project strengthened my skills in <strong>data engineering, prompt design, API development, and
-                        collaborative
-                        software design</strong> across institutional and industrial partners.
-                </p>
-            </article>
+        <article class="card">
+          <h2>🧠 My Role</h2>
+          <p>
+            As part of the BionomeeX engineering team, I was responsible for
+            <strong>developing the backend and automation pipeline</strong> that
+            connects LLM generation, ontology tagging, and expert validation. My
+            focus was on ensuring scalability, consistency, and maintainability
+            in a rapidly evolving, multi-partner environment.
+          </p>
+          <ul style="margin-left: 1.5rem">
+            <li>
+              🧩 Designed and implemented the multi-stage generation pipeline in
+              Python
+            </li>
+            <li>
+              ⚙️ Developed parsing and validation tools to clean and standardize
+              question outputs
+            </li>
+            <li>
+              🔗 Created APIs for communication between LLM generation services
+              and expert dashboards
+            </li>
+            <li>
+              🧠 Worked on ontology-based tagging and automated quality metrics
+            </li>
+            <li>
+              🤝 Coordinated integration with Numalis and academic reviewers
+            </li>
+          </ul>
+          <p>
+            This project strengthened my skills in
+            <strong
+              >data engineering, prompt design, API development, and
+              collaborative software design</strong
+            >
+            across institutional and industrial partners.
+          </p>
+        </article>
 
-            <footer style="padding: 2rem 0; text-align: center">
-                <p>
-                    ⚠️ <strong>Disclaimer:</strong> This article was generated with
-                    assistance from AI (Mistral & ChatGPT), but
-                    <strong>all information, metrics, and technical content</strong>
-                    originate from my verified work. The projects, results, and data
-                    presented reflect my professional experience and my personal
-                    research.
-                </p>
-                <p style="margin-top: 1.5rem">
-                    © <span id="y"></span> HixLoop — BionomeeX
-                </p>
-            </footer>
-
-            <script>
-                document.getElementById("y").textContent = new Date().getFullYear();
-            </script>
-        </div>
+        <footer style="padding: 2rem 0; text-align: center">
+          <p>
+            ⚠️ <strong>Disclaimer:</strong> This article was generated with
+            assistance from AI (Mistral & ChatGPT), but
+            <strong>all information, metrics, and technical content</strong>
+            originate from my verified work. The projects, results, and data
+            presented reflect my professional experience and my personal
+            research.
+          </p>
+          <p style="margin-top: 1.5rem">
+            © <span id="y"></span> HixLoop — BionomeeX
+          </p>
+        </footer>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>

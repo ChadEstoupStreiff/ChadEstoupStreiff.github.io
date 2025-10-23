@@ -14,7 +14,23 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style.css" />
+    <script src="../assets/js/responsive.js" defer></script>
     <link rel="stylesheet" href="../assets/css/project.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JTQH3237V7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JTQH3237V7");
+    </script>
   </head>
 
   <body>
@@ -244,10 +260,6 @@
             © <span id="y"></span> HixLoop — BionomeeX
           </p>
         </footer>
-
-        <script>
-          document.getElementById("y").textContent = new Date().getFullYear();
-        </script>
       </div>
     </section>
   </body>

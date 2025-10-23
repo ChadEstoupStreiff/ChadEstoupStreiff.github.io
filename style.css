@@ -39,6 +39,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+a:hover {
+  cursor: pointer;
+}
 .wrap {
   width: min(1200px, 92vw);
   margin-inline: auto;
@@ -106,6 +109,10 @@ nav a:hover {
   position: relative;
   padding-top: 150px;
 }
+
+.hero::before,
+.hero::after { pointer-events: none; }
+
 .hero__grid {
   display: flex;
   flex-direction: row;

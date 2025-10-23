@@ -12,29 +12,44 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
-    <script src="./assets/js/responsive.js" defer></script>
+    <script src="../assets/js/responsive.js" defer></script>
     <link rel="stylesheet" href="../assets/css/project.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTQH3237V7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-JTQH3237V7");
+    </script>
 </head>
 
 <body>
     <header>
         <div class="wrap nav">
-            <a class="brand" href="../index.html" aria-label="Homepage">
-                <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
+            <a class="brand" href="#home" aria-label="Homepage">
+                <img id="navbar_logo" src="assets/img/fade.png" alt="Chad Estoup--Streiff Logo" />
                 <div class="brand__text">
-                    Chad Estoup-Streiff <br />
-                    <small>AI Engineer & PhD Student</small>
+                    Chad Estoup--Streiff <br />
+                    IA engineer & PhD Student
                 </div>
             </a>
-            <button class="nav-toggle" aria-label="Open menu">
+
+            <!-- NEW -->
+            <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
+
             <nav id="primary-nav" aria-label="primary">
                 <ul>
-                    <li><a href="../index.html#work">💼 Work</a></li>
-                    <li><a href="../index.html#education">🎓 Education</a></li>
-                    <li><a href="../index.html#projects">🛠️ Projects</a></li>
-                    <li><a href="../index.html#contact">📧 Contact</a></li>
+                    <li><a href="#work">💼 Work</a></li>
+                    <li><a href="#diplomation">🎓 Diplomation</a></li>
+                    <li><a href="#projects">🛠️ Projects</a></li>
+                    <li><a href="#contact">📞 Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -264,10 +279,6 @@
                     © <span id="y"></span> HD-SMLM — Abbelight × BionomeeX
                 </p>
             </footer>
-
-            <script>
-                document.getElementById("y").textContent = new Date().getFullYear();
-            </script>
         </div>
     </section>
 </body>
