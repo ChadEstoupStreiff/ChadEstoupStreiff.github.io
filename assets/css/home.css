@@ -1,0 +1,27 @@
+
+.card-toggle {
+    width: calc(100% - 6vw);
+    margin: 20px 3vw;
+}
+.card-details{
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 250ms ease, opacity 200ms ease;
+    display: block; /* or keep grid if you need it */
+}
+.card-details.is-open{
+    max-height: 600px; /* pick a value taller than the content */
+    opacity: 1;
+}
+
+.card-toggle[aria-expanded="true"]::before{ content:"🔽 "; }
+.card-toggle[aria-expanded="false"]::before{ content:"🔼 "; }
+
+
+@media (max-width: 860px) {
+    .card-toggle {
+        width: calc(100% - 4vw);
+        margin: 20px 2vw;
+    }
+}
