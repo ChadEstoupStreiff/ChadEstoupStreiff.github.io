@@ -107,18 +107,24 @@ nav a:hover {
   padding-top: 150px;
 }
 .hero__grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  width: 70vw;
+  justify-content: center;
 }
+.hero__lead {
+  width: 30vw;
+}
+.hero__panel {
+  width: 30vw;
+  margin: 30px;
+}
+
 @media (max-width: 920px) {
   .hero__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding-top: 2rem;
-    width: 90vw;
   }
 }
 .badge {
@@ -436,6 +442,9 @@ footer {
   color: var(--muted);
   text-align: center;
 }
+footer p {
+  text-align: center;
+}
 .social {
   display: flex;
   gap: 0.9rem;
@@ -673,7 +682,6 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
-/* ==== HERO: Special visual enhancements ==== */
 .hero {
   position: relative;
   background: radial-gradient(
@@ -765,6 +773,14 @@ img { max-width: 100%; height: auto; display: block; }
   position: absolute; inset: 0;
   z-index: 1;            /* behind text */
   pointer-events: none;  /* ignore clicks */
+}
+
+
+@media (max-width: 860px) {
+  .hero__panel, .hero__lead {
+    width: 90vw;
+    text-align: left;
+  }
 }
 
 /* ===== Custom styles ===== */
@@ -867,9 +883,6 @@ hr.hidden {
   margin: 6px;
   padding: 0;
 }
-
-
-
 
 @media (max-width: 860px) {
   .inline {

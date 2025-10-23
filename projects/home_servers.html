@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Abbelight • HD-SMLM Deep Learning Model | Chad Estoup-Streiff</title>
+    <title>Servers & Network for Personal Use | Chad Estoup-Streiff</title>
     <meta name="description"
-        content="Abbelight HD-SMLM: a deep learning model for high-density single-molecule localization microscopy (SMLM), developed with BionomeeX to push the physical limits of emitter detection." />
+        content="Homelab project: Raspberry Pi and repurposed PCs turned into a multi-service home server network using Docker, NGINX reverse proxy, Pi-hole DNS, DHCP, FastAPI, Nextcloud, Jellyfin, Grafana/Prometheus, Kutt, and more." />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
@@ -38,26 +38,112 @@
             </nav>
         </div>
     </header>
-    
 
-    <section class="hero" style="height: 100vh;">
-        <div class="wrap hero__grid" style="grid-template-columns: 1fr; text-align:center">
+    <section class="hero">
+        <div class="wrap hero__grid" style="grid-template-columns:1fr;text-align:center">
             <div>
-                <h1>IN WRITING</h1>
+                <span class="badge">🏠 Homelab • 2023–ongoing</span>
+                <h1>Servers & Network for Personal Use</h1>
+                <p>
+                    I repurposed Raspberry Pi devices and old computers into a <strong>multi-service home server
+                        network</strong>
+                    that hosts daily tools (cloud, media, dashboards) behind a secure reverse proxy. The system is
+                    containerized,
+                    observable, and easily reproducible.
+                </p>
+                <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin:1.3rem 0">
+                    <span class="chip">Docker</span>
+                    <span class="chip">NGINX (Reverse Proxy)</span>
+                    <span class="chip">Pi-hole (DNS)</span>
+                    <span class="chip">DHCP</span>
+                    <span class="chip">Nextcloud</span>
+                    <span class="chip">Grafana</span>
+                    <span class="chip">Prometheus</span>
+                    <span class="chip">PHP / JS / WordPress</span>
+                    <span class="chip">Python FastAPI</span>
+                </div>
             </div>
         </div>
     </section>
 
-    
-    </header>
-
-            <footer style="padding:2rem 0;text-align:center">
+    <section>
+        <div class="wrap">
+            <article class="card">
+                <h2>🔍 The Goal</h2>
                 <p>
-                    ⚠️ <strong>Disclaimer:</strong> This page summarizes the HD-SMLM project results between
-                    Abbelight and BionomeeX (2024-2025). Some experiments are ongoing or confidential.
+                    Build a <strong>reliable, low-cost, low-power</strong> platform for personal services: private
+                    cloud, media streaming,
+                    self-hosted apps, ad-blocking DNS, monitoring, and simple web tools — all accessible on the LAN with
+                    clean routing,
+                    and manageable like a small production stack.
                 </p>
-                <p style="margin-top:1.5rem">
-                    © <span id="y"></span> HD-SMLM — Abbelight × BionomeeX
+            </article>
+
+            <article class="card">
+                <h2>💡 What I Built</h2>
+                <ul style="columns:2; margin-left:1.2rem">
+                    <li>🧱 <strong>Containerization:</strong> All apps in Docker, isolated & portable</li>
+                    <li>🔁 <strong>Reverse Proxy (NGINX):</strong> Virtual hosts, TLS (local), request routing</li>
+                    <li>🧭 <strong>DNS (Pi-hole):</strong> Local domains, ad/tracker blocking</li>
+                    <li>📡 <strong>DHCP configs:</strong> Static leases for servers/services</li>
+                    <li>☁️ <strong>Nextcloud:</strong> Private file sync & notes</li>
+                    <li>🎬 <strong>Jellyfin:</strong> Streaming for home media library</li>
+                    <li>📊 <strong>Grafana + Prometheus:</strong> Metrics & dashboards</li>
+                    <li>🌐 <strong>Websites:</strong> PHP/JS/WordPress hosting</li>
+                    <li>🐍 <strong>FastAPI:</strong> Small Python services & webhooks</li>
+                    <li>🧪 <strong>MLflow:</strong> Experiment tracking, model registry, and reproducible ML pipelines
+                    </li>
+                    <li>📊 <strong>Glances:</strong> Lightweight, real-time system monitoring for CPU, memory, disk,
+                        network, and sensors</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>⚙️ Architecture</h2>
+                <ul style="margin-left:1.2rem">
+                    <li><strong>Hardware:</strong> Raspberry Pi 2 + Raspberry Pi 4 (ARM) + repurposed x64 PC</li>
+                    <li><strong>Networking:</strong> Pi-hole DNS + DHCP reservations; NGINX reverse proxy</li>
+                    <li><strong>Orchestration:</strong> Docker Compose stacks per service; bind-mounts for persistent
+                        volumes</li>
+                    <li><strong>Observability:</strong> Node exporters, Prometheus scrape, Grafana dashboards (CPU, RAM,
+                        I/O, network)</li>
+                    <li><strong>Backup:</strong> Disk replication ; Periodic Nextcloud + DB snapshots; config in git for
+                        quick rebuilds</li>
+                </ul>
+                <h2>📊 Outcomes</h2>
+                <ul style="columns:2; margin-left:1.2rem">
+                    <li>🚀 One-click (compose) deploys & rollbacks</li>
+                    <li>🧩 Modular — add/remove apps without touching the core</li>
+                    <li>📉 Low power usage via Pi nodes; x64 only for heavy apps</li>
+                    <li>🔍 Full visibility with Grafana/Prometheus</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h2>🧠 What I Learned / My Role</h2>
+                <p>
+                    I designed and implemented the entire homelab: network plan, DNS/DHCP, reverse proxy, containers,
+                    monitoring, and CI-style updates. This project strengthened my skills in:
+                </p>
+                <ul style="margin-left:1.2rem">
+                    <li><strong>DevOps:</strong> Docker/Compose, config-as-code, backups, incremental upgrades</li>
+                    <li><strong>NetOps:</strong> DNS (Pi-hole), DHCP reservations, virtual hosts, TLS on LAN</li>
+                    <li><strong>Back-end:</strong> FastAPI micro-services, webhooks, service-to-service auth</li>
+                    <li><strong>Ops:</strong> Monitoring, alerting, capacity planning on mixed ARM/x64</li>
+                </ul>
+            </article>
+
+            <footer style="padding: 2rem 0; text-align: center">
+                <p>
+                    ⚠️ <strong>Disclaimer:</strong> This article was generated with
+                    assistance from AI (Mistral & ChatGPT), but
+                    <strong>all information, metrics, and technical content</strong>
+                    originate from my verified work. The projects, results, and data
+                    presented reflect my professional experience and my personal
+                    research.
+                </p>
+                <p style="margin-top: 1.5rem">
+                    © <span id="y"></span> HixLoop — BionomeeX
                 </p>
             </footer>
 

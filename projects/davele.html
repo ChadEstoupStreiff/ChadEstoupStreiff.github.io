@@ -1,71 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Abbelight • HD-SMLM Deep Learning Model | Chad Estoup-Streiff</title>
-    <meta name="description"
-        content="Abbelight HD-SMLM: a deep learning model for high-density single-molecule localization microscopy (SMLM), developed with BionomeeX to push the physical limits of emitter detection." />
+    <title>Solar Panel Shadow Simulation | Chad Estoup-Streiff</title>
+    <meta
+      name="description"
+      content="A web app simulating solar panel shadows and irradiance using the PASE scientific library. Built for BionomeeX and Davele to optimize solar field configurations through accurate, multiprocessed 3D simulations."
+    />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../assets/css/project.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="wrap nav">
-            <a class="brand" href="../index.html" aria-label="Homepage">
-                <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
-                <div class="brand__text">
-                    Chad Estoup-Streiff <br />
-                    <small>AI Engineer & PhD Student</small>
-                </div>
-            </a>
-            <button class="nav-toggle" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-            <nav id="primary-nav" aria-label="primary">
-                <ul>
-                    <li><a href="../index.html#work">💼 Work</a></li>
-                    <li><a href="../index.html#education">🎓 Education</a></li>
-                    <li><a href="../index.html#projects">🛠️ Projects</a></li>
-                    <li><a href="../index.html#contact">📧 Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-
-    <section class="hero" style="height: 100vh;">
-        <div class="wrap hero__grid" style="grid-template-columns: 1fr; text-align:center">
-            <div>
-                <h1>IN WRITING</h1>
-            </div>
-        </div>
-    </section>
-
-    
+      <div class="wrap nav">
+        <a class="brand" href="../index.html" aria-label="Homepage">
+          <img id="navbar_logo" src="../assets/img/fade.png" alt="Logo" />
+          <div class="brand__text">
+            Chad Estoup-Streiff <br />
+            <small>AI Engineer & PhD Student</small>
+          </div>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="primary-nav" aria-label="primary">
+          <ul>
+            <li><a href="../index.html#work">💼 Work</a></li>
+            <li><a href="../index.html#education">🎓 Education</a></li>
+            <li><a href="../index.html#projects">🛠️ Projects</a></li>
+            <li><a href="../index.html#contact">📧 Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
-            <footer style="padding:2rem 0;text-align:center">
-                <p>
-                    ⚠️ <strong>Disclaimer:</strong> This page summarizes the HD-SMLM project results between
-                    Abbelight and BionomeeX (2024-2025). Some experiments are ongoing or confidential.
-                </p>
-                <p style="margin-top:1.5rem">
-                    © <span id="y"></span> HD-SMLM — Abbelight × BionomeeX
-                </p>
-            </footer>
-
-            <script>
-                document.getElementById("y").textContent = new Date().getFullYear();
-            </script>
+    <section class="hero">
+      <div
+        class="wrap hero__grid"
+        style="grid-template-columns: 1fr; text-align: center"
+      >
+        <div>
+          <span class="badge">☀️ BionomeeX × Davele</span>
+          <h1>Solar Panel Shadow Simulation — 3D Web Application</h1>
+          <p>
+            A full-stack scientific web application built for
+            <strong>Davele</strong> at <strong>BionomeeX</strong>, designed to
+            <em>simulate shadows, irradiance, and energy performance</em> across
+            complex solar panel installations. The system provides
+            high-precision 3D visualizations and detailed irradiance statistics
+            for any field configuration.
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 0.6rem;
+              margin: 1.5rem 0;
+            "
+          >
+            <span class="chip">Solar Simulation</span>
+            <span class="chip">3D Visualization</span>
+            <span class="chip">Streamlit</span>
+            <span class="chip">Python</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Multiprocessing</span>
+            <span class="chip">DevOps</span>
+            <span class="chip">PASE Library</span>
+          </div>
         </div>
+      </div>
     </section>
-</body>
 
+    <section>
+      <div class="wrap">
+        <article class="card">
+          <h2>🔍 The Challenge</h2>
+          <p>
+            Simulating solar shadows and irradiance across large photovoltaic
+            fields is computationally demanding. Each simulation depends on
+            numerous parameters — geographic position, date, solar trajectory,
+            panel orientation, tilt, and spacing — requiring real-time 3D
+            feedback to guide configuration choices. The goal was to deliver a
+            <strong>responsive and accurate web app</strong> capable of handling
+            heavy physics calculations while remaining fluid and accessible to
+            non-technical users.
+          </p>
+          <ul style="columns: 2">
+            <li>⚙️ High-precision irradiance and shadow modeling</li>
+            <li>
+              🌍 Parameter-rich simulations (geometry, tilt, azimuth, date…)
+            </li>
+            <li>🧮 Heavy computational load across large panel arrays</li>
+            <li>💻 Need for smooth visualization and background computation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>💡 The Solution</h2>
+          <p>
+            The <strong>Solar Panel Shadow Simulation App</strong> provides a
+            complete, parameter-driven environment for modeling and visualizing
+            solar installations. Users can define every aspect of a setup — from
+            panel dimensions and pitch to site latitude and time resolution —
+            then launch simulations that compute irradiance, shadow overlap, and
+            light diffusion using the open-source scientific library
+            <strong>PASE</strong>.
+          </p>
+          <div class="figure">
+            <img
+              src="../assets/img/davele/davele_multiprocess.png"
+              alt="HixLoop UI screenshot - Multiprocessing"
+            />
+            <figcaption>
+              Multiprocess backend handling multiple simulations concurrently
+            </figcaption>
+          </div>
+          <p>
+            The results are displayed in an interactive
+            <strong>3D visualization</strong> window, enabling users to view how
+            shadows evolve through the day and how total irradiance changes with
+            geometry. Computations are handled in the background by a dedicated
+            backend service, allowing the user to close the page or run multiple
+            simulations in parallel.
+          </p>
+          <div class="figure">
+            <img
+              src="../assets/img/davele_ombrage.png"
+              alt="HixLoop UI screenshot - Ombrage 3D"
+            />
+            <figcaption>3D visualization of solar panel shadows</figcaption>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>⚙️ Technical Architecture</h2>
+          <ul style="margin-left: 1.5rem">
+            <li>
+              <strong>Frontend:</strong> Streamlit web interface with 3D scene
+              rendering and parameter control
+            </li>
+            <li>
+              <strong>Backend:</strong> Python API handling simulation requests
+              asynchronously
+            </li>
+            <li>
+              <strong>Computation:</strong> Multi-process system using
+              <code>multiprocessing</code> to run concurrent simulations
+            </li>
+            <li>
+              <strong>Scientific engine:</strong> PASE library for solar
+              geometry and irradiance computation
+            </li>
+            <li>
+              <strong>Containerization:</strong> Full Docker deployment with
+              persistent volume management
+            </li>
+            <li>
+              <strong>Task management:</strong> Background queue system allowing
+              simulations to continue when UI is closed
+            </li>
+          </ul>
+          <p>
+            This architecture ensures efficiency, scalability, and robustness,
+            making it suitable for large solar projects or educational demos
+            requiring multiple concurrent simulations.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>📊 Results</h2>
+          <p>
+            The application enables engineers and clients to
+            <strong
+              >visualize and quantify the impact of configuration changes
+              instantly</strong
+            >. The backend’s multiprocessing system reduces total simulation
+            time by a lot (the more thread the faster) compared to sequential
+            execution.
+          </p>
+          <ul style="columns: 2">
+            <li>☀️ Realistic 3D irradiance and shadow modeling</li>
+            <li>🚀 Parallel execution of multiple simulations</li>
+            <li>🧩 Modular architecture — parameters easily extendable</li>
+            <li>💾 Results saved for offline analysis</li>
+            <li>📈 Improved DevOps workflow and deployment automation</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>🧠 My Role</h2>
+          <p>
+            I was responsible for developing the
+            <strong>backend architecture</strong> and implementing the
+            <strong>multi-process computation system</strong>. My work focused
+            on performance, scalability, and seamless integration with the
+            Streamlit interface.
+          </p>
+          <ul style="margin-left: 1.5rem">
+            <li>
+              ⚙️ Designed and implemented the multi-process simulation backend
+            </li>
+            <li>🐳 Set up full Dockerized environment and CI/CD deployment</li>
+            <li>
+              🧮 Integrated PASE scientific library for shadow and irradiance
+              modeling
+            </li>
+            <li>
+              🔗 Developed communication API between backend and Streamlit
+              frontend
+            </li>
+            <li>
+              🧠 Optimized resource allocation and background task scheduling
+            </li>
+          </ul>
+          <p>
+            This project reinforced my expertise in
+            <strong
+              >Python system design, DevOps, multiprocessing, and scientific
+              software integration</strong
+            >
+            — bridging simulation performance with web-based usability.
+          </p>
+        </article>
+
+        <footer style="padding: 2rem 0; text-align: center">
+          <p>
+            ⚠️ <strong>Disclaimer:</strong> This article was generated with
+            assistance from AI (Mistral & ChatGPT), but
+            <strong>all information, metrics, and technical content</strong>
+            originate from my verified work. The projects, results, and data
+            presented reflect my professional experience and my personal
+            research.
+          </p>
+          <p style="margin-top: 1.5rem">
+            © <span id="y"></span> HixLoop — BionomeeX
+          </p>
+        </footer>
+
+        <script>
+          document.getElementById("y").textContent = new Date().getFullYear();
+        </script>
+      </div>
+    </section>
+  </body>
 </html>

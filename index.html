@@ -1,94 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chad Estoup--Streiff • IA engineer & PhD Student • Portfolio</title>
-    <meta
-      name="description"
-      content="IA engineer focused on ovarian cancer – research, projects, publications and contact."
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./assets/js/responsive.js" defer></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-JTQH3237V7"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chad Estoup--Streiff • IA engineer & PhD Student • Portfolio</title>
+  <meta name="description"
+    content="IA engineer focused on ovarian cancer – research, projects, publications and contact." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./assets/css/badge.css" />
+  <script src="./assets/js/responsive.js" defer></script>
+  <!-- <script src="./assets/js/badge.js" defer></script> -->
 
-      gtag("config", "G-JTQH3237V7");
-    </script>
-  </head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTQH3237V7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  <body>
-    <header>
-      <div class="wrap nav">
-        <a class="brand" href="#home" aria-label="Homepage">
-          <img
-            id="navbar_logo"
-            src="assets/img/fade.png"
-            alt="Chad Estoup--Streiff Logo"
-          />
-          <div class="brand__text">
-            Chad Estoup--Streiff <br />
-            IA engineer & PhD Student
-          </div>
-        </a>
+    gtag("config", "G-JTQH3237V7");
+  </script>
+</head>
 
-        <!-- NEW -->
-        <button
-          class="nav-toggle"
-          aria-label="Open menu"
-          aria-controls="primary-nav"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav id="primary-nav" aria-label="primary">
-          <ul>
-            <li><a href="#work">💼 Work</a></li>
-            <li><a href="#diplomation">🎓 Diplomation</a></li>
-            <li><a href="#projects">🛠️ Projects</a></li>
-            <li><a href="#contact">📞 Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home" aria-label="Hero banner">
-      <div class="wrap hero__grid">
-        <div>
-          <span class="badge"
-            >AI & DevOPS Engineer • PhD as IA in medecin field Researcher</span
-          >
-          <h1>
-            Bridging AI and science to transform research.<br />
-          </h1>
-          <p class="lead">
-            I build machine learning systems for medical imaging and multimodal data, with a focus on ovarian cancer.
-            My work combines deep learning, histopathology, and radiomics to create clinically meaningful models—transparently evaluated, reproducible, and ready for real-world impact.
-          </p>
-          <div class="cta">
-            <a class="btn btn--primary" href="#projects">Explore Projects →</a>
-            <a class="btn" href="#contact">Get in touch</a>
-          </div>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Homepage">
+        <img id="navbar_logo" src="assets/img/fade.png" alt="Chad Estoup--Streiff Logo" />
+        <div class="brand__text">
+          Chad Estoup--Streiff <br />
+          IA engineer & PhD Student
         </div>
-        <div class="hero__panel">
-          <div class="term" role="img" aria-label="Code like terminal">
-            <pre class="prompt">$ <strong>whoami</strong>
+      </a>
+
+      <!-- NEW -->
+      <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="primary-nav" aria-label="primary">
+        <ul>
+          <li><a href="#work">💼 Work</a></li>
+          <li><a href="#diplomation">🎓 Diplomation</a></li>
+          <li><a href="#projects">🛠️ Projects</a></li>
+          <li><a href="#contact">📞 Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home" aria-label="Hero banner">
+    <div class="inline">
+      <div class="hero__lead">
+        <span class="badge">AI & DevOPS Engineer • PhD as IA in medecin field Researcher</span>
+        <h1>
+          Bridging AI and science to transform research.<br />
+        </h1>
+        <p class="lead">
+          I build machine learning systems for medical imaging and multimodal data, with a focus on ovarian cancer.
+          My work combines deep learning, histopathology, and radiomics to create clinically meaningful
+          models—transparently evaluated, reproducible, and ready for real-world impact.
+        </p>
+        <div class="cta">
+          <a class="btn btn--primary" href="#projects">Explore Projects →</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="stage">
+        <div class="coin" aria-label="Rotating badge">
+          <div class="face front" role="img" aria-label="Image A"></div>
+          <div class="face back" role="img" aria-label="Image B"></div>
+        </div>
+      </div>
+
+      <div class="hero__panel">
+        <div class="term" role="img" aria-label="Code like terminal">
+          <pre class="prompt">$ <strong>whoami</strong>
 &gt; DevOPS & IA engineer · PhD student in AI for Medicine
 $ <strong>current_focus</strong>
 &gt; Ovarian cancer: histopathology, radiomics, multimodal AI, predictive modeling
@@ -99,508 +94,504 @@ $ <strong>research</strong>
 $ <strong>motto</strong>
 &gt; Science first. Using AI to be useful and impactful.
 $ <span class="cursor">&nbsp;</span></pre>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== WORK ===== -->
-    <section id="work">
-      <div class="wrap">
-        <h2 class="section__title">💼 Work</h2>
-        <div class="cards">
-          <article class="card">
-  <div class="inline">
-    <div>
-      <h2>PhD: Multimodal AI for Ovarian Cancer Detection • Dr. Stéphanie Nougaret</h2>
-      <div>
-        <span class="chip2"><strong>3 years • 2025–2028 • IRCM Montpellier</strong></span>
-      </div>
-      <div class="skills-chips">
-        <span class="chip">🔬 Radiogenomics</span>
-        <span class="chip">🧬 Spatial Transcriptomics</span>
-        <span class="chip">🤖 AI/ML</span>
-        <span class="chip">🖥️ PyTorch/MONAI</span>
-        <span class="chip">📊 Predictive Modeling</span>
+  <!-- ===== WORK ===== -->
+  <section id="work">
+    <div class="wrap">
+      <h2 class="section__title">💼 Work</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="inline">
+            <div>
+              <h2>PhD: Multimodal AI for Ovarian Cancer Detection • Dr. Stéphanie Nougaret</h2>
+              <div>
+                <span class="chip2"><strong>3 years • 2025–2028 • IRCM Montpellier</strong></span>
+              </div>
+              <div class="skills-chips">
+                <span class="chip">🔬 Radiogenomics</span>
+                <span class="chip">🧬 Spatial Transcriptomics</span>
+                <span class="chip">🤖 AI/ML</span>
+                <span class="chip">🖥️ PyTorch/MONAI</span>
+                <span class="chip">📊 Predictive Modeling</span>
+              </div>
+            </div>
+            <a href="https://www.ircm.fr/" target="_blank">
+              <img src="assets/img/ircm-banner.png" alt="IRCM Logo" />
+            </a>
+          </div>
+
+          <div class="content-ghost">
+            <p>
+              <strong>Mission:</strong><br />
+              Developing <strong>multimodal AI models</strong> to link MRI, histology, and spatial transcriptomics for
+              <strong>non-invasive ovarian cancer characterization</strong>. Goal: Predict tumor biology, immune
+              landscapes, and treatment response from imaging.
+            </p>
+
+            <p>
+              <strong>Key Work:</strong>
+            <ul>
+              <li><strong>Multimodal Coregistration:</strong> Align 3T/9.4T MRI, histology, and transcriptomics at
+                voxel-level (ANTs, Coherent Point Drift).</li>
+              <li><strong>Feature Extraction:</strong> Radiomics (PyRadiomics), pathomics (QuPath), transcriptomics
+                (scuttle/scran).</li>
+              <li><strong>AI Models:</strong> U-Net (segmentation), CNNs (fusion), spatial transformers (context). Loss
+                functions: Hausdorff (best MCC: 0.65), Tversky, Dice.</li>
+              <li><strong>Clustering:</strong> BayesSpace, SNNGraph for spatial gene expression patterns.</li>
+            </ul>
+            </p>
+
+            <p>
+              <strong>Progress:</strong>
+            <ul>
+              <li>12 HGSOC samples (100GB+), 9.4T MRI, 10X Visium transcriptomics, H&E slides.</li>
+              <li>Segmentation models: 98% specificity, 65% MCC (Hausdorff Loss).</li>
+              <li>Spatial clustering: 3 distinct tumor habitats identified (immune hot/cold, stroma-rich).</li>
+            </ul>
+            </p>
+
+            <p>
+              <strong>Impact:</strong>
+            <ul>
+              <li>First <strong>spatially aligned multimodal dataset</strong> for HGSOC.</li>
+              <li>AI tools to predict <strong>immune phenotypes</strong> and <strong>therapy response</strong> from MRI.
+              </li>
+              <li>Open-source pipelines for <strong>radiogenomics</strong> and <strong>precision oncology</strong>.</li>
+            </ul>
+            </p>
+
+            <p>
+              <strong>Next:</strong> Validate models on external cohorts; deploy clinical decision support tools.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="inline">
+            <div>
+              <h2>Apprentice IA & DevOps Engineer</h2>
+              <div>
+                <span class="chip2">
+                  <strong>3 years and 4 months</strong> • 2022-2025 • BionomeeX
+                </span>
+              </div>
+              <div class="skills-chips">
+                <span class="chip">⚙️ DevOps</span>
+                <span class="chip">🤖 MLOps</span>
+                <span class="chip">🖥️ Server Admin</span>
+                <span class="chip">🧠 AI</span>
+                <span class="chip">👁️ Computer Vision</span>
+                <span class="chip">🐍 Python</span>
+                <span class="chip">🔥 PyTorch, TensorFlow, Keras</span>
+                <span class="chip">📊 Streamlit</span>
+                <span class="chip">🐳 Docker</span>
+                <span class="chip">⚡ FastAPI</span>
+                <span class="chip">🐧 Debian/Ubuntu</span>
+              </div>
+            </div>
+            <a href="https://www.bionomeex.com/" target="_blank">
+              <img src="assets/img/bionomeex-banner.png" alt="BionomeeX Banner" />
+            </a>
+          </div>
+
+          <div class="content-ghost">
+            <p>
+              <strong>Mission:</strong><br />
+              Designed and deployed <strong>AI-driven solutions</strong> for scientific imaging (microscopy,
+              histopathology, agronomy), bridging research and operational tools. Developed <strong>end-to-end
+                pipelines</strong>—from data preprocessing to model deployment—enabling partners to automate analysis
+              and accelerate discovery.
+            </p>
+
+            <p>
+              <strong>Key Projects:</strong>
+            <ul>
+              <li>
+                <strong>HixLoop:</strong> Built a <strong>modular AI platform</strong> for object detection/segmentation
+                in scientific images, cutting manual annotation effort by <strong>80%</strong> and improving model
+                precision to <strong>98%</strong>.
+                <small>(FastAPI, PyTorch, Docker, Streamlit)</small>
+              </li>
+              <li>
+                <strong>Abbelight:</strong> Developed <strong>CNN models</strong> for super-resolution microscopy,
+                boosting recall/precision by <strong>15–20%</strong> and delivering a cross-platform pipeline.
+                <small>(PyTorch, MLflow, GPU optimization)</small>
+              </li>
+              <li>
+                <strong>ULTIM:</strong> Automated transcription site detection in microscopy, reducing analysis time
+                from hours to minutes.
+                <small>(Detectron2, Docker, Streamlit)</small>
+              </li>
+              <li>
+                <strong>Tools:</strong> Created <strong>GPUBalancer</strong> (GPU queue system),
+                <strong>CIRToolbox</strong> (time-tracking with voice AI), and solar shadow simulators for agronomic
+                research.
+              </li>
+            </ul>
+            </p>
+
+            <p>
+              <strong>Skills:</strong><br />
+              <strong>AI/ML:</strong> PyTorch, TensorFlow, Keras, Detectron2<br />
+              <strong>DevOps:</strong> Docker, FastAPI, GPU clusters<br />
+              <strong>Collaboration:</strong> Git, Notion, Agile
+            </p>
+
+            <p>
+              <strong>Impact:</strong>
+            <ul>
+              <li>Delivered <strong>3 core platforms</strong> now used daily by BionomeeX and partners (IRCM,
+                Abbelight).</li>
+              <li>Set standards for <strong>modular AI pipelines</strong> and <strong>Docker-based deployment</strong>,
+                reducing project time by <strong>60%</strong>.</li>
+              <li>Contributed to <strong>publication-ready tools</strong> for oncology and microscopy research.</li>
+            </ul>
+            </p>
+
+            <p>
+              <strong>Next:</strong> Applying this expertise in my <strong>PhD at IRCM</strong>, developing
+              <strong>multi-modal AI for ovarian cancer detection</strong>.
+            </p>
+          </div>
+        </article>
+
       </div>
     </div>
-    <a href="https://www.ircm.fr/" target="_blank">
-      <img src="assets/img/ircm-banner.png" alt="IRCM Logo" />
-    </a>
-  </div>
+  </section>
 
-  <div class="content-ghost">
-    <p>
-      <strong>Mission:</strong><br />
-      Developing <strong>multimodal AI models</strong> to link MRI, histology, and spatial transcriptomics for <strong>non-invasive ovarian cancer characterization</strong>. Goal: Predict tumor biology, immune landscapes, and treatment response from imaging.
-    </p>
-
-    <p>
-      <strong>Key Work:</strong>
-      <ul>
-        <li><strong>Multimodal Coregistration:</strong> Align 3T/9.4T MRI, histology, and transcriptomics at voxel-level (ANTs, Coherent Point Drift).</li>
-        <li><strong>Feature Extraction:</strong> Radiomics (PyRadiomics), pathomics (QuPath), transcriptomics (scuttle/scran).</li>
-        <li><strong>AI Models:</strong> U-Net (segmentation), CNNs (fusion), spatial transformers (context). Loss functions: Hausdorff (best MCC: 0.65), Tversky, Dice.</li>
-        <li><strong>Clustering:</strong> BayesSpace, SNNGraph for spatial gene expression patterns.</li>
-      </ul>
-    </p>
-
-    <p>
-      <strong>Progress:</strong>
-      <ul>
-        <li>12 HGSOC samples (100GB+), 9.4T MRI, 10X Visium transcriptomics, H&E slides.</li>
-        <li>Segmentation models: 98% specificity, 65% MCC (Hausdorff Loss).</li>
-        <li>Spatial clustering: 3 distinct tumor habitats identified (immune hot/cold, stroma-rich).</li>
-      </ul>
-    </p>
-
-    <p>
-      <strong>Impact:</strong>
-      <ul>
-        <li>First <strong>spatially aligned multimodal dataset</strong> for HGSOC.</li>
-        <li>AI tools to predict <strong>immune phenotypes</strong> and <strong>therapy response</strong> from MRI.</li>
-        <li>Open-source pipelines for <strong>radiogenomics</strong> and <strong>precision oncology</strong>.</li>
-      </ul>
-    </p>
-
-    <p>
-      <strong>Next:</strong> Validate models on external cohorts; deploy clinical decision support tools.
-    </p>
-  </div>
-</article>
-
-          <article class="card">
-  <div class="inline">
-    <div>
-      <h2>Apprentice IA & DevOps Engineer</h2>
-      <div>
-        <span class="chip2">
-          <strong>3 years and 4 months</strong> • 2022-2025 • BionomeeX
-        </span>
-      </div>
-      <div class="skills-chips">
-        <span class="chip">⚙️ DevOps</span>
-        <span class="chip">🤖 MLOps</span>
-        <span class="chip">🖥️ Server Admin</span>
-        <span class="chip">🧠 AI</span>
-        <span class="chip">👁️ Computer Vision</span>
-        <span class="chip">🐍 Python</span>
-        <span class="chip">🔥 PyTorch, TensorFlow, Keras</span>
-        <span class="chip">📊 Streamlit</span>
-        <span class="chip">🐳 Docker</span>
-        <span class="chip">⚡ FastAPI</span>
-        <span class="chip">🐧 Debian/Ubuntu</span>
-      </div>
-    </div>
-    <a href="https://www.bionomeex.com/" target="_blank">
-      <img src="assets/img/bionomeex-banner.png" alt="BionomeeX Banner" />
-    </a>
-  </div>
-
-  <div class="content-ghost">
-    <p>
-      <strong>Mission:</strong><br />
-      Designed and deployed <strong>AI-driven solutions</strong> for scientific imaging (microscopy, histopathology, agronomy), bridging research and operational tools. Developed <strong>end-to-end pipelines</strong>—from data preprocessing to model deployment—enabling partners to automate analysis and accelerate discovery.
-    </p>
-
-    <p>
-      <strong>Key Projects:</strong>
-      <ul>
-        <li>
-          <strong>HixLoop:</strong> Built a <strong>modular AI platform</strong> for object detection/segmentation in scientific images, cutting manual annotation effort by <strong>80%</strong> and improving model precision to <strong>98%</strong>.
-          <small>(FastAPI, PyTorch, Docker, Streamlit)</small>
-        </li>
-        <li>
-          <strong>Abbelight:</strong> Developed <strong>CNN models</strong> for super-resolution microscopy, boosting recall/precision by <strong>15–20%</strong> and delivering a cross-platform pipeline.
-          <small>(PyTorch, MLflow, GPU optimization)</small>
-        </li>
-        <li>
-          <strong>ULTIM:</strong> Automated transcription site detection in microscopy, reducing analysis time from hours to minutes.
-          <small>(Detectron2, Docker, Streamlit)</small>
-        </li>
-        <li>
-          <strong>Tools:</strong> Created <strong>GPUBalancer</strong> (GPU queue system), <strong>CIRToolbox</strong> (time-tracking with voice AI), and solar shadow simulators for agronomic research.
-        </li>
-      </ul>
-    </p>
-
-    <p>
-      <strong>Skills:</strong><br />
-      <strong>AI/ML:</strong> PyTorch, TensorFlow, Keras, Detectron2<br />
-      <strong>DevOps:</strong> Docker, FastAPI, GPU clusters<br />
-      <strong>Collaboration:</strong> Git, Notion, Agile
-    </p>
-
-    <p>
-      <strong>Impact:</strong>
-      <ul>
-        <li>Delivered <strong>3 core platforms</strong> now used daily by BionomeeX and partners (IRCM, Abbelight).</li>
-        <li>Set standards for <strong>modular AI pipelines</strong> and <strong>Docker-based deployment</strong>, reducing project time by <strong>60%</strong>.</li>
-        <li>Contributed to <strong>publication-ready tools</strong> for oncology and microscopy research.</li>
-      </ul>
-    </p>
-
-    <p>
-      <strong>Next:</strong> Applying this expertise in my <strong>PhD at IRCM</strong>, developing <strong>multi-modal AI for ovarian cancer detection</strong>.
-    </p>
-  </div>
-</article>
-
+  <!-- ===== DIPLOMATION ===== -->
+  <section id="diplomation">
+    <div class="wrap">
+      <h2 class="section__title">🎓 Diplomation</h2>
+      <div class="timeline">
+        <div class="t inline start">
+          <a href="https://edi2s.umontpellier.fr/" target="_blank" rel="noopener">
+            <img class="logo wide" src="assets/img/i2s-logo.png" alt="I2S Logo" />
+          </a>
+          <div>
+            <strong>PhD degree as specialist of AI applied in medicine
+              field.</strong>
+            <div class="when">2028 — BAC +8 - I2S / ICM, France.</div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== DIPLOMATION ===== -->
-    <section id="diplomation">
-      <div class="wrap">
-        <h2 class="section__title">🎓 Diplomation</h2>
-        <div class="timeline">
-          <div class="t inline start">
-            <a
-              href="https://edi2s.umontpellier.fr/"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                class="logo wide"
-                src="assets/img/i2s-logo.png"
-                alt="I2S Logo"
-              />
-            </a>
-            <div>
-              <strong
-                >PhD degree as specialist of AI applied in medicine
-                field.</strong
-              >
-              <div class="when">2028 — BAC +8 - I2S / ICM, France.</div>
-            </div>
+        <div class="t inline start">
+          <a href="https://www.imt-mines-ales.fr/" target="_blank" rel="noopener">
+            <img class="logo wide" src="assets/img/ales-logo.png" alt="IMT Mines Alès Logo" />
+          </a>
+          <div>
+            <strong>Engineering degree as Software Engineer.</strong>
+            <div class="when">2025 — BAC +5 - IMT Mines Alès, France.</div>
           </div>
-          <div class="t inline start">
-            <a
-              href="https://www.imt-mines-ales.fr/"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                class="logo wide"
-                src="assets/img/ales-logo.png"
-                alt="IMT Mines Alès Logo"
-              />
-            </a>
-            <div>
-              <strong>Engineering degree as Software Engineer.</strong>
-              <div class="when">2025 — BAC +5 - IMT Mines Alès, France.</div>
-            </div>
+        </div>
+        <div class="t inline start">
+          <a href="https://iut-montpellier-sete.edu.umontpellier.fr/" target="_blank" rel="noopener">
+            <img class="logo wide" src="assets/img/IUT-logo.png" alt="IUT Logo" />
+          </a>
+          <div>
+            <strong>DUT developper</strong>
+            <div class="when">2022 — BAC +2 - IUT Montpellier, France.</div>
           </div>
-          <div class="t inline start">
-            <a
-              href="https://iut-montpellier-sete.edu.umontpellier.fr/"
-              target="_blank"
-              rel="noopener"
-            >
-              <img
-                class="logo wide"
-                src="assets/img/IUT-logo.png"
-                alt="IUT Logo"
-              />
-            </a>
-            <div>
-              <strong>DUT developper</strong>
-              <div class="when">2022 — BAC +2 - IUT Montpellier, France.</div>
-            </div>
-          </div>
-          <!-- <div class="t inline start">
+        </div>
+        <!-- <div class="t inline start">
             <div>
               <strong>BAC S</strong>
               <div class="when">2020 — BAC +0 - Lycée Jean Jaurès, France.</div>
             </div>
           </div> -->
-        </div>
       </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== --><section id="projects">
-  <div class="wrap projects">
-    <h2 class="section__title">🛠️ Projects</h2>
-    <p class="section__desc">
-      Explore my technical deep-dives and innovations. Each project reflects my expertise in AI, computer vision, and multimodal data integration—from medical imaging to simulation and infrastructure.
-    </p>
-    <div class="project-grid">
-      <!-- HixLoop -->
-      <article class="project">
-        <a href="projects/hixloop.html">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" />
-          </div>
-          <div class="meta">
-            <h3>HixLoop</h3>
-            <span class="chip">2022-2025 • Bionomeex • Intern library</span><hr class="hidden" />
-            <div>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Active Learning</span>
-              <span class="tag">Modular AI</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">Keras</span>
-              <span class="tag">TensorFlow</span>
-              <span class="tag">Detectron2</span>
-              <span class="tag">Streamlit</span>
-            </div>
-            <p class="ghost">
-              A modular AI platform for scientific image analysis, reducing manual annotation effort by 80% using iterative training loops. Built with FastAPI, Docker, and Streamlit.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- SuperDiary -->
-      <article class="project">
-        <a href="https://github.com/ChadEstoupStreiff/SuperDiary">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/superdiary_home.png" alt="SuperDiary: Smart Journaling" />
-          </div>
-          <div class="meta">
-            <h3>SuperDiary</h3>
-            <span class="chip">2025–present • Personnal • OpenSource</span><hr class="hidden" />
-            <div>
-              <span class="tag">NLP</span>
-              <span class="tag">Privacy-First</span>
-              <span class="tag">Python</span>
-              <span class="tag">Streamlit</span>
-            </div>
-            <p class="ghost">
-              A privacy-focused smart journaling app with NLP-driven insights, local data storage, and customizable AI providers.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- Home Servers -->
-      <article class="project">
-        <a href="projects/home_servers.html">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/homeservers_portainer.png" alt="Home Servers: Self-Hosted Infrastructure" />
-          </div>
-          <div class="meta">
-            <h3>Home Servers</h3>
-            <span class="chip">2020–present • Personal • Private</span><hr class="hidden" />
-            <div>
-              <span class="tag">Self-Hosting</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Debian</span>
-            </div>
-            <p class="ghost">
-              Self-hosted infrastructure on multiple home servers using Debian and Docker, managing services like Nextcloud, Home Assistant, and more.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- Abbelight Emitters Detection -->
-      <article class="project">
-        <a href="projects/abbelight.html">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/abbelight_emitters.png" alt="Emitters Detection in Super-Resolution Microscopy" />
-          </div>
-          <div class="meta">
-            <h3>Abbelight Emitters Detection</h3>
-            <span class="chip">2025 • Bionomeex • Client Research</span><hr class="hidden" />
-            <div>
-              <span class="tag">Super-Resolution</span>
-              <span class="tag">CNN</span>
-              <span class="tag">Microscopy</span>
-              <span class="tag">PyTorch</span>
-              <span class="tag">GPU Optimization</span>
-            </div>
-            <p class="ghost">
-              Developed CNN models for emitter detection in super-resolution microscopy, improving recall/precision by 15–20% (from 0.75 to 0.90) using custom SNR filtering and patch-based training.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- Solar Panel Shadow Simulation -->
-      <article class="project">
-        <a href="projects/davele.html">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/davele_ombrage.png" alt="Solar Panel Shadow Simulation" />
-          </div>
-          <div class="meta">
-            <h3>Solar Panel Shadow Simulation</h3>
-            <span class="chip">2025 • Bionomeex • Client Software</span><hr class="hidden" />
-            <div>
-              <span class="tag">Geometric Modeling</span>
-              <span class="tag">Agronomy</span>
-              <span class="tag">Python</span>
-              <span class="tag">Optimization</span>
-            </div>
-            <p class="ghost">
-              Simulated solar panel shadows on crops to optimize agronomic layouts, using geometric algorithms and temporal light modeling.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- Aicet -->
-      <article class="project">
-        <a href="projects/aicet.html">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/ai7_main.png" alt="Aicet: Custom AI Framework" />
-          </div>
-          <div class="meta">
-            <h3>Aicet</h3>
-            <span class="chip">2025 • Bionomeex • Intern tool</span><hr class="hidden" />
-            <div>
-              <span class="tag">Automation</span>
-              <span class="tag">Python</span>
-              <span class="tag">DevOps</span>
-            </div>
-            <p class="ghost">
-              An application to generate, edit and validate questions around AI concepts. To create an official AI certification program.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- JTT -->
-      <article class="project">
-        <a href="https://apps.apple.com/fr/app/js-timetable/id6477736560?l=en-GBJ's TimeTable">
-          <div class="thumb" aria-hidden="true">
-            <img src="assets/img/jtt_home.jpg" alt="JTT: Task Tracking Tool" />
-          </div>
-          <div class="meta">
-            <h3>J's TimeTable</h3>
-            <span class="chip">2024 • Personnal • AppStore</span><hr class="hidden" />
-            <div>
-              <span class="tag">Time Tracking</span>
-              <span class="tag">Swift</span>
-            </div>
-            <p class="ghost">
-              A tool to improve revision management and time tracking using J's Method in a user-friendly environment, enhancing productivity. Made in collaboration with students to fit their needs. Available on Apple AppStore.
-            </p>
-          </div>
-        </a>
-      </article>
-
-
-      <!-- Universe Simulation -->
-      <article class="project">
-        <a href="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer">
-          <div class="thumb" aria-hidden="true">
-            <img src="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer/raw/main/assets/result_search.png" alt="EMA-GalaTablePlacer" />
-          </div>
-          <div class="meta">
-            <h3>EMA-GalaTablePlacer</h3>
-            <span class="chip">2023 • IMT Ales • OpenSource</span><hr class="hidden" />
-            <div>
-              <span class="tag">Optimization</span>
-              <span class="tag">Python</span>
-            </div>
-            <p class="ghost">
-              A tool to optimize gala dinner table placements based on guest preferences using constraint satisfaction algorithms. Used in real events at IMT Ales.
-            </p>
-          </div>
-        </a>
-      </article>
-
-      <!-- Universe Simulation -->
-      <article class="project">
-        <a href="https://github.com/ChadEstoupStreiff/UniverseSimulator">
-          <div class="thumb" aria-hidden="true">
-            <img src="https://github.com/ChadEstoupStreiff/UniverseSimulator/raw/main/img/vid1.gif" alt="Universe Simulation" />
-          </div>
-          <div class="meta">
-            <h3>Universe Simulation</h3>
-            <span class="chip">2022 • Personal • OpenSource</span><hr class="hidden" />
-            <div>
-              <span class="tag">Physics Simulation</span>
-              <span class="tag">Python</span>
-              <span class="tag">OpenGL</span>
-            </div>
-            <p class="ghost">
-              One of my first public personal projects just for fun. A universe simulator with realistic physics using Python and OpenGL.
-            </p>
-          </div>
-        </a>
-      </article>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="wrap projects">
+      <h2 class="section__title">🛠️ Projects</h2>
+      <p class="section__desc">
+        Explore my technical deep-dives and innovations. Each project reflects my expertise in AI, computer vision, and
+        multimodal data integration—from medical imaging to simulation and infrastructure.
+      </p>
+      <div class="project-grid">
+        <!-- HixLoop -->
+        <article class="project">
+          <a href="projects/hixloop.html">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" />
+            </div>
+            <div class="meta">
+              <h3>HixLoop</h3>
+              <span class="chip">2022-2025 • Bionomeex • Intern library</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Active Learning</span>
+                <span class="tag">Modular AI</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Keras</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">Detectron2</span>
+                <span class="tag">Streamlit</span>
+              </div>
+              <p class="ghost">
+                A modular AI platform for scientific image analysis, reducing manual annotation effort by 80% using
+                iterative training loops. Built with FastAPI, Docker, and Streamlit.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- SuperDiary -->
+        <article class="project">
+          <a href="https://github.com/ChadEstoupStreiff/SuperDiary">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/superdiary_home.png" alt="SuperDiary: Smart Journaling" />
+            </div>
+            <div class="meta">
+              <h3>SuperDiary</h3>
+              <span class="chip">2025–present • Personnal • OpenSource</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">NLP</span>
+                <span class="tag">Privacy-First</span>
+                <span class="tag">Python</span>
+                <span class="tag">Streamlit</span>
+              </div>
+              <p class="ghost">
+                A privacy-focused smart journaling app with NLP-driven insights, local data storage, and customizable AI
+                providers.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Home Servers -->
+        <article class="project">
+          <a href="projects/home_servers.html">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/homeservers_portainer.png" alt="Home Servers: Self-Hosted Infrastructure" />
+            </div>
+            <div class="meta">
+              <h3>HomeLab</h3>
+              <span class="chip">2020–present • Personal • Private</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Self-Hosting</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Debian</span>
+              </div>
+              <p class="ghost">
+                Self-hosted infrastructure on multiple home servers using Debian and Docker, managing services like
+                Nextcloud, Home Assistant, and more.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Abbelight Emitters Detection -->
+        <article class="project">
+          <a href="projects/abbelight.html">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/abbelight_emitters.png" alt="Emitters Detection in Super-Resolution Microscopy" />
+            </div>
+            <div class="meta">
+              <h3>Abbelight Emitters Detection</h3>
+              <span class="chip">2025 • Bionomeex • Client Research</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Super-Resolution</span>
+                <span class="tag">CNN</span>
+                <span class="tag">Microscopy</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">GPU Optimization</span>
+              </div>
+              <p class="ghost">
+                Developed CNN models for emitter detection in super-resolution microscopy, improving recall/precision by
+                15–20% (from 0.75 to 0.90) using custom SNR filtering and patch-based training.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Solar Panel Shadow Simulation -->
+        <article class="project">
+          <a href="projects/davele.html">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/davele_ombrage.png" alt="Solar Panel Shadow Simulation" />
+            </div>
+            <div class="meta">
+              <h3>Solar Panel Shadow Simulation</h3>
+              <span class="chip">2025 • Bionomeex • Client Software</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Geometric Modeling</span>
+                <span class="tag">Agronomy</span>
+                <span class="tag">Python</span>
+                <span class="tag">Optimization</span>
+              </div>
+              <p class="ghost">
+                Simulated solar panel shadows on crops to optimize agronomic layouts, using geometric algorithms and
+                temporal light modeling.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Aicet -->
+        <article class="project">
+          <a href="projects/aicet.html">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/ai7_main.png" alt="Aicet: Custom AI Framework" />
+            </div>
+            <div class="meta">
+              <h3>Aicet</h3>
+              <span class="chip">2025 • Bionomeex • Intern tool</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Automation</span>
+                <span class="tag">Python</span>
+                <span class="tag">DevOps</span>
+              </div>
+              <p class="ghost">
+                An application to generate, edit and validate questions around AI concepts. To create an official AI
+                certification program.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- JTT -->
+        <article class="project">
+          <a href="https://apps.apple.com/fr/app/js-timetable/id6477736560?l=en-GBJ's TimeTable">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/jtt_home.jpg" alt="JTT: Task Tracking Tool" />
+            </div>
+            <div class="meta">
+              <h3>J's TimeTable</h3>
+              <span class="chip">2024 • Personnal • AppStore</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Time Tracking</span>
+                <span class="tag">Swift</span>
+              </div>
+              <p class="ghost">
+                A tool to improve revision management and time tracking using J's Method in a user-friendly environment,
+                enhancing productivity. Made in collaboration with students to fit their needs. Available on Apple
+                AppStore.
+              </p>
+            </div>
+          </a>
+        </article>
 
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-      <div class="wrap">
-        <h2 class="section__title">📞 Contact</h2>
-        <p class="section__desc">
-          Let’s collaborate! For work, research, partnerships, mentoring or just
-          talking.
-        </p>
-        <div class="contact">
-          <div class="panel">
-            <h3>Contact Me</h3>
-            <div class="social spaced">
-              <a
-                href="https://github.com/ChadEstoupStreiff"
-                target="_blank"
-                rel="noopener"
-              >
-                <img
-                  class="github"
-                  src="assets/img/github-logo.png"
-                  alt="GitHub"
-                />
-                GitHub
-              </a>
-              <!-- <a
+        <!-- Universe Simulation -->
+        <article class="project">
+          <a href="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer">
+            <div class="thumb" aria-hidden="true">
+              <img src="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer/raw/main/assets/result_search.png"
+                alt="EMA-GalaTablePlacer" />
+            </div>
+            <div class="meta">
+              <h3>EMA-GalaTablePlacer</h3>
+              <span class="chip">2023 • IMT Ales • OpenSource</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Optimization</span>
+                <span class="tag">Python</span>
+              </div>
+              <p class="ghost">
+                A tool to optimize gala dinner table placements based on guest preferences using constraint satisfaction
+                algorithms. Used in real events at IMT Ales.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Universe Simulation -->
+        <article class="project">
+          <a href="https://github.com/ChadEstoupStreiff/UniverseSimulator">
+            <div class="thumb" aria-hidden="true">
+              <img src="https://github.com/ChadEstoupStreiff/UniverseSimulator/raw/main/img/vid1.gif"
+                alt="Universe Simulation" />
+            </div>
+            <div class="meta">
+              <h3>Universe Simulation</h3>
+              <span class="chip">2022 • Personal • OpenSource</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Physics Simulation</span>
+                <span class="tag">Python</span>
+                <span class="tag">OpenGL</span>
+              </div>
+              <p class="ghost">
+                One of my first public personal projects just for fun. A universe simulator with realistic physics using
+                Python and OpenGL.
+              </p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section__title">📞 Contact</h2>
+      <p class="section__desc">
+        Let’s collaborate! For work, research, partnerships, mentoring or just
+        talking.
+      </p>
+      <div class="contact">
+        <div class="panel">
+          <h3>Contact Me</h3>
+          <div class="social spaced">
+            <a href="https://github.com/ChadEstoupStreiff" target="_blank" rel="noopener">
+              <img class="github" src="assets/img/github-logo.png" alt="GitHub" />
+              GitHub
+            </a>
+            <!-- <a
                 href="https://gitlab.com/ChadOW"
                 target="_blank"
                 rel="noopener"
               >
                 <img src="assets/img/gitlab-logo.png" alt="GitLab" /> GitLab
               </a> -->
-              <a
-                href="https://discordapp.com/users/297371832460509186/"
-                target="_blank"
-                rel="noopener"
-              >
-                <img src="assets/img/discord-logo.png" alt="Discord" /> Discord
-              </a>
-              <a
-                href="https://www.linkedin.com/in/chad-estoup-streiff-8878b11b7/"
-                target="_blank"
-                rel="noopener"
-              >
-                <img src="assets/img/linkedin-logo.png" alt="LinkedIn" />
-                LinkedIn
-              </a>
-              <a href="mailto:chad.estoup@gmail.com">
-                <img src="assets/img/Gmail-Logo.png" alt="Gmail" /> Email
-              </a>
-              <a
-                href="https://www.instagram.com/chad.mtp/"
-                target="_blank"
-                rel="noopener"
-              >
-                <img src="assets/img/instagram-logo.png" alt="Instagram" />
-                Instagram
-              </a>
-            </div>
+            <a href="https://discordapp.com/users/297371832460509186/" target="_blank" rel="noopener">
+              <img src="assets/img/discord-logo.png" alt="Discord" /> Discord
+            </a>
+            <a href="https://www.linkedin.com/in/chad-estoup-streiff-8878b11b7/" target="_blank" rel="noopener">
+              <img src="assets/img/linkedin-logo.png" alt="LinkedIn" />
+              LinkedIn
+            </a>
+            <a href="mailto:chad.estoup@gmail.com">
+              <img src="assets/img/Gmail-Logo.png" alt="Gmail" /> Email
+            </a>
+            <a href="https://www.instagram.com/chad.mtp/" target="_blank" rel="noopener">
+              <img src="assets/img/instagram-logo.png" alt="Instagram" />
+              Instagram
+            </a>
           </div>
         </div>
       </div>
-    </section>
-    <footer>
-      <div class="wrap">
-        <p>
-          © <span id="y"></span> Chad Estoup--Streiff — IA Engineer • PhD
-          student in AI for Medicine
-        </p>
-      </div>
-    </footer>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <p>
+        © <span id="y"></span> Chad Estoup--Streiff — IA Engineer • PhD
+        student in AI for Medicine
+      </p>
+    </div>
+  </footer>
 
-    <script>
-      // Tiny nicety: current year in footer
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <script>
+    // Tiny nicety: current year in footer
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+
 </html>

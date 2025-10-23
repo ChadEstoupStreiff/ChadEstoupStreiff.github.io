@@ -12,6 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="../style.css" />
+    <script src="./assets/js/responsive.js" defer></script>
     <link rel="stylesheet" href="../assets/css/project.css" />
 </head>
 
@@ -42,9 +43,9 @@
     <section class="hero">
         <div class="wrap hero__grid" style="grid-template-columns: 1fr; text-align:center">
             <div>
-                <span class="badge">🔬 Abbelight × BionomeeX • 2024–2025</span>
+                <span class="badge">🔬 Abbelight × BionomeeX</span>
                 <h1>HD-SMLM — Deep Learning for Super-Resolution Microscopy</h1>
-                <p class="lead">
+                <p>
                     HD-SMLM (High-Density Single-Molecule Localization Microscopy) is an ambitious AI project
                     built with <strong>Abbelight</strong> to revolutionize <em>super-resolution microscopy</em>.
                     The goal: enable accurate detection of overlapping fluorescent emitters at extremely high densities,
@@ -100,70 +101,91 @@
             </article>
 
             <article class="card">
-  <h2>💡 The HD-SMLM Approach</h2>
+                <h2>💡 The HD-SMLM Approach</h2>
 
-  <!-- Model architecture -->
-  <p>
-    We use a <strong>3D-UNet</strong> tailored for SMLM movies: a projection layer → encoder (down-blocks with residual
-    convs + Swish) → bottleneck → decoder (up-blocks with skip connections). The temporal axis (e.g., 3–5 frames) is kept
-    intact so the network learns <em>spatio-temporal</em> blink patterns. The final 1×1×1 conv produces a
-    <strong>4-channel probability map</strong> for per-pixel counts: <code>0/1/2/3+</code>.
-  </p>
+                <!-- Model architecture -->
+                <p>
+                    We use a <strong>3D-UNet</strong> tailored for SMLM movies: a projection layer → encoder
+                    (down-blocks with residual
+                    convs + Swish) → bottleneck → decoder (up-blocks with skip connections). The temporal axis (e.g.,
+                    3–5 frames) is kept
+                    intact so the network learns <em>spatio-temporal</em> blink patterns. The final 1×1×1 conv produces
+                    a
+                    <strong>4-channel probability map</strong> for per-pixel counts: <code>0/1/2/3+</code>.
+                </p>
 
-  <!-- SNR explanation -->
-  <p>
-    The <strong>Signal-to-Noise Ratio (SNR)</strong> measures how strong the emitter’s signal
-    is compared to background noise. Low-SNR events are nearly indistinguishable from background, while extremely high-SNR
-    events can dominate the loss and bias learning. To ensure consistent and balanced training, we <strong>clip SNR values
-    above 2</strong> — meaning all signals with SNR&nbsp;≥&nbsp;2 are treated as reliable, while weaker ones are excluded
-    from learning. This choice filters out ambiguous detections, stabilizes training, and focuses the model on physically
-    meaningful emitter events.
-  </p>
-  <div class="figure">
-    <img src="../assets/img/abbelight/snr.png" alt="Signal-to-Noise Ratio illustration" />
-    <figcaption>
-      Signal-to-Noise Ratio (SNR) concept: higher SNR means clearer emitter signals over background noise.
-    </figcaption>
-  </div>
+                <!-- SNR explanation -->
+                <p>
+                    The <strong>Signal-to-Noise Ratio (SNR)</strong> measures how strong the emitter’s signal
+                    is compared to background noise. Low-SNR events are nearly indistinguishable from background, while
+                    extremely high-SNR
+                    events can dominate the loss and bias learning. To ensure consistent and balanced training, we
+                    <strong>clip SNR values
+                        above 2</strong> — meaning all signals with SNR&nbsp;≥&nbsp;2 are treated as reliable, while
+                    weaker ones are excluded
+                    from learning. This choice filters out ambiguous detections, stabilizes training, and focuses the
+                    model on physically
+                    meaningful emitter events.
+                </p>
+                <div class="figure">
+                    <img src="../assets/img/abbelight/snr.png" alt="Signal-to-Noise Ratio illustration" />
+                    <figcaption>
+                        Signal-to-Noise Ratio (SNR) concept: higher SNR means clearer emitter signals over background
+                        noise.
+                    </figcaption>
+                </div>
 
-  <!-- Intensity clipping / normalization -->
-  <p>
-    Separately, we apply <strong>intensity clipping for normalization</strong> on raw 16-bit TIFF inputs, typically between
-    the 20th and 99th percentiles of the pixel distribution. This removes extreme background noise and saturation peaks
-    while keeping the relevant emitter information. After clipping, intensities are normalized (e.g., scaled to −1…1), which
-    improves gradient flow, speeds up convergence, and allows the same model to handle data from multiple microscopes and
-    illumination conditions.
-  </p>
-  <div class="figure">
-    <img src="../assets/img/abbelight/clipping.png" alt="Intensity clipping illustration" />
-    <figcaption>
-      Intensity clipping for normalization: removing extreme values to focus on relevant emitter signals.
-    </figcaption>
-  </div>
+                <!-- Intensity clipping / normalization -->
+                <p>
+                    Separately, we apply <strong>intensity clipping for normalization</strong> on raw 16-bit TIFF
+                    inputs, typically between
+                    the 20th and 99th percentiles of the pixel distribution. This removes extreme background noise and
+                    saturation peaks
+                    while keeping the relevant emitter information. After clipping, intensities are normalized (e.g.,
+                    scaled to −1…1), which
+                    improves gradient flow, speeds up convergence, and allows the same model to handle data from
+                    multiple microscopes and
+                    illumination conditions.
+                </p>
+                <div class="figure">
+                    <img src="../assets/img/abbelight/clipping.png" alt="Intensity clipping illustration" />
+                    <figcaption>
+                        Intensity clipping for normalization: removing extreme values to focus on relevant emitter
+                        signals.
+                    </figcaption>
+                </div>
 
-  <!-- kNN metric system -->
-  <p>
-    Traditional pixel-exact metrics are too rigid for microscopy, where emitters may be predicted one pixel away from their
-    ground truth due to diffraction, sampling, or reconstruction variance. We therefore designed a custom
-    <strong>k-nearest-neighbor (kNN) metric system</strong>. For each predicted emitter, we look for the <em>k</em>
-    closest ground-truth emitters (usually k = 8). If a match is found within this neighborhood, it counts as a
-    <strong>true prediction</strong>. This makes evaluation more physically realistic, tolerating natural spatial variance
-    while still penalizing false or missing detections.
-  </p>
-  <div class="figure">
-    <img src="../assets/img/abbelight/knn.png" alt="k-nearest-neighbor metric illustration" />
-    <figcaption>
-      k-nearest-neighbor (kNN) metric concept: allowing spatial tolerance in emitter matching for realistic evaluation.
-    </figcaption>
-  </div>
+                <!-- kNN metric system -->
+                <p>
+                    Traditional pixel-exact metrics are too rigid for microscopy, where emitters may be predicted one
+                    pixel away from their
+                    ground truth due to diffraction, sampling, or reconstruction variance. We therefore designed a
+                    custom
+                    <strong>k-nearest-neighbor (kNN) metric system</strong>. For each predicted emitter, we look for the
+                    <em>k</em>
+                    closest ground-truth emitters (usually k = 8). If a match is found within this neighborhood, it
+                    counts as a
+                    <strong>true prediction</strong>. This makes evaluation more physically realistic, tolerating
+                    natural spatial variance
+                    while still penalizing false or missing detections.
+                </p>
+                <div class="figure">
+                    <img src="../assets/img/abbelight/knn.png" alt="k-nearest-neighbor metric illustration" />
+                    <figcaption>
+                        k-nearest-neighbor (kNN) metric concept: allowing spatial tolerance in emitter matching for
+                        realistic evaluation.
+                    </figcaption>
+                </div>
 
-  <!-- Output usage -->
-  <p>
-    These design choices — SNR curation, normalization clipping, and kNN-based evaluation — make HD-SMLM robust to optical
-    noise, dense emitter overlap, and real-world acquisition variability. The final probability maps serve as priors for
-    Abbelight’s multi-emitter fitting algorithms, combining AI inference with precise optical modeling.
-  </p>
-</article>
+                <!-- Output usage -->
+                <p>
+                    These design choices — SNR curation, normalization clipping, and kNN-based evaluation — make HD-SMLM
+                    robust to optical
+                    noise, dense emitter overlap, and real-world acquisition variability. The final probability maps
+                    serve as priors for
+                    Abbelight’s multi-emitter fitting algorithms, combining AI inference with precise optical modeling.
+                </p>
+            </article>
 
             <article class="card">
                 <h2>⚙️ Technical Implementation</h2>
@@ -231,8 +253,12 @@
 
             <footer style="padding:2rem 0;text-align:center">
                 <p>
-                    ⚠️ <strong>Disclaimer:</strong> This page summarizes the HD-SMLM project results between
-                    Abbelight and BionomeeX (2024-2025). Some experiments are ongoing or confidential.
+                    ⚠️ <strong>Disclaimer:</strong> This article was generated with
+                    assistance from AI (Mistral & ChatGPT), but
+                    <strong>all information, metrics, and technical content</strong>
+                    originate from my verified work. The projects, results, and data
+                    presented reflect my professional experience and my personal
+                    research.
                 </p>
                 <p style="margin-top:1.5rem">
                     © <span id="y"></span> HD-SMLM — Abbelight × BionomeeX
