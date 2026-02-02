@@ -34,7 +34,7 @@
 
   .face.back{
     transform: rotateY(180deg);
-    background-image: url("/assets/img/myself.png");
+    background-image: url("/assets/img/myself.jpg");
   }
 
   @keyframes spin {
