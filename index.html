@@ -117,11 +117,12 @@ $ <span class="cursor">&nbsp;</span></pre>
                 <span class="chip2"><strong>Defense planned for 2028</strong></span>
               </div>
               <div class="skills-chips">
-                <span class="chip">🔬 Radiogenomics</span>
-                <span class="chip">🧬 Spatial Transcriptomics</span>
-                <span class="chip">🤖 AI/ML</span>
-                <span class="chip">🖥️ PyTorch/MONAI</span>
-                <span class="chip">📊 Predictive Modeling</span>
+                <span class="chip">🩺 Medical Image Registration</span>
+                <span class="chip">🧫 MRI / WSI</span>
+                <span class="chip">🤖 Deep Learning</span>
+                <span class="chip">🖥️ VoxelMorph / Elastix</span>
+                <span class="chip">🔬 Virtual Biopsy</span>
+                <span class="chip">📊 Multimodal Fusion</span>
               </div>
             </div>
             <a href="https://www.ircm.fr/" target="_blank">
@@ -132,9 +133,10 @@ $ <span class="cursor">&nbsp;</span></pre>
           <div class="content-ghost">
             <p>
               <strong>Mission:</strong><br />
-              Developing <strong>multimodal AI models</strong> to link MRI, histology, and spatial transcriptomics for
-              <strong>non-invasive ovarian cancer characterization</strong>. Goal: Predict tumor biology, immune
-              landscapes, and treatment response from imaging.
+              Building a <strong>virtual biopsy</strong> system for ovarian cancer — a modular framework that registers
+              high-resolution ex-vivo MRI (9.4T) with histopathological Whole Slide Images (WSI), enabling
+              <strong>biological feature maps</strong> (transcriptomics, carcinomatosis) to be projected onto
+              non-invasive MRI for clinical use.
             </p>
 
             <a class="card-toggle btn" aria-expanded="false" aria-controls="phd-details">
@@ -145,40 +147,32 @@ $ <span class="cursor">&nbsp;</span></pre>
               <p>
                 <strong>Key Work:</strong>
               <ul>
-                <li><strong>Multimodal Coregistration:</strong> Align 3T/9.4T MRI, histology, and transcriptomics at
-                  voxel-level (ANTs, Coherent Point Drift).</li>
-                <li><strong>Feature Extraction:</strong> Radiomics (PyRadiomics), pathomics (QuPath), transcriptomics
-                  (scuttle/scran).</li>
-                <li><strong>AI Models:</strong> U-Net (segmentation), CNNs (fusion), spatial transformers (context).
-                  Loss
-                  functions: Hausdorff (best MCC: 0.65), Tversky, Dice.</li>
-                <li><strong>Clustering:</strong> BayesSpace, SNNGraph for spatial gene expression patterns.</li>
-              </ul>
-              </p>
-
-              <p>
-                <strong>Progress:</strong>
-              <ul>
-                <li>12 HGSOC samples (100GB+), 9.4T MRI, 10X Visium transcriptomics, H&E slides.</li>
-                <li>Segmentation models: 98% specificity, 65% MCC (Hausdorff Loss).</li>
-                <li>Spatial clustering: 3 distinct tumor habitats identified (immune hot/cold, stroma-rich).</li>
+                <li><strong>Modular Registration Pipeline:</strong> Sequential composition of global rigid/affine
+                  alignment (Elastix RRA) followed by B-spline local deformations and VoxelMorph deep learning
+                  dense flow fields — coarse-to-fine refinement of extreme non-linear tissue deformations.</li>
+                <li><strong>Custom Evaluation Framework:</strong> Two novel tissue-based metrics beyond standard
+                  intensity measures — area-based (Dice, Jaccard, Hausdorff) and landmark-based (expert
+                  pathologist-annotated anatomical keypoints), yielding clinically meaningful spatial validation.</li>
+                <li><strong>Annotation Software:</strong> Built a side-by-side annotation tool for expert
+                  pathologists to manually define biologically relevant MRI–WSI landmark.</li>
               </ul>
               </p>
 
               <p>
                 <strong>Impact:</strong>
               <ul>
-                <li>First <strong>spatially aligned multimodal dataset</strong> for HGSOC.</li>
-                <li>AI tools to predict <strong>immune phenotypes</strong> and <strong>therapy response</strong> from
-                  MRI.
-                </li>
-                <li>Open-source pipelines for <strong>radiogenomics</strong> and <strong>precision oncology</strong>.
-                </li>
+                <li>First modular MRI–WSI registration framework validated for ovarian cancer.</li>
+                <li>Enables transfer of biological feature maps from invasive WSI to non-invasive MRI coordinate
+                  space.</li>
+                <li>Foundation for future clinical virtual biopsy tools — reducing reliance on invasive tissue
+                  sampling.</li>
               </ul>
               </p>
 
               <p>
-                <strong>Next:</strong> Validate models on external cohorts; deploy clinical decision support tools.
+                <strong>Next:</strong> Complete landmark annotation for the full IRCM cohort; extend to clinical 3T
+                whole-body MRI; explore Virtual Biopsy deep learning models for direct biological feature
+                prediction from MRI.
               </p>
             </div>
           </div>
@@ -342,33 +336,6 @@ $ <span class="cursor">&nbsp;</span></pre>
         multimodal data integration—from medical imaging to simulation and infrastructure.
       </p>
       <div class="project-grid">
-        <!-- HixLoop -->
-        <article class="project">
-          <a href="projects/hixloop.html">
-            <div class="thumb" aria-hidden="true">
-              <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" />
-            </div>
-            <div class="meta">
-              <h3>HixLoop</h3>
-              <span class="chip">2022-2025 • Bionomeex • Intern library</span>
-              <hr class="hidden" />
-              <div>
-                <span class="tag">Computer Vision</span>
-                <span class="tag">Active Learning</span>
-                <span class="tag">Modular AI</span>
-                <span class="tag">PyTorch</span>
-                <span class="tag">Keras</span>
-                <span class="tag">TensorFlow</span>
-                <span class="tag">Detectron2</span>
-                <span class="tag">Streamlit</span>
-              </div>
-              <p class="ghost">
-                A modular AI platform for scientific image analysis, reducing manual annotation effort by 80% using
-                iterative training loops. Built with FastAPI, Docker, and Streamlit.
-              </p>
-            </div>
-          </a>
-        </article>
 
         <!-- SuperDiary -->
         <article class="project">
@@ -412,6 +379,58 @@ $ <span class="cursor">&nbsp;</span></pre>
               <p class="ghost">
                 Self-hosted infrastructure on multiple home servers using Debian and Docker, managing services like
                 Nextcloud, Home Assistant, and more.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- WateringCat -->
+        <article class="project">
+          <a href="https://github.com/ChadEstoupStreiff/WateringCat">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/wateringcat.jpeg" alt="WateringCat: Plant Watering System" />
+            </div>
+            <div class="meta">
+              <h3>WateringCat</h3>
+              <span class="chip">2026 • Personal • OpenSource</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">IoT</span>
+                <span class="tag">Python</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Raspberry Pi</span>
+              </div>
+              <p class="ghost">
+                An automated plant watering system using a Raspberry Pi, soil moisture sensors, and a Python control
+                script.
+              </p>
+            </div>
+          </a>
+        </article>
+
+        <!-- HixLoop -->
+        <article class="project">
+          <a href="projects/hixloop.html">
+            <div class="thumb" aria-hidden="true">
+              <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" />
+            </div>
+            <div class="meta">
+              <h3>HixLoop</h3>
+              <span class="chip">2022-2025 • Bionomeex • Intern library</span>
+              <hr class="hidden" />
+              <div>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Active Learning</span>
+                <span class="tag">Modular AI</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Keras</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">Detectron2</span>
+                <span class="tag">Streamlit</span>
+              </div>
+              <p class="ghost">
+                A modular AI platform for scientific image analysis, reducing manual annotation effort by 80% using
+                iterative training loops. Built with FastAPI, Docker, and Streamlit.
               </p>
             </div>
           </a>
