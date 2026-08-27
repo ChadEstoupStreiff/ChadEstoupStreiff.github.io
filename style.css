@@ -104,6 +104,11 @@
   inherits: true;
   initial-value: rgba(255, 255, 255, 0.09);
 }
+@property --ink-flip {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
 @property --hero-wash {
   syntax: "<color>";
   inherits: true;
@@ -158,6 +163,7 @@
   --nav-panel-bg: rgba(25, 21, 39, 0.97);
   --input-bg: rgba(0, 0, 0, 0.18);
   --logo-bg: rgba(255, 255, 255, 0.09);
+  --ink-flip: 1; /* 1 = flip dark-ink logos, see .ink-dark / .ink-light */
   --hero-wash: rgba(183, 154, 238, 0.16);
   /* shadow tints for --ring / --ring-hover */
   --ring-color: rgba(0, 0, 0, 0.25);
@@ -205,6 +211,7 @@
     --nav-panel-bg: rgba(246, 244, 251, 0.98);
     --input-bg: #ffffff;
     --logo-bg: #ffffff;
+    --ink-flip: 0;
     --hero-wash: rgba(111, 75, 184, 0.1);
     /* shadow tints for --ring / --ring-hover */
     --ring-color: rgba(45, 30, 80, 0.08);
@@ -241,6 +248,7 @@
   --nav-panel-bg: rgba(246, 244, 251, 0.98);
   --input-bg: #ffffff;
   --logo-bg: #ffffff;
+  --ink-flip: 0;
   --hero-wash: rgba(111, 75, 184, 0.1);
   /* shadow tints for --ring / --ring-hover */
   --ring-color: rgba(45, 30, 80, 0.08);
@@ -280,6 +288,7 @@
       --nav-panel-bg var(--theme-fade),
       --input-bg var(--theme-fade),
       --logo-bg var(--theme-fade),
+      --ink-flip var(--theme-fade),
       --hero-wash var(--theme-fade),
       --ring-color var(--theme-fade),
       --ring-hover-color var(--theme-fade),
@@ -1032,6 +1041,14 @@ a:hover img {
   .card {
     width: auto;
   }
+}
+
+/* The header runs out of room well before the old 860px cut: the brand block
+   ("Chad Estoup--Streiff" + the role line) and the six nav links start
+   colliding just under 1060px, which wrapped the name onto a second line and
+   clipped it against the header edge. Collapse to the hamburger at 1080px, a
+   little above where it actually breaks. */
+@media (max-width: 1080px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -1327,24 +1344,56 @@ h3 {
   margin: 0.6rem;
 }
 
-.logo {
+/* The plate lives on the link, not on the <img>, because the theme-adaptive
+   filter below applies to an element's whole rendering -- background and
+   border included -- and inverting the card along with the artwork would turn
+   the white plate black. Same box as before: 80x80 (160x80 when .wide),
+   border-box, 10px of padding around the logo. */
+.logo-frame {
+  display: inline-flex;
+  flex: none; /* it is a flex item in .t.inline -- keep the box at its size */
   width: 80px;
   height: 80px;
   border-radius: 8px;
   margin: 0.6rem;
-  object-fit: contain;
   background: var(--logo-bg);
   border: 1px solid var(--line);
   padding: 10px;
 }
 
-a .logo:hover {
+.logo-frame.wide {
+  width: 160px;
+}
+
+.logo-frame:hover {
   transform: translateY(-2px);
   border-color: var(--line-strong);
 }
 
-.wide {
-  width: 160px;
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== Theme-adaptive logos =====
+   Single-ink logos only read on one theme: a black wordmark disappears on the
+   dark background, a white one disappears on the light background. These two
+   classes flip the artwork's lightness with the theme instead of shipping a
+   second file. invert() alone would also flip the hue (I2S blue turns orange),
+   so hue-rotate(180deg) puts the hue back and only the lightness moves.
+   Both run off --ink-flip, so the flip cross-fades with the rest of the theme
+   rather than snapping. Colourful logos (LinkedIn, Gmail, IRCM, fade.png) are
+   left alone -- they already read on both themes and their brand colours are
+   the point. */
+.ink-dark {
+  /* artwork drawn in dark ink -> lighten it on the dark theme */
+  filter: invert(var(--ink-flip)) hue-rotate(calc(var(--ink-flip) * 180deg));
+}
+.ink-light {
+  /* artwork drawn in light ink -> darken it on the light theme */
+  filter: invert(calc(1 - var(--ink-flip)))
+    hue-rotate(calc((1 - var(--ink-flip)) * 180deg));
 }
 
 p {
