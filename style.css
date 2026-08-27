@@ -1353,6 +1353,13 @@ p {
   text-align: justify;
 }
 
+/* Content lists: the UA default indent is 40px, far deeper than this layout
+   wants. nav ul is more specific, so the menu keeps its own padding. */
+ul,
+ol {
+  padding-inline-start: 1.2rem;
+}
+
 figcaption {
   text-align: center;
 }

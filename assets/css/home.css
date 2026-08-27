@@ -49,14 +49,23 @@
         width: 90%;
     }
 }
-.card-details{
-    overflow: hidden;
-    max-height: 0;
+/* Collapse via a 0fr -> 1fr grid row: the open height is the content's own
+   height, so nothing is clipped however long the entry runs. */
+.card-details {
+    display: grid;
+    grid-template-rows: 0fr;
     opacity: 0;
-    transition: max-height 250ms ease, opacity 200ms ease;
-    display: block; /* or keep grid if you need it */
+    transition: grid-template-rows 250ms ease, opacity 200ms ease;
 }
-.card-details.is-open{
-    max-height: 600px; /* pick a value taller than the content */
+.card-details__inner {
+    overflow: hidden;
+    min-height: 0; /* lets the grid row shrink past the content height */
+}
+.card-details.is-open {
+    grid-template-rows: 1fr;
     opacity: 1;
+}
+/* the rule above would otherwise beat the UA's [hidden] { display: none } */
+.card-details[hidden] {
+    display: none;
 }
