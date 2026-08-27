@@ -546,6 +546,22 @@ section .section__desc {
 }
 
 /* ===== Publications ===== */
+.pub-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+.pub-profiles .btn {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+}
+.pub-profiles__icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
 .pub-list {
   display: flex;
   flex-direction: column;
