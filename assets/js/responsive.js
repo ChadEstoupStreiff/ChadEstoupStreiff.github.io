@@ -31,17 +31,36 @@ document.getElementById("y").textContent = new Date().getFullYear();
   let P=[], rafId=null;
   const mouse = {x:null,y:null,active:false};
 
-  // Particle colour follows the active theme (--particle-rgb).
-  let rgb = '183,154,238';
-  function readColor(){
-    const v = getComputedStyle(document.documentElement)
-      .getPropertyValue('--particle-rgb').trim();
-    if(v) rgb = v;
+  // Particle colour follows the active theme (--particle-rgb), easing over the
+  // same window as the CSS token cross-fade so the canvas does not snap.
+  const FADE = 320;
+  let cur = [183,154,238], from = cur, to = cur, fadeStart = 0;
+  let rgb = cur.join(',');
+
+  function parseRGB(v){
+    const n = v.split(',').map(parseFloat);
+    return (n.length === 3 && n.every(x => !isNaN(x))) ? n : null;
   }
-  readColor();
-  document.addEventListener('themechange', readColor);
+  function readColor(animate){
+    const n = parseRGB(getComputedStyle(document.documentElement)
+      .getPropertyValue('--particle-rgb').trim());
+    if(!n || n.join(',') === to.join(',')) return;
+    if(animate){ from = cur; to = n; fadeStart = performance.now(); }
+    else { from = to = cur = n; fadeStart = 0; rgb = n.join(','); }
+  }
+  function fadeColor(now){
+    if(!fadeStart) return;
+    let k = (now - fadeStart) / FADE;
+    if(k >= 1){ k = 1; fadeStart = 0; }
+    const e = k*k*(3 - 2*k); // smoothstep, close enough to the CSS easing
+    cur = from.map((c, i) => c + (to[i] - c) * e);
+    rgb = cur.map(Math.round).join(',');
+  }
+
+  readColor(false);
+  document.addEventListener('themechange', () => readColor(true));
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-    setTimeout(readColor, 0);
+    setTimeout(() => readColor(true), 0);
   });
 
   const CFG = {
@@ -85,7 +104,8 @@ document.getElementById("y").textContent = new Date().getFullYear();
     }
   }
 
-  function step(){
+  function step(now){
+    fadeColor(now || performance.now());
     ctx.clearRect(0,0,W,H);
 
     // Update

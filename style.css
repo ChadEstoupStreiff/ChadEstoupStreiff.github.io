@@ -1,46 +1,181 @@
+/* ===== Theme tokens =====
+   The colour tokens are registered with @property so browsers treat them as
+   animatable: flipping the theme then cross-fades every var()-driven colour on
+   the page instead of snapping. Gradients and shadows are rebuilt from
+   registered colour stops (--surface-1/2, --ring-color) so they follow along.
+   Browsers without @property simply keep the old instant swap. */
+@property --bg0 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #191527;
+}
+@property --bg1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #241f36;
+}
+@property --bg2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1f1a2f;
+}
+@property --text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #efecf7;
+}
+@property --muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #aca4c4;
+}
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b79aee;
+}
+@property --accent-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(183, 154, 238, 0.16);
+}
+@property --accent-line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(183, 154, 238, 0.5);
+}
+@property --accent-fill {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(183, 154, 238, 0.26);
+}
+@property --line {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(200, 190, 230, 0.2);
+}
+@property --line-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(200, 190, 230, 0.34);
+}
+@property --surface-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.07);
+}
+@property --surface-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.035);
+}
+@property --fill-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.05);
+}
+@property --fill-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.09);
+}
+@property --fill-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.09);
+}
+@property --header-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(25, 21, 39, 0.85);
+}
+@property --nav-panel-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(25, 21, 39, 0.97);
+}
+@property --input-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0.18);
+}
+@property --logo-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(255, 255, 255, 0.09);
+}
+@property --hero-wash {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(183, 154, 238, 0.16);
+}
+@property --ring-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0.25);
+}
+@property --ring-hover-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(0, 0, 0, 0.3);
+}
+@property --switch-track {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(183, 154, 238, 0.26);
+}
+@property --switch-knob {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #efecf7;
+}
+@property --switch-on {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
 :root {
   --bg0: #191527; /* base */
   --bg1: #241f36; /* elevated */
   --bg2: #1f1a2f; /* cards */
   --text: #efecf7; /* primary text */
   --muted: #aca4c4; /* secondary text */
-
   --accent: #b79aee; /* violet */
   --accent-soft: rgba(183, 154, 238, 0.16);
   --accent-line: rgba(183, 154, 238, 0.5);
   --accent-fill: rgba(183, 154, 238, 0.26);
-
   --line: rgba(200, 190, 230, 0.2); /* hairline borders */
   --line-strong: rgba(200, 190, 230, 0.34);
-  --surface: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.07),
-    rgba(255, 255, 255, 0.035)
-  );
-
+  /* gradient stops for --surface */
+  --surface-1: rgba(255, 255, 255, 0.07);
+  --surface-2: rgba(255, 255, 255, 0.035);
   /* overlay fills: rest / hover / strong */
   --fill-1: rgba(255, 255, 255, 0.05);
   --fill-2: rgba(255, 255, 255, 0.09);
   --fill-3: rgba(255, 255, 255, 0.09);
-
   --header-bg: rgba(25, 21, 39, 0.85);
   --nav-panel-bg: rgba(25, 21, 39, 0.97);
   --input-bg: rgba(0, 0, 0, 0.18);
   --logo-bg: rgba(255, 255, 255, 0.09);
   --hero-wash: rgba(183, 154, 238, 0.16);
+  /* shadow tints for --ring / --ring-hover */
+  --ring-color: rgba(0, 0, 0, 0.25);
+  --ring-hover-color: rgba(0, 0, 0, 0.3);
+  --switch-track: var(--accent-fill);
+  --switch-knob: var(--text);
+
+  /* Derived from the tokens above, so they animate with them. */
+  --surface: linear-gradient(180deg, var(--surface-1), var(--surface-2));
+  --ring: 0 1px 2px var(--ring-color);
+  --ring-hover: 0 8px 24px var(--ring-hover-color);
 
   --particle-rgb: 183, 154, 238;
 
   --radius: 14px;
-  --ring: 0 1px 2px rgba(0, 0, 0, 0.25);
-  --ring-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
 
-  /* theme switch: knob position + the glyph it carries */
+  /* theme switch: 1 = dark (knob right, moon), 0 = light (knob left, sun) */
   --switch-on: 1;
-  --switch-track: var(--accent-fill);
-  --switch-knob: var(--text);
-  --icon-sun: none;
-  --icon-moon: inline;
   color-scheme: dark;
 }
 
@@ -53,36 +188,33 @@
     --bg2: #ffffff; /* cards */
     --text: #211c2e; /* primary text */
     --muted: #5f5872; /* secondary text */
-
     --accent: #6f4bb8; /* violet */
     --accent-soft: rgba(111, 75, 184, 0.1);
     --accent-line: rgba(111, 75, 184, 0.38);
     --accent-fill: rgba(111, 75, 184, 0.16);
-
-    --line: rgba(45, 30, 80, 0.14);
+    --line: rgba(45, 30, 80, 0.14); /* hairline borders */
     --line-strong: rgba(45, 30, 80, 0.26);
-    --surface: linear-gradient(180deg, #ffffff, #fbfaff);
-
+    /* gradient stops for --surface */
+    --surface-1: #ffffff;
+    --surface-2: #fbfaff;
+    /* overlay fills: rest / hover / strong */
     --fill-1: rgba(45, 30, 80, 0.04);
     --fill-2: rgba(45, 30, 80, 0.08);
     --fill-3: rgba(45, 30, 80, 0.05);
-
     --header-bg: rgba(246, 244, 251, 0.86);
     --nav-panel-bg: rgba(246, 244, 251, 0.98);
     --input-bg: #ffffff;
     --logo-bg: #ffffff;
     --hero-wash: rgba(111, 75, 184, 0.1);
+    /* shadow tints for --ring / --ring-hover */
+    --ring-color: rgba(45, 30, 80, 0.08);
+    --ring-hover-color: rgba(45, 30, 80, 0.14);
+    --switch-track: var(--fill-2);
+    --switch-knob: #ffffff;
 
     --particle-rgb: 111, 75, 184;
 
-    --ring: 0 1px 2px rgba(45, 30, 80, 0.08);
-    --ring-hover: 0 8px 24px rgba(45, 30, 80, 0.14);
-
     --switch-on: 0;
-    --switch-track: var(--fill-2);
-    --switch-knob: #ffffff;
-    --icon-sun: inline;
-    --icon-moon: none;
     color-scheme: light;
   }
 }
@@ -92,37 +224,69 @@
   --bg2: #ffffff; /* cards */
   --text: #211c2e; /* primary text */
   --muted: #5f5872; /* secondary text */
-
   --accent: #6f4bb8; /* violet */
   --accent-soft: rgba(111, 75, 184, 0.1);
   --accent-line: rgba(111, 75, 184, 0.38);
   --accent-fill: rgba(111, 75, 184, 0.16);
-
-  --line: rgba(45, 30, 80, 0.14);
+  --line: rgba(45, 30, 80, 0.14); /* hairline borders */
   --line-strong: rgba(45, 30, 80, 0.26);
-  --surface: linear-gradient(180deg, #ffffff, #fbfaff);
-
+  /* gradient stops for --surface */
+  --surface-1: #ffffff;
+  --surface-2: #fbfaff;
+  /* overlay fills: rest / hover / strong */
   --fill-1: rgba(45, 30, 80, 0.04);
   --fill-2: rgba(45, 30, 80, 0.08);
   --fill-3: rgba(45, 30, 80, 0.05);
-
   --header-bg: rgba(246, 244, 251, 0.86);
   --nav-panel-bg: rgba(246, 244, 251, 0.98);
   --input-bg: #ffffff;
   --logo-bg: #ffffff;
   --hero-wash: rgba(111, 75, 184, 0.1);
+  /* shadow tints for --ring / --ring-hover */
+  --ring-color: rgba(45, 30, 80, 0.08);
+  --ring-hover-color: rgba(45, 30, 80, 0.14);
+  --switch-track: var(--fill-2);
+  --switch-knob: #ffffff;
 
   --particle-rgb: 111, 75, 184;
 
-  --ring: 0 1px 2px rgba(45, 30, 80, 0.08);
-  --ring-hover: 0 8px 24px rgba(45, 30, 80, 0.14);
-
   --switch-on: 0;
-  --switch-track: var(--fill-2);
-  --switch-knob: #ffffff;
-  --icon-sun: inline;
-  --icon-moon: none;
   color-scheme: light;
+}
+
+/* The cross-fade itself: every registered token eases from one theme to the
+   other, and the switch knob rides along on --switch-on. */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --theme-fade: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      --bg0 var(--theme-fade),
+      --bg1 var(--theme-fade),
+      --bg2 var(--theme-fade),
+      --text var(--theme-fade),
+      --muted var(--theme-fade),
+      --accent var(--theme-fade),
+      --accent-soft var(--theme-fade),
+      --accent-line var(--theme-fade),
+      --accent-fill var(--theme-fade),
+      --line var(--theme-fade),
+      --line-strong var(--theme-fade),
+      --surface-1 var(--theme-fade),
+      --surface-2 var(--theme-fade),
+      --fill-1 var(--theme-fade),
+      --fill-2 var(--theme-fade),
+      --fill-3 var(--theme-fade),
+      --header-bg var(--theme-fade),
+      --nav-panel-bg var(--theme-fade),
+      --input-bg var(--theme-fade),
+      --logo-bg var(--theme-fade),
+      --hero-wash var(--theme-fade),
+      --ring-color var(--theme-fade),
+      --ring-hover-color var(--theme-fade),
+      --switch-track var(--theme-fade),
+      --switch-knob var(--theme-fade),
+      --switch-on 0.32s cubic-bezier(0.3, 1.4, 0.5, 1);
+  }
 }
 * {
   box-sizing: border-box;
@@ -188,7 +352,8 @@ header {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--switch-track);
-  transition: background 0.25s ease, border-color 0.2s ease;
+  /* --switch-track animates with the theme, so only hover needs a transition */
+  transition: border-color 0.2s ease;
 }
 .theme-switch:hover {
   border-color: var(--accent-line);
@@ -217,18 +382,21 @@ header {
         (var(--sw-w) - var(--sw-knob) - 2 * var(--sw-pad) - 2px)
     )
   );
-  transition: transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+/* Both glyphs sit in the same grid cell and cross-fade on --switch-on. */
+.theme-switch .icon-sun,
+.theme-switch .icon-moon {
+  grid-area: 1 / 1;
 }
 .theme-switch .icon-sun {
-  display: var(--icon-sun);
+  opacity: calc(1 - var(--switch-on));
+  transform: rotate(calc(var(--switch-on) * -90deg))
+    scale(calc(1 - 0.4 * var(--switch-on)));
 }
 .theme-switch .icon-moon {
-  display: var(--icon-moon);
-}
-@media (prefers-reduced-motion: reduce) {
-  .theme-switch__knob {
-    transition: none;
-  }
+  opacity: var(--switch-on);
+  transform: rotate(calc((1 - var(--switch-on)) * 90deg))
+    scale(calc(0.6 + 0.4 * var(--switch-on)));
 }
 .brand {
   display: flex;
