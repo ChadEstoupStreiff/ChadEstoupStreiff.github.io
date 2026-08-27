@@ -31,6 +31,19 @@ document.getElementById("y").textContent = new Date().getFullYear();
   let P=[], rafId=null;
   const mouse = {x:null,y:null,active:false};
 
+  // Particle colour follows the active theme (--particle-rgb).
+  let rgb = '183,154,238';
+  function readColor(){
+    const v = getComputedStyle(document.documentElement)
+      .getPropertyValue('--particle-rgb').trim();
+    if(v) rgb = v;
+  }
+  readColor();
+  document.addEventListener('themechange', readColor);
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    setTimeout(readColor, 0);
+  });
+
   const CFG = {
     density: 0.00012,
     max: 220, maxM: 120,
@@ -129,7 +142,7 @@ document.getElementById("y").textContent = new Date().getFullYear();
           ctx.beginPath();
           ctx.moveTo(a.x,a.y);
           ctx.lineTo(b.x,b.y);
-          ctx.strokeStyle = `rgba(0,230,255,${0.14*alpha})`;
+          ctx.strokeStyle = `rgba(${rgb},${0.22*alpha})`;
           ctx.lineWidth = 1;
           ctx.stroke();
           linked[i]++; linked[j]++;
@@ -139,7 +152,7 @@ document.getElementById("y").textContent = new Date().getFullYear();
     }
 
     // Nodes
-    ctx.fillStyle='rgba(183,108,255,0.65)';
+    ctx.fillStyle=`rgba(${rgb},0.7)`;
     for(const p of P){ ctx.beginPath(); ctx.arc(p.x,p.y,1.1,0,Math.PI*2); ctx.fill(); }
 
     rafId = requestAnimationFrame(step);

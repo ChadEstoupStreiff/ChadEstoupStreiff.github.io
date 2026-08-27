@@ -33,7 +33,19 @@
 
       gtag("config", "G-JTQH3237V7");
     </script>
-  </head>
+      <script>
+      // Apply a saved theme before paint; with none, the CSS
+      // prefers-color-scheme rules follow the browser.
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "light" || t === "dark")
+            document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+    <script src="../assets/js/theme.js" defer></script>
+</head>
 
   <body>
     <header>
@@ -41,24 +53,34 @@
             <a class="brand" href="/#home" aria-label="Homepage">
                 <img id="navbar_logo" src="../assets/img/fade.png" alt="Chad Estoup--Streiff Logo" />
                 <div class="brand__text">
-                    Chad Estoup--Streiff <br />
-                    IA engineer & PhD Student
+                    <span class="brand__name">Chad Estoup--Streiff</span>
+                    <span class="brand__role">IA engineer &amp; PhD Student</span>
                 </div>
             </a>
 
-            <!-- NEW -->
-            <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
+            <div class="nav-right">
+                <nav id="primary-nav" aria-label="primary">
+                    <ul>
+                        <li><a href="/#work">💼 Work</a></li>
+                        <li><a href="/#diplomation">🎓 Diplomation</a></li>
+                        <li><a href="/#projects">🛠️ Projects</a></li>
+                        <li><a href="/#publications">📚 Publications</a></li>
+                        <li><a href="/#contact">📞 Contact</a></li>
+                    </ul>
+                </nav>
 
-            <nav id="primary-nav" aria-label="primary">
-                <ul>
-                    <li><a href="/#work">💼 Work</a></li>
-                    <li><a href="/#diplomation">🎓 Diplomation</a></li>
-                    <li><a href="/#projects">🛠️ Projects</a></li>
-                    <li><a href="/#contact">📞 Contact</a></li>
-                </ul>
-            </nav>
+                <button class="theme-switch" type="button" role="switch" aria-checked="true"
+                  aria-label="Dark mode" title="Dark mode">
+                  <span class="theme-switch__knob" aria-hidden="true">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                  </span>
+                </button>
+
+                <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 

@@ -30,6 +30,18 @@
 
     gtag("config", "G-JTQH3237V7");
   </script>
+  <script>
+    // Apply a saved theme before paint; with none, the CSS
+    // prefers-color-scheme rules follow the browser.
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark")
+          document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="assets/js/theme.js" defer></script>
 </head>
 
 <body>
@@ -38,24 +50,34 @@
       <a class="brand" href="#home" aria-label="Homepage">
         <img id="navbar_logo" src="assets/img/fade.png" alt="Chad Estoup--Streiff Logo" />
         <div class="brand__text">
-          Chad Estoup--Streiff <br />
-          IA engineer & PhD Student
+          <span class="brand__name">Chad Estoup--Streiff</span>
+          <span class="brand__role">IA engineer &amp; PhD Student</span>
         </div>
       </a>
 
-      <!-- NEW -->
-      <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <nav id="primary-nav" aria-label="primary">
+          <ul>
+            <li><a href="#work">💼 Work</a></li>
+            <li><a href="#diplomation">🎓 Diplomation</a></li>
+            <li><a href="#projects">🛠️ Projects</a></li>
+            <li><a href="#publications">📚 Publications</a></li>
+            <li><a href="#contact">📞 Contact</a></li>
+          </ul>
+        </nav>
 
-      <nav id="primary-nav" aria-label="primary">
-        <ul>
-          <li><a href="#work">💼 Work</a></li>
-          <li><a href="#diplomation">🎓 Diplomation</a></li>
-          <li><a href="#projects">🛠️ Projects</a></li>
-          <li><a href="#contact">📞 Contact</a></li>
-        </ul>
-      </nav>
+        <button class="theme-switch" type="button" role="switch" aria-checked="true"
+          aria-label="Dark mode" title="Dark mode">
+          <span class="theme-switch__knob" aria-hidden="true">
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon">🌙</span>
+          </span>
+        </button>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -577,6 +599,91 @@ $ <span class="cursor">&nbsp;</span></pre>
               </p>
             </div>
           </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== PUBLICATIONS ===== -->
+  <section id="publications">
+    <div class="wrap">
+      <h2 class="section__title">📚 Publications</h2>
+      <p class="section__desc">
+        Peer-reviewed research I have contributed to, from large-scale genomics to multimodal AI in oncology.
+      </p>
+      <div class="pub-list">
+
+        <!-- Frontiers in Oncology 2026 -->
+        <article class="pub">
+          <div class="year">2026</div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.3389/fonc.2026.1874918" target="_blank" rel="noopener">
+                Multimodal AI in high-grade serous ovarian cancer: integrated prediction and clinical decision-making
+              </a>
+            </h3>
+            <p class="authors">
+              M. Pelissier-Combescure, J.-P. Villemin, D. Bonzom, C. Berger,
+              <span class="me">C. Estoup-Streiff</span>, Y. Lakhman, R. Woitek, P.-E. Colombo, Z. Lin, H. Li,
+              S. Nougaret
+            </p>
+            <p class="venue">Frontiers in Oncology · vol. 16, art. 1874918 · Review · 31 July 2026</p>
+            <div>
+              <span class="tag">Multimodal AI</span>
+              <span class="tag">Ovarian Cancer</span>
+              <span class="tag">Radiomics</span>
+              <span class="tag">Histopathology</span>
+              <span class="tag">Clinical Decision Support</span>
+            </div>
+            <p class="ghost">
+              Review of how AI integrates radiology, digital pathology and molecular profiling in high-grade serous
+              ovarian carcinoma (HGSOC) to improve survival prediction, treatment-response assessment and patient
+              stratification.
+            </p>
+            <div class="links">
+              <a href="https://doi.org/10.3389/fonc.2026.1874918" target="_blank" rel="noopener">DOI</a>
+              <a href="https://www.frontiersin.org/articles/10.3389/fonc.2026.1874918/full" target="_blank"
+                rel="noopener">Full text</a>
+              <a href="https://www.researchgate.net/publication/411056291_Multimodal_AI_in_high-grade_serous_ovarian_cancer_integrated_prediction_and_clinical_decision-making"
+                target="_blank" rel="noopener">ResearchGate</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Genome Biology 2024 -->
+        <article class="pub">
+          <div class="year">2024</div>
+          <div>
+            <h3>
+              <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">
+                Next-Gen GWAS: full 2D epistatic interaction maps retrieve part of missing heritability and improve
+                phenotypic prediction
+              </a>
+            </h3>
+            <p class="authors">
+              C. Carré, J. B. Carluer, C. Chaux, <span class="me">C. Estoup-Streiff</span>, N. Roche, E. Hosy,
+              A. Mas, G. Krouk
+            </p>
+            <p class="venue">Genome Biology · vol. 25, art. 76 · 25 March 2024</p>
+            <div>
+              <span class="tag">GWAS</span>
+              <span class="tag">Epistasis</span>
+              <span class="tag">HPC / GPU</span>
+              <span class="tag">Genomics</span>
+              <span class="tag">Phenotype Prediction</span>
+            </div>
+            <p class="ghost">
+              Next-Gen GWAS (NGG) evaluates over 60 billion SNP first-order interactions within hours, producing
+              gene-resolution 2D epistatic maps for <em>Arabidopsis thaliana</em> and showing that a large share of the
+              missing heritability lies in epistasis — and can be used to improve phenotype prediction.
+            </p>
+            <div class="links">
+              <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">DOI</a>
+              <a href="https://link.springer.com/article/10.1186/s13059-024-03202-0" target="_blank"
+                rel="noopener">Full text</a>
+            </div>
+          </div>
         </article>
       </div>
     </div>
