@@ -602,7 +602,11 @@ section .section__desc {
   padding: 1.25rem;
   box-shadow: var(--ring);
   transition: transform 0.2s ease, border-color 0.2s ease;
-  width: 60vw;
+  /* No explicit width: the card fills its .wrap (minus any margins the project
+     pages add). It used to be 60vw, which is measured against the viewport and
+     so ignored the wrap's own width (min(1200px, 92vw)) -- past a ~1900px
+     viewport 60vw grew wider than the wrap and the cards spilled out to the
+     right, and below that they stopped short of it with a lopsided gutter. */
 }
 .card:hover {
   transform: translateY(-2px);
