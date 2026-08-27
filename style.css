@@ -717,6 +717,23 @@ section .section__desc {
 .project .meta h3 {
   margin: 0.1rem 0 0.35rem;
 }
+/* glyph: " ↗" for external links, a magnifier icon for internal project pages */
+.project a[href^="http"] .meta h3::after {
+  content: " ↗";
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.project a:not([href^="http"]) .meta h3::after {
+  content: "";
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-left: 0.35em;
+  vertical-align: -0.02em;
+  background-color: var(--muted);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.2'%20stroke-linecap='round'%3E%3Ccircle%20cx='10.5'%20cy='10.5'%20r='6.5'/%3E%3Cpath%20d='M15.4%2015.4%20L21%2021'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='black'%20stroke-width='2.2'%20stroke-linecap='round'%3E%3Ccircle%20cx='10.5'%20cy='10.5'%20r='6.5'/%3E%3Cpath%20d='M15.4%2015.4%20L21%2021'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 .tag {
   font-size: 0.75rem;
   color: var(--muted);
