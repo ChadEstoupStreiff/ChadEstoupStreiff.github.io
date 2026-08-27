@@ -6,9 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="assets/img/favicon.ico" />
   <link rel="icon" type="image/png" href="assets/img/fade.png" />
-  <title>Chad Estoup--Streiff • IA engineer & PhD Student • Portfolio</title>
+  <title>Chad Estoup--Streiff • AI engineer & PhD Student • Portfolio</title>
   <meta name="description"
-    content="IA engineer focused on ovarian cancer – research, projects, publications and contact." />
+    content="AI engineer focused on ovarian cancer – research, projects, publications and contact." />
+  <meta name="author" content="Chad Estoup--Streiff" />
+  <link rel="canonical" href="https://chades.fr/" />
+
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Chad Estoup--Streiff" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://chades.fr/" />
+  <meta property="og:title" content="Chad Estoup--Streiff • AI Engineer &amp; PhD Student" />
+  <meta property="og:description"
+    content="I build machine learning systems for medical imaging and multimodal data, with a focus on ovarian cancer." />
+  <meta property="og:image" content="https://chades.fr/assets/img/myself.jpg" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:image:alt" content="Portrait of Chad Estoup--Streiff" />
+  <meta property="profile:first_name" content="Chad" />
+  <meta property="profile:last_name" content="Estoup--Streiff" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chad Estoup--Streiff • AI Engineer &amp; PhD Student" />
+  <meta name="twitter:description"
+    content="I build machine learning systems for medical imaging and multimodal data, with a focus on ovarian cancer." />
+  <meta name="twitter:image" content="https://chades.fr/assets/img/myself.jpg" />
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
@@ -38,20 +63,71 @@
         var t = localStorage.getItem("theme");
         if (t === "light" || t === "dark")
           document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
   <script src="assets/js/theme.js" defer></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Chad Estoup--Streiff",
+      "givenName": "Chad",
+      "familyName": "Estoup--Streiff",
+      "jobTitle": "AI Engineer & PhD Student",
+      "description": "AI engineer and PhD researcher building machine learning systems for medical imaging and multimodal data, with a focus on ovarian cancer.",
+      "url": "https://chades.fr/",
+      "image": "https://chades.fr/assets/img/myself.jpg",
+      "email": "mailto:chad.estoup@gmail.com",
+      "nationality": "FR",
+      "affiliation": {
+        "@type": "ResearchOrganization",
+        "name": "Institut de Recherche en Cancérologie de Montpellier (IRCM)",
+        "url": "https://www.ircm.fr/"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "IMT Mines Alès",
+          "url": "https://www.imt-mines-ales.fr/"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "IUT Montpellier-Sète",
+          "url": "https://iut-montpellier-sete.edu.umontpellier.fr/"
+        }
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Deep Learning",
+        "Medical Imaging",
+        "Medical Image Registration",
+        "Histopathology",
+        "Radiomics",
+        "Multimodal Machine Learning",
+        "Ovarian Cancer",
+        "Computer Vision",
+        "MLOps",
+        "DevOps"
+      ],
+      "sameAs": [
+        "https://github.com/ChadEstoupStreiff",
+        "https://www.linkedin.com/in/chad-estoup-streiff-8878b11b7/"
+      ]
+    }
+  </script>
 </head>
 
 <body>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#home" aria-label="Homepage">
-        <img id="navbar_logo" src="assets/img/fade.png" alt="Chad Estoup--Streiff Logo" />
+        <img id="navbar_logo" src="assets/img/fade.png" alt="Chad Estoup--Streiff Logo" width="512" height="512"
+          decoding="async" />
         <div class="brand__text">
           <span class="brand__name">Chad Estoup--Streiff</span>
-          <span class="brand__role">IA engineer &amp; PhD Student</span>
+          <span class="brand__role">AI engineer &amp; PhD Student</span>
         </div>
       </a>
 
@@ -59,15 +135,15 @@
         <nav id="primary-nav" aria-label="primary">
           <ul>
             <li><a href="#work">💼 Experience</a></li>
-            <li><a href="#diplomation">🎓 Diplomation</a></li>
+            <li><a href="#education">🎓 Education</a></li>
             <li><a href="#projects">🛠️ Projects</a></li>
             <li><a href="#publications">📚 Publications</a></li>
             <li><a href="#contact">📞 Contact</a></li>
           </ul>
         </nav>
 
-        <button class="theme-switch" type="button" role="switch" aria-checked="true"
-          aria-label="Dark mode" title="Dark mode">
+        <button class="theme-switch" type="button" role="switch" aria-checked="true" aria-label="Dark mode"
+          title="Dark mode">
           <span class="theme-switch__knob" aria-hidden="true">
             <span class="icon-sun">☀️</span>
             <span class="icon-moon">🌙</span>
@@ -85,7 +161,7 @@
   <section class="hero" id="home" aria-label="Hero banner">
     <div class="inline">
       <div class="hero__lead">
-        <span class="badge">AI & DevOPS Engineer • PhD as IA in medecin field Researcher</span>
+        <span class="badge">AI & DevOps Engineer • PhD Researcher — AI for Medicine</span>
         <h1>
           Bridging AI and science to transform research.<br />
         </h1>
@@ -95,6 +171,7 @@
           models—transparently evaluated, reproducible, and ready for real-world impact.
         </p>
         <div class="cta">
+          <a class="btn btn--primary" href="#publications">View Publications →</a>
           <a class="btn btn--primary" href="#projects">Explore Projects →</a>
           <a class="btn" href="#contact">Get in touch</a>
         </div>
@@ -110,7 +187,7 @@
       <div class="hero__panel">
         <div class="term" role="img" aria-label="Code like terminal">
           <pre class="prompt">$ <strong>whoami</strong>
-&gt; DevOPS & IA engineer · PhD student in AI for Medicine
+&gt; DevOps & AI engineer · PhD student in AI for Medicine
 $ <strong>current_focus</strong>
 &gt; Ovarian cancer: histopathology, radiomics, multimodal AI, predictive modeling
 $ <strong>stack</strong>
@@ -148,7 +225,8 @@ $ <span class="cursor">&nbsp;</span></pre>
               </div>
             </div>
             <a href="https://www.ircm.fr/" target="_blank">
-              <img src="assets/img/ircm-logo.png" alt="IRCM Logo" style="width: 500px; height: auto;" />
+              <img src="assets/img/ircm-logo.png" alt="IRCM Logo" style="width: 500px; height: auto;" width="800"
+                height="253" decoding="async" loading="lazy" />
             </a>
           </div>
 
@@ -166,8 +244,7 @@ $ <span class="cursor">&nbsp;</span></pre>
             </a>
 
             <div id="phd-details" class="card-details" hidden>
-              <p>
-                <strong>Key Work:</strong>
+              <p><strong>Key Work:</strong></p>
               <ul>
                 <li><strong>Modular Registration Pipeline:</strong> Sequential composition of global rigid/affine
                   alignment (Elastix RRA) followed by B-spline local deformations and VoxelMorph deep learning
@@ -178,10 +255,8 @@ $ <span class="cursor">&nbsp;</span></pre>
                 <li><strong>Annotation Software:</strong> Built a side-by-side annotation tool for expert
                   pathologists to manually define biologically relevant MRI–WSI landmark.</li>
               </ul>
-              </p>
 
-              <p>
-                <strong>Impact:</strong>
+              <p><strong>Impact:</strong></p>
               <ul>
                 <li>First modular MRI–WSI registration framework validated for ovarian cancer.</li>
                 <li>Enables transfer of biological feature maps from invasive WSI to non-invasive MRI coordinate
@@ -189,7 +264,6 @@ $ <span class="cursor">&nbsp;</span></pre>
                 <li>Foundation for future clinical virtual biopsy tools — reducing reliance on invasive tissue
                   sampling.</li>
               </ul>
-              </p>
 
               <p>
                 <strong>Next:</strong> Complete landmark annotation for the full IRCM cohort; extend to clinical 3T
@@ -203,7 +277,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="card">
           <div class="inline">
             <div>
-              <h2>Apprentice IA & DevOps Engineer</h2>
+              <h2>Apprentice AI & DevOps Engineer</h2>
               <div>
                 <span class="chip2">
                   <strong>3 years and 4 months</strong> • 2022-2025 • BionomeeX
@@ -224,7 +298,8 @@ $ <span class="cursor">&nbsp;</span></pre>
               </div>
             </div>
             <a href="https://www.bionomeex.com/" target="_blank">
-              <img src="assets/img/bionomeex-banner.png" alt="BionomeeX Banner" style="width: 500px; height: auto;" />
+              <img src="assets/img/bionomeex-banner.png" alt="BionomeeX Banner" style="width: 500px; height: auto;"
+                width="625" height="221" decoding="async" loading="lazy" />
             </a>
           </div>
 
@@ -236,14 +311,13 @@ $ <span class="cursor">&nbsp;</span></pre>
                 pipelines</strong>—from data preprocessing to model deployment—enabling partners to automate analysis
               and accelerate discovery.
             </p>
-            
+
             <a class="card-toggle btn" aria-expanded="false" aria-controls="bionomeex-details">
               Show details
             </a>
 
             <div id="bionomeex-details" class="card-details" hidden>
-              <p>
-                <strong>Key Projects:</strong>
+              <p><strong>Key Projects:</strong></p>
               <ul>
                 <li>
                   <strong>HixLoop:</strong> Built a <strong>modular AI platform</strong> for object
@@ -273,7 +347,6 @@ $ <span class="cursor">&nbsp;</span></pre>
                   research.
                 </li>
               </ul>
-              </p>
 
               <p>
                 <strong>Skills:</strong><br />
@@ -282,8 +355,7 @@ $ <span class="cursor">&nbsp;</span></pre>
                 <strong>Collaboration:</strong> Git, Notion, Agile
               </p>
 
-              <p>
-                <strong>Impact:</strong>
+              <p><strong>Impact:</strong></p>
               <ul>
                 <li>Delivered <strong>3 core platforms</strong> now used daily by BionomeeX and partners (IRCM,
                   Abbelight).</li>
@@ -292,7 +364,6 @@ $ <span class="cursor">&nbsp;</span></pre>
                   reducing project time by <strong>60%</strong>.</li>
                 <li>Contributed to <strong>publication-ready tools</strong> for oncology and microscopy research.</li>
               </ul>
-              </p>
 
               <p>
                 <strong>Next:</strong> Applying this expertise in my <strong>PhD at IRCM</strong>, developing
@@ -306,14 +377,15 @@ $ <span class="cursor">&nbsp;</span></pre>
     </div>
   </section>
 
-  <!-- ===== DIPLOMATION ===== -->
-  <section id="diplomation">
+  <!-- ===== EDUCATION ===== -->
+  <section id="education">
     <div class="wrap">
-      <h2 class="section__title">🎓 Diplomation</h2>
+      <h2 class="section__title">🎓 Education</h2>
       <div class="timeline">
         <div class="t inline start">
           <a href="https://edi2s.umontpellier.fr/" target="_blank" rel="noopener">
-            <img class="logo wide" src="assets/img/i2s-logo.png" alt="I2S Logo" />
+            <img class="logo wide" src="assets/img/i2s-logo.png" alt="I2S Logo" width="547" height="282"
+              decoding="async" loading="lazy" />
           </a>
           <div>
             <strong>PhD degree as specialist of AI applied in medicine
@@ -323,7 +395,8 @@ $ <span class="cursor">&nbsp;</span></pre>
         </div>
         <div class="t inline start">
           <a href="https://www.imt-mines-ales.fr/" target="_blank" rel="noopener">
-            <img class="logo wide" src="assets/img/ales-logo.png" alt="IMT Mines Alès Logo" />
+            <img class="logo wide" src="assets/img/ales-logo.png" alt="IMT Mines Alès Logo" width="263" height="145"
+              decoding="async" loading="lazy" />
           </a>
           <div>
             <strong>Engineering degree as Software Engineer.</strong>
@@ -332,10 +405,11 @@ $ <span class="cursor">&nbsp;</span></pre>
         </div>
         <div class="t inline start">
           <a href="https://iut-montpellier-sete.edu.umontpellier.fr/" target="_blank" rel="noopener">
-            <img class="logo wide" src="assets/img/IUT-logo.png" alt="IUT Logo" />
+            <img class="logo wide" src="assets/img/IUT-logo.png" alt="IUT Logo" width="240" height="88" decoding="async"
+              loading="lazy" />
           </a>
           <div>
-            <strong>DUT developper</strong>
+            <strong>DUT in Software Development</strong>
             <div class="when">2022 — BAC +2 - IUT Montpellier, France.</div>
           </div>
         </div>
@@ -351,11 +425,60 @@ $ <span class="cursor">&nbsp;</span></pre>
 
   <!-- ===== PUBLICATIONS ===== -->
   <section id="publications">
-    <div class="wrap">
+    <div class="wrap center">
       <h2 class="section__title">📚 Publications</h2>
       <p class="section__desc">
         Peer-reviewed research I have contributed to, from large-scale genomics to multimodal AI in oncology.
       </p>
+
+      <!-- TODO: the HAL href is a PLACEHOLDER - replace with the real IdHAL
+           CV URL (https://cv.hal.science/<your-idhal>) once it exists. -->
+      <div class="pub-profiles">
+        <a class="btn" href="https://orcid.org/0009-0007-8617-849X" target="_blank" rel="noopener me"
+          aria-label="ORCID profile">
+          <svg class="pub-profiles__icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+            <circle cx="128" cy="128" r="128" fill="#A6CE39" />
+            <g fill="#fff">
+              <path d="M86.3 186.2H70.9V79.1h15.4v107.1z" />
+              <path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4
+                93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4z" />
+              <circle cx="78.6" cy="56.8" r="10.1" />
+            </g>
+          </svg>
+          ORCID
+        </a>
+
+        <a class="btn" href="https://scholar.google.com/citations?view_op=list_works&hl=fr&user=cmevhHwAAAAJ"
+          target="_blank" rel="noopener me" aria-label="Google Scholar profile">
+          <svg class="pub-profiles__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="#4285F4" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z" />
+            <path fill="#4285F4" d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+          </svg>
+          Google Scholar
+        </a>
+
+        <a class="btn" href="https://cv.hal.science/drchades" target="_blank" rel="noopener me"
+          aria-label="HAL profile">
+          <svg class="pub-profiles__icon" viewBox="19.5 169.5 30.5 30.5" aria-hidden="true" focusable="false">
+            <path fill="#e84a1d"
+              d="M43.16,176.5c.56.57,1.32.88,2.12.89h.01c.69,0,1.34-.23,1.87-.65-1.09-1.69-2.51-3.14-4.18-4.26-.44.53-.69,1.2-.69,1.9,0,.8.31,1.56.87,2.12Z" />
+            <path fill="#ce3b1b"
+              d="M42.27,177.46c-1.65-1.64-2.56-3.82-2.55-6.14,0-.16,0-.31.02-.47-.97-.34-1.99-.58-3.04-.71-.04.39-.06.78-.06,1.17-.01,3.15,1.22,6.11,3.46,8.34,2.32,2.31,5.37,3.46,8.43,3.46.28,0,.57-.01.85-.03-.11-1.06-.33-2.08-.66-3.06-2.33.05-4.68-.8-6.45-2.56Z" />
+            <path fill="#a63232"
+              d="M39.21,180.6c-2.99-2.97-5.16-6.54-6.39-10.42-1.04.15-2.04.41-3,.76,1.37,4.42,3.82,8.48,7.22,11.85,3.32,3.3,7.26,5.64,11.45,7.03.37-.95.64-1.95.8-2.99-3.69-1.24-7.15-3.32-10.08-6.23Z" />
+            <path fill="#7e2d46"
+              d="M46.24,193.71l-20.38-20.53c-.81.64-1.55,1.37-2.21,2.16l20.41,20.55c.8-.65,1.53-1.38,2.18-2.19Z" />
+            <path fill="#64286e"
+              d="M21.26,179.49c-.36.96-.62,1.96-.77,3,3.78,1.23,7.33,3.33,10.33,6.31,2.93,2.91,5.07,6.38,6.31,10.17,1.04-.16,2.04-.43,2.99-.8-1.39-4.31-3.8-8.26-7.13-11.56-3.4-3.38-7.44-5.75-11.74-7.12Z" />
+            <path fill="#412781"
+              d="M29.93,189.75c-2.58-2.57-6.09-3.71-9.48-3.41.13,1.05.36,2.07.7,3.05,2.38-.09,4.79.76,6.6,2.56,1.65,1.64,2.56,3.82,2.55,6.14,0,.11,0,.21,0,.32.98.33,2,.55,3.05.66.03-.32.05-.64.05-.97.01-3.15-1.22-6.11-3.46-8.34Z" />
+            <path fill="#292d67"
+              d="M26.87,192.9c-.56-.57-1.32-.88-2.12-.89h-.01c-.71,0-1.38.25-1.92.7,1.12,1.66,2.58,3.08,4.28,4.16.42-.52.64-1.17.65-1.85,0-.8-.31-1.56-.87-2.12Z" />
+          </svg>
+          HAL
+        </a>
+      </div>
+
       <div class="pub-list">
 
         <!-- Frontiers in Oncology 2026 -->
@@ -424,8 +547,8 @@ $ <span class="cursor">&nbsp;</span></pre>
             </p>
             <div class="links">
               <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">DOI</a>
-              <a href="https://link.springer.com/article/10.1186/s13059-024-03202-0" target="_blank"
-                rel="noopener">Full text</a>
+              <a href="https://link.springer.com/article/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">Full
+                text</a>
             </div>
           </div>
         </article>
@@ -447,11 +570,12 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="https://github.com/ChadEstoupStreiff/athenacognis">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/athenacognis_home.png" alt="Athenacognis: Smart Journaling" />
+              <img src="assets/img/athenacognis_home.png" alt="Athenacognis: Smart Journaling" width="1000" height="484"
+                decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>Athenacognis</h3>
-              <span class="chip">2025–present • Personnal • OpenSource</span>
+              <span class="chip">2025–present • Personal • OpenSource</span>
               <hr class="hidden" />
               <div>
                 <span class="tag">NLP</span>
@@ -471,7 +595,8 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="projects/home_servers.html">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/homeservers_portainer.png" alt="Home Servers: Self-Hosted Infrastructure" />
+              <img src="assets/img/homeservers_portainer.png" alt="Home Servers: Self-Hosted Infrastructure"
+                width="1000" height="514" decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>HomeLab</h3>
@@ -494,7 +619,8 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="https://github.com/ChadEstoupStreiff/WateringCat">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/wateringcat.jpeg" alt="WateringCat: Plant Watering System" />
+              <img src="assets/img/wateringcat.jpeg" alt="WateringCat: Plant Watering System" width="768" height="1000"
+                decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>WateringCat</h3>
@@ -518,11 +644,12 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="projects/hixloop.html">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" />
+              <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" width="768" height="768"
+                decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>HixLoop</h3>
-              <span class="chip">2022-2025 • Bionomeex • Intern library</span>
+              <span class="chip">2022-2025 • Bionomeex • Internal library</span>
               <hr class="hidden" />
               <div>
                 <span class="tag">Computer Vision</span>
@@ -546,7 +673,8 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="projects/abbelight.html">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/abbelight_emitters.png" alt="Emitters Detection in Super-Resolution Microscopy" />
+              <img src="assets/img/abbelight_emitters.jpg" alt="Emitters Detection in Super-Resolution Microscopy"
+                width="800" height="704" decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>Abbelight Emitters Detection</h3>
@@ -571,7 +699,8 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="projects/davele.html">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/davele_ombrage.png" alt="Solar Panel Shadow Simulation" />
+              <img src="assets/img/davele_ombrage.png" alt="Solar Panel Shadow Simulation" width="1000" height="405"
+                decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>Solar Panel Shadow Simulation</h3>
@@ -595,11 +724,12 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="projects/aicet.html">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/ai7_main.png" alt="Aicet: Custom AI Framework" />
+              <img src="assets/img/ai7_main.png" alt="Aicet: Custom AI Framework" width="821" height="745"
+                decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>Aicet</h3>
-              <span class="chip">2025 • Bionomeex • Intern tool</span>
+              <span class="chip">2025 • Bionomeex • Internal tool</span>
               <hr class="hidden" />
               <div>
                 <span class="tag">Automation</span>
@@ -616,13 +746,14 @@ $ <span class="cursor">&nbsp;</span></pre>
 
         <!-- JTT -->
         <article class="project">
-          <a href="https://apps.apple.com/fr/app/js-timetable/id6477736560?l=en-GBJ's TimeTable">
+          <a href="https://apps.apple.com/fr/app/js-timetable/id6477736560?l=en-GB" target="_blank" rel="noopener">
             <div class="thumb" aria-hidden="true">
-              <img src="assets/img/jtt_home.jpg" alt="JTT: Task Tracking Tool" />
+              <img src="assets/img/jtt_home.jpg" alt="JTT: Task Tracking Tool" width="932" height="932" decoding="async"
+                loading="lazy" />
             </div>
             <div class="meta">
               <h3>J's TimeTable</h3>
-              <span class="chip">2024 • Personnal • AppStore</span>
+              <span class="chip">2024 • Personal • AppStore</span>
               <hr class="hidden" />
               <div>
                 <span class="tag">Time Tracking</span>
@@ -642,8 +773,8 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer">
             <div class="thumb" aria-hidden="true">
-              <img src="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer/raw/main/assets/result_search.png"
-                alt="EMA-GalaTablePlacer" />
+              <img src="assets/img/ema_galatableplacer.png" alt="EMA-GalaTablePlacer" width="1000" height="779"
+                decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>EMA-GalaTablePlacer</h3>
@@ -665,8 +796,10 @@ $ <span class="cursor">&nbsp;</span></pre>
         <article class="project">
           <a href="https://github.com/ChadEstoupStreiff/UniverseSimulator">
             <div class="thumb" aria-hidden="true">
+              <!-- External 5 MB animated GIF, served from GitHub on purpose so the
+                   repo stays small. Lazy-loaded, so it never blocks first render. -->
               <img src="https://github.com/ChadEstoupStreiff/UniverseSimulator/raw/main/img/vid1.gif"
-                alt="Universe Simulation" />
+                alt="Universe Simulation" width="600" height="338" decoding="async" loading="lazy" />
             </div>
             <div class="meta">
               <h3>Universe Simulation</h3>
@@ -701,7 +834,8 @@ $ <span class="cursor">&nbsp;</span></pre>
           <h3>Contact Me</h3>
           <div class="social spaced">
             <a href="https://github.com/ChadEstoupStreiff" target="_blank" rel="noopener">
-              <img class="github" src="assets/img/github-logo.png" alt="GitHub" />
+              <img class="github" src="assets/img/github-logo.png" alt="GitHub" width="128" height="128"
+                decoding="async" loading="lazy" />
               GitHub
             </a>
             <!-- <a
@@ -709,23 +843,73 @@ $ <span class="cursor">&nbsp;</span></pre>
                                 target="_blank"
                                 rel="noopener"
                             >
-                                <img src="assets/img/gitlab-logo.png" alt="GitLab" /> GitLab
+                                <img src="assets/img/gitlab-logo.png" alt="GitLab" width="1200" height="1109" decoding="async" loading="lazy" /> GitLab
                             </a> -->
-            <a href="https://discordapp.com/users/297371832460509186/" target="_blank" rel="noopener">
-              <img src="assets/img/discord-logo.png" alt="Discord" /> Discord
-            </a>
             <a href="https://www.linkedin.com/in/chad-estoup-streiff-8878b11b7/" target="_blank" rel="noopener">
-              <img src="assets/img/linkedin-logo.png" alt="LinkedIn" />
+              <img src="assets/img/linkedin-logo.png" alt="LinkedIn" width="128" height="128" decoding="async"
+                loading="lazy" />
               LinkedIn
             </a>
             <a href="mailto:chad.estoup@gmail.com">
-              <img src="assets/img/Gmail-Logo.png" alt="Gmail" /> Email
+              <img src="assets/img/Gmail-Logo.png" alt="Gmail" width="128" height="128" decoding="async"
+                loading="lazy" /> Email
+            </a>
+            <!-- <a href="https://discordapp.com/users/297371832460509186/" target="_blank" rel="noopener">
+              <img src="assets/img/discord-logo.png" alt="Discord" width="128" height="128" decoding="async"
+                loading="lazy" /> Discord
             </a>
             <a href="https://www.instagram.com/chad.mtp/" target="_blank" rel="noopener">
-              <img src="assets/img/instagram-logo.png" alt="Instagram" />
+              <img src="assets/img/instagram-logo.png" alt="Instagram" width="128" height="128" decoding="async"
+                loading="lazy" />
               Instagram
+            </a> -->
+            <a href="https://orcid.org/0009-0007-8617-849X" target="_blank" rel="noopener me"
+              aria-label="ORCID profile">
+              <svg class="pub-profiles__icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+                <circle cx="128" cy="128" r="128" fill="#A6CE39" />
+                <g fill="#fff">
+                  <path d="M86.3 186.2H70.9V79.1h15.4v107.1z" />
+                  <path d="M108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4
+                93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4z" />
+                  <circle cx="78.6" cy="56.8" r="10.1" />
+                </g>
+              </svg>
+              ORCID
+            </a>
+
+            <a href="https://scholar.google.com/citations?view_op=list_works&hl=fr&user=cmevhHwAAAAJ"
+              target="_blank" rel="noopener me" aria-label="Google Scholar profile">
+              <svg class="pub-profiles__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="#4285F4" d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3z" />
+                <path fill="#4285F4" d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
+              </svg>
+              Google Scholar
+            </a>
+
+            <a href="https://cv.hal.science/drchades" target="_blank" rel="noopener me"
+              aria-label="HAL profile">
+              <svg class="pub-profiles__icon" viewBox="19.5 169.5 30.5 30.5" aria-hidden="true" focusable="false">
+                <path fill="#e84a1d"
+                  d="M43.16,176.5c.56.57,1.32.88,2.12.89h.01c.69,0,1.34-.23,1.87-.65-1.09-1.69-2.51-3.14-4.18-4.26-.44.53-.69,1.2-.69,1.9,0,.8.31,1.56.87,2.12Z" />
+                <path fill="#ce3b1b"
+                  d="M42.27,177.46c-1.65-1.64-2.56-3.82-2.55-6.14,0-.16,0-.31.02-.47-.97-.34-1.99-.58-3.04-.71-.04.39-.06.78-.06,1.17-.01,3.15,1.22,6.11,3.46,8.34,2.32,2.31,5.37,3.46,8.43,3.46.28,0,.57-.01.85-.03-.11-1.06-.33-2.08-.66-3.06-2.33.05-4.68-.8-6.45-2.56Z" />
+                <path fill="#a63232"
+                  d="M39.21,180.6c-2.99-2.97-5.16-6.54-6.39-10.42-1.04.15-2.04.41-3,.76,1.37,4.42,3.82,8.48,7.22,11.85,3.32,3.3,7.26,5.64,11.45,7.03.37-.95.64-1.95.8-2.99-3.69-1.24-7.15-3.32-10.08-6.23Z" />
+                <path fill="#7e2d46"
+                  d="M46.24,193.71l-20.38-20.53c-.81.64-1.55,1.37-2.21,2.16l20.41,20.55c.8-.65,1.53-1.38,2.18-2.19Z" />
+                <path fill="#64286e"
+                  d="M21.26,179.49c-.36.96-.62,1.96-.77,3,3.78,1.23,7.33,3.33,10.33,6.31,2.93,2.91,5.07,6.38,6.31,10.17,1.04-.16,2.04-.43,2.99-.8-1.39-4.31-3.8-8.26-7.13-11.56-3.4-3.38-7.44-5.75-11.74-7.12Z" />
+                <path fill="#412781"
+                  d="M29.93,189.75c-2.58-2.57-6.09-3.71-9.48-3.41.13,1.05.36,2.07.7,3.05,2.38-.09,4.79.76,6.6,2.56,1.65,1.64,2.56,3.82,2.55,6.14,0,.11,0,.21,0,.32.98.33,2,.55,3.05.66.03-.32.05-.64.05-.97.01-3.15-1.22-6.11-3.46-8.34Z" />
+                <path fill="#292d67"
+                  d="M26.87,192.9c-.56-.57-1.32-.88-2.12-.89h-.01c-.71,0-1.38.25-1.92.7,1.12,1.66,2.58,3.08,4.28,4.16.42-.52.64-1.17.65-1.85,0-.8-.31-1.56-.87-2.12Z" />
+              </svg>
+              HAL
             </a>
           </div>
+
+
+
         </div>
       </div>
     </div>
@@ -733,7 +917,7 @@ $ <span class="cursor">&nbsp;</span></pre>
   <footer>
     <div class="wrap">
       <p>
-        © <span id="y"></span> Chad Estoup--Streiff — IA Engineer • PhD
+        © <span id="y"></span> Chad Estoup--Streiff — AI Engineer • PhD
         student in AI for Medicine
       </p>
     </div>
