@@ -1,5 +1,5 @@
   :root{
-    --badge-size: 250px;      /* diameter */
+    --badge-size: clamp(150px, 42vw, 250px);      /* diameter */
     --spin-duration: 8s;      /* 360° = 2s => each face shown for 1s */
   }
 

@@ -293,6 +293,10 @@
 }
 html {
   scroll-behavior: smooth;
+  /* Chrome on Android inflates text inside wide blocks ("font boosting"),
+     which is why the page reads far bigger there than on desktop/iOS. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -458,10 +462,19 @@ nav a:hover {
 }
 .hero__lead {
   width: 30vw;
+  min-width: 0;
+  max-width: 100%;
 }
 .hero__panel {
   width: 30vw;
+  min-width: 0;
+  max-width: 100%;
   margin: 30px;
+}
+/* the hero has no .wrap, so the row carries its own gutters */
+.hero > .inline {
+  width: min(1200px, 100%);
+  padding-inline: clamp(12px, 4vw, 24px);
 }
 
 @media (max-width: 920px) {
@@ -531,11 +544,14 @@ h1 {
 .term {
   background: var(--bg2);
   border-radius: 14px;
-  padding: 1rem;
+  padding: clamp(0.7rem, 3vw, 1rem);
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.92rem;
+  font-size: clamp(0.7rem, 2.8vw, 0.92rem);
   line-height: 1.5;
   min-height: 360px;
+}
+.term pre {
+  margin: 0;
 }
 .prompt {
   opacity: 0.9;
@@ -557,7 +573,7 @@ section {
   padding: 72px 0;
 }
 section .section__title {
-  font-size: 1.8rem;
+  font-size: clamp(1.35rem, 5vw, 1.8rem);
   margin-bottom: 1rem;
 }
 section .section__desc {
@@ -1155,9 +1171,6 @@ img {
 }
 
 @media (max-width: 920px) {
-  .hero {
-    padding-top: 150px;
-  }
   .lead {
     font-size: 1rem;
   }
@@ -1177,8 +1190,11 @@ img {
     padding: 0.75rem;
   }
   .term {
-    min-height: 260px;
-    font-size: 0.86rem;
+    min-height: 0;
+  }
+  /* justified text on a narrow column opens rivers of whitespace */
+  p {
+    text-align: left;
   }
 }
 
@@ -1243,8 +1259,16 @@ img {
 @media (max-width: 860px) {
   .hero__panel,
   .hero__lead {
-    width: 90vw;
+    width: 100%;
+    max-width: 560px;
+    margin: 0;
     text-align: left;
+  }
+  .hero {
+    padding-top: 96px;
+  }
+  .term {
+    min-height: 0;
   }
 }
 
@@ -1377,6 +1401,10 @@ hr.hidden {
   li,
   p,
   .lead {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 48px 0;
   }
 }
