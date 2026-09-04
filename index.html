@@ -43,6 +43,7 @@
   <link rel="stylesheet" href="./assets/css/home.css" />
   <script src="./assets/js/responsive.js" defer></script>
   <script src="./assets/js/home.js" defer></script>
+  <script src="./assets/js/filters.js" defer></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JTQH3237V7"></script>
@@ -432,7 +433,8 @@ $ <span class="cursor">&nbsp;</span></pre>
     <div class="wrap center">
       <h2 class="section__title">📚 Publications</h2>
       <p class="section__desc">
-        Peer-reviewed research I have contributed to, from large-scale genomics to multimodal AI in oncology.
+        Peer-reviewed papers, conference contributions, posters and research software I have contributed to, from
+        large-scale genomics to multimodal AI in oncology.
       </p>
 
       <!-- TODO: the HAL href is a PLACEHOLDER - replace with the real IdHAL
@@ -483,77 +485,255 @@ $ <span class="cursor">&nbsp;</span></pre>
         </a>
       </div>
 
-      <div class="pub-list">
+      <div class="filters" data-filters-for="#pub-grid" data-filters-noun="publications"
+        data-filters-derived="First author" hidden>
+        <span class="filters__label">Filters</span>
+        <div class="filters__row"></div>
+        <p class="filters__count" role="status"></p>
+      </div>
+
+      <!-- Each entry carries a nature badge: add .pub-type--<kind> next to .pub-type.
+           Available kinds: paper · review · conference · poster · preprint · thesis ·
+           talk · workshop · chapter · software. Without a modifier the badge falls back to the
+           site accent, so a new kind only needs a one-line rule in style.css. -->
+      <div class="pub-grid" id="pub-grid">
 
         <!-- Frontiers in Oncology 2026 -->
         <article class="pub">
-          <div class="year">2026</div>
-          <div>
-            <h3>
-              <a href="https://doi.org/10.3389/fonc.2026.1874918" target="_blank" rel="noopener">
-                Multimodal AI in high-grade serous ovarian cancer: integrated prediction and clinical decision-making
-              </a>
-            </h3>
-            <p class="authors">
-              M. Pelissier-Combescure, J.-P. Villemin, D. Bonzom, C. Berger,
-              <span class="me">C. Estoup-Streiff</span>, Y. Lakhman, R. Woitek, P.-E. Colombo, Z. Lin, H. Li,
-              S. Nougaret
-            </p>
-            <p class="venue">Frontiers in Oncology · vol. 16, art. 1874918 · Review · 31 July 2026</p>
-            <div>
-              <span class="tag">Multimodal AI</span>
-              <span class="tag">Ovarian Cancer</span>
-              <span class="tag">Radiomics</span>
-              <span class="tag">Histopathology</span>
-              <span class="tag">Clinical Decision Support</span>
-            </div>
-            <p class="ghost">
-              Review of how AI integrates radiology, digital pathology and molecular profiling in high-grade serous
-              ovarian carcinoma (HGSOC) to improve survival prediction, treatment-response assessment and patient
-              stratification.
-            </p>
-            <div class="links">
-              <a href="https://doi.org/10.3389/fonc.2026.1874918" target="_blank" rel="noopener">DOI</a>
-              <a href="https://www.frontiersin.org/articles/10.3389/fonc.2026.1874918/full" target="_blank"
-                rel="noopener">Full text</a>
-              <a href="https://www.researchgate.net/publication/411056291_Multimodal_AI_in_high-grade_serous_ovarian_cancer_integrated_prediction_and_clinical_decision-making"
-                target="_blank" rel="noopener">ResearchGate</a>
-            </div>
+          <div class="pub__head">
+            <span class="pub-type pub-type--review">📝 Review</span>
+            <span class="year">2026</span>
+          </div>
+          <h3>
+            <a href="https://doi.org/10.3389/fonc.2026.1874918" target="_blank" rel="noopener">
+              Multimodal AI in high-grade serous ovarian cancer: integrated prediction and clinical decision-making
+            </a>
+          </h3>
+          <p class="authors">
+            M. Pelissier-Combescure, J.-P. Villemin, D. Bonzom, C. Berger,
+            <span class="me">C. Estoup-Streiff</span>, Y. Lakhman, R. Woitek, P.-E. Colombo, Z. Lin, H. Li,
+            S. Nougaret
+          </p>
+          <span class="chip venue">Frontiers in Oncology · vol. 16, art. 1874918 · 31 July 2026</span>
+          <div class="tags">
+            <span class="tag">Multimodal AI</span>
+            <span class="tag">Ovarian Cancer</span>
+            <span class="tag">Radiomics</span>
+            <span class="tag">Histopathology</span>
+            <span class="tag">Clinical Decision Support</span>
+          </div>
+          <p class="ghost">
+            Review of how AI integrates radiology, digital pathology and molecular profiling in high-grade serous
+            ovarian carcinoma (HGSOC) to improve survival prediction, treatment-response assessment and patient
+            stratification.
+          </p>
+          <div class="links">
+            <a href="https://doi.org/10.3389/fonc.2026.1874918" target="_blank" rel="noopener">DOI</a>
+            <a href="https://www.frontiersin.org/articles/10.3389/fonc.2026.1874918/full" target="_blank"
+              rel="noopener">Full text</a>
+            <a href="https://www.researchgate.net/publication/411056291_Multimodal_AI_in_high-grade_serous_ovarian_cancer_integrated_prediction_and_clinical_decision-making"
+              target="_blank" rel="noopener">ResearchGate</a>
+          </div>
+        </article>
+
+        <!-- RFIAP 2026 -->
+        <article class="pub">
+          <div class="pub__head">
+            <span class="pub-type pub-type--conference">🎤 Conference</span>
+            <span class="year">2026</span>
+          </div>
+          <h3>
+            <a href="https://hal.science/hal-05658830" target="_blank" rel="noopener">
+              MRI-WSI registration for spatially consistency in multimodal ovarian cancer analysis
+            </a>
+          </h3>
+          <p class="authors">
+            <span class="me">C. Estoup-Streiff</span>, M. Pelissier-Combescure, G. Andrade-Miranda, S. Nougaret,
+            M. Verdier, M. Tardieu, M. Cardoso, L. Khellaf, A. Gudin-De-Vallerin, F. Boissière, P.-E. Colombo,
+            C. Goze-Bac
+          </p>
+          <span class="chip venue">RFIAP 2026 (SSFAM &amp; AFRIF) · Montpellier, France · 6 July 2026</span>
+          <div class="tags">
+            <span class="tag">Multimodal Registration</span>
+            <span class="tag">MRI / WSI</span>
+            <span class="tag">Virtual Biopsy</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Ovarian Cancer</span>
+          </div>
+          <p class="ghost">
+            A modular multi-stage pipeline that registers high-resolution ex-vivo 9.4T MRI with whole-slide images of
+            ovarian tumours, plus two tissue-based metrics to score the alignment — the spatial veracity a
+            non-invasive "virtual biopsy" needs.
+          </p>
+          <div class="links">
+            <a href="https://hal.science/hal-05658830" target="_blank" rel="noopener">HAL</a>
+            <a href="https://hal.science/hal-05658830/file/rfiap2024_resume__v1_.pdf" target="_blank"
+              rel="noopener">PDF</a>
+          </div>
+        </article>
+
+        <!-- docker-uv 2026 -->
+        <article class="pub">
+          <div class="pub__head">
+            <span class="pub-type pub-type--software">💻 Software</span>
+            <span class="year">2026</span>
+          </div>
+          <h3>
+            <a href="https://github.com/PINKcc-Lab/docker-uv" target="_blank" rel="noopener">
+              Science Repo Template: a reproducible computing environment for scientific work
+            </a>
+          </h3>
+          <p class="authors">
+            <span class="me">C. Estoup-Streiff</span>
+          </p>
+          <span class="chip venue">Research software · PINKcc Lab · MIT · GitHub · March 2026</span>
+          <div class="tags">
+            <span class="tag">Reproducibility</span>
+            <span class="tag">Docker</span>
+            <span class="tag">uv</span>
+            <span class="tag">HPC / Jean-Zay</span>
+            <span class="tag">Python</span>
+          </div>
+          <p class="ghost">
+            A containerised, lockfile-pinned environment built on uv and Docker so an experiment runs identically on a
+            laptop, a colleague's machine and the Jean-Zay cluster — shipped with onboarding documentation for each.
+          </p>
+          <div class="links">
+            <a href="https://github.com/PINKcc-Lab/docker-uv" target="_blank" rel="noopener">Repository</a>
+            <a href="https://github.com/PINKcc-Lab/docker-uv/blob/main/docs/README.md" target="_blank"
+              rel="noopener">Docs</a>
+          </div>
+        </article>
+
+        <!-- IABM 2026 -->
+        <article class="pub">
+          <div class="pub__head">
+            <span class="pub-type pub-type--poster">🖼️ Poster</span>
+            <span class="year">2026</span>
+          </div>
+          <h3>
+            <a href="https://hal.science/hal-05581943" target="_blank" rel="noopener">
+              Improving Spatial Coherence in Multimodal Ovarian Cancer Data via MRI–WSI Registration
+            </a>
+          </h3>
+          <p class="authors">
+            <span class="me">C. Estoup-Streiff</span>, M. Verdier, M. Tardieu, M. Cardoso, L. Khellaf,
+            A. Gudin-De-Vallerin, F. Boissière, P.-E. Colombo, C. Goze-Bac, G. Andrade-Miranda, S. Nougaret
+          </p>
+          <span class="chip venue">IABM 2026 — Colloque Français d'IA en Imagerie Biomédicale · Lyon, France · 9 March
+            2026</span>
+          <div class="tags">
+            <span class="tag">Image Registration</span>
+            <span class="tag">MRI / WSI</span>
+            <span class="tag">Multimodal Learning</span>
+            <span class="tag">Digital Pathology</span>
+            <span class="tag">Ovarian Cancer</span>
+          </div>
+          <p class="ghost">
+            Comparative study of rigid, affine and non-rigid registration strategies for aligning histology with
+            high-field MRI. Without voxel-level spatial coherence, WSI-derived biological signals are misassigned and
+            downstream multimodal models lose both robustness and interpretability.
+          </p>
+          <div class="links">
+            <a href="https://hal.science/hal-05581943" target="_blank" rel="noopener">HAL</a>
+            <a href="https://hal.science/hal-05581943/file/Poster_IABM_v2.pdf" target="_blank" rel="noopener">Poster
+              PDF</a>
+          </div>
+        </article>
+
+        <!-- PINKCC SmartSync 2026 -->
+        <article class="pub">
+          <div class="pub__head">
+            <span class="pub-type pub-type--software">💻 Software</span>
+            <span class="year">2026</span>
+          </div>
+          <h3>
+            <a href="https://github.com/PINKcc-Lab/PINKCC-SmartSync" target="_blank" rel="noopener">
+              SmartSync: bidirectional directory synchronisation for research datasets
+            </a>
+          </h3>
+          <p class="authors">
+            <span class="me">C. Estoup-Streiff</span>
+          </p>
+          <span class="chip venue">Research software · PINKcc Lab · MIT · GitHub · January 2026</span>
+          <div class="tags">
+            <span class="tag">Data Management</span>
+            <span class="tag">Python</span>
+            <span class="tag">CLI</span>
+            <span class="tag">Automation</span>
+          </div>
+          <p class="ghost">
+            A command-line utility that keeps two dataset trees in step: smart pruning of hidden and user-excluded
+            paths, optional newest-wins overwriting, and timestamped logs written to both sides for audit.
+          </p>
+          <div class="links">
+            <a href="https://github.com/PINKcc-Lab/PINKCC-SmartSync" target="_blank" rel="noopener">Repository</a>
+          </div>
+        </article>
+
+        <!-- PINKcc Lab Website 2025 -->
+        <article class="pub">
+          <div class="pub__head">
+            <span class="pub-type pub-type--software">💻 Software</span>
+            <span class="year">2025</span>
+          </div>
+          <h3>
+            <a href="https://github.com/PINKcc-Lab/PINKCC-Website" target="_blank" rel="noopener">
+              PINKcc Lab website: a public dissemination platform for the research group
+            </a>
+          </h3>
+          <p class="authors">
+            <span class="me">C. Estoup-Streiff</span>
+          </p>
+          <span class="chip venue">Research software · PINKcc Lab · MIT · GitHub · November 2025</span>
+          <div class="tags">
+            <span class="tag">Science Communication</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Static Site</span>
+          </div>
+          <p class="ghost">
+            The public face of PINKcc (Precision Imaging as a New Key in Cancer Care): research themes, publications,
+            events, team and contact, served as a containerised static site.
+          </p>
+          <div class="links">
+            <a href="https://github.com/PINKcc-Lab/PINKCC-Website" target="_blank" rel="noopener">Repository</a>
           </div>
         </article>
 
         <!-- Genome Biology 2024 -->
         <article class="pub">
-          <div class="year">2024</div>
-          <div>
-            <h3>
-              <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">
-                Next-Gen GWAS: full 2D epistatic interaction maps retrieve part of missing heritability and improve
-                phenotypic prediction
-              </a>
-            </h3>
-            <p class="authors">
-              C. Carré, J. B. Carluer, C. Chaux, <span class="me">C. Estoup-Streiff</span>, N. Roche, E. Hosy,
-              A. Mas, G. Krouk
-            </p>
-            <p class="venue">Genome Biology · vol. 25, art. 76 · 25 March 2024</p>
-            <div>
-              <span class="tag">GWAS</span>
-              <span class="tag">Epistasis</span>
-              <span class="tag">HPC / GPU</span>
-              <span class="tag">Genomics</span>
-              <span class="tag">Phenotype Prediction</span>
-            </div>
-            <p class="ghost">
-              Next-Gen GWAS (NGG) evaluates over 60 billion SNP first-order interactions within hours, producing
-              gene-resolution 2D epistatic maps for <em>Arabidopsis thaliana</em> and showing that a large share of the
-              missing heritability lies in epistasis — and can be used to improve phenotype prediction.
-            </p>
-            <div class="links">
-              <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">DOI</a>
-              <a href="https://link.springer.com/article/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">Full
-                text</a>
-            </div>
+          <div class="pub__head">
+            <span class="pub-type pub-type--paper">📄 Journal paper</span>
+            <span class="year">2024</span>
+          </div>
+          <h3>
+            <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">
+              Next-Gen GWAS: full 2D epistatic interaction maps retrieve part of missing heritability and improve
+              phenotypic prediction
+            </a>
+          </h3>
+          <p class="authors">
+            C. Carré, J. B. Carluer, C. Chaux, <span class="me">C. Estoup-Streiff</span>, N. Roche, E. Hosy,
+            A. Mas, G. Krouk
+          </p>
+          <span class="chip venue">Genome Biology · vol. 25, art. 76 · 25 March 2024</span>
+          <div class="tags">
+            <span class="tag">GWAS</span>
+            <span class="tag">Epistasis</span>
+            <span class="tag">HPC / GPU</span>
+            <span class="tag">Genomics</span>
+            <span class="tag">Phenotype Prediction</span>
+          </div>
+          <p class="ghost">
+            Next-Gen GWAS (NGG) evaluates over 60 billion SNP first-order interactions within hours, producing
+            gene-resolution 2D epistatic maps for <em>Arabidopsis thaliana</em> and showing that a large share of the
+            missing heritability lies in epistasis — and can be used to improve phenotype prediction.
+          </p>
+          <div class="links">
+            <a href="https://doi.org/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">DOI</a>
+            <a href="https://link.springer.com/article/10.1186/s13059-024-03202-0" target="_blank" rel="noopener">Full
+              text</a>
           </div>
         </article>
       </div>
@@ -568,10 +748,16 @@ $ <span class="cursor">&nbsp;</span></pre>
         Explore my technical deep-dives and innovations. Each project reflects my expertise in AI, computer vision, and
         multimodal data integration—from medical imaging to simulation and infrastructure.
       </p>
-      <div class="project-grid">
+      <div class="filters" data-filters-for="#project-grid" data-filters-noun="projects" hidden>
+        <span class="filters__label">Filters</span>
+        <div class="filters__row"></div>
+        <p class="filters__count" role="status"></p>
+      </div>
+
+      <div class="project-grid" id="project-grid">
 
         <!-- Athenacognis -->
-        <article class="project">
+        <article class="project" data-filters="Personal|Open source">
           <a href="https://github.com/ChadEstoupStreiff/athenacognis">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/athenacognis_home.png" alt="Athenacognis: Smart Journaling" width="1000" height="484"
@@ -581,7 +767,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>Athenacognis</h3>
               <span class="chip">2025–present • Personal • OpenSource</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">NLP</span>
                 <span class="tag">Privacy-First</span>
                 <span class="tag">Python</span>
@@ -596,7 +782,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- Home Servers -->
-        <article class="project">
+        <article class="project" data-filters="Personal">
           <a href="projects/home_servers.html">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/homeservers_portainer.png" alt="Home Servers: Self-Hosted Infrastructure"
@@ -606,7 +792,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>HomeLab</h3>
               <span class="chip">2020–present • Personal • Private</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Self-Hosting</span>
                 <span class="tag">Docker</span>
                 <span class="tag">Debian</span>
@@ -620,7 +806,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- WateringCat -->
-        <article class="project">
+        <article class="project" data-filters="Personal|Open source">
           <a href="https://github.com/ChadEstoupStreiff/WateringCat">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/wateringcat.jpeg" alt="WateringCat: Plant Watering System" width="768" height="1000"
@@ -630,7 +816,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>WateringCat</h3>
               <span class="chip">2026 • Personal • OpenSource</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">IoT</span>
                 <span class="tag">Python</span>
                 <span class="tag">Docker</span>
@@ -645,7 +831,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- HixLoop -->
-        <article class="project">
+        <article class="project" data-filters="Professional">
           <a href="projects/hixloop.html">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/ultim.webp" alt="HixLoop: Modular AI Platform" width="768" height="768"
@@ -655,7 +841,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>HixLoop</h3>
               <span class="chip">2022-2025 • Bionomeex • Internal library</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Computer Vision</span>
                 <span class="tag">Active Learning</span>
                 <span class="tag">Modular AI</span>
@@ -674,7 +860,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- Abbelight Emitters Detection -->
-        <article class="project">
+        <article class="project" data-filters="Professional">
           <a href="projects/abbelight.html">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/abbelight_emitters.jpg" alt="Emitters Detection in Super-Resolution Microscopy"
@@ -684,7 +870,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>Abbelight Emitters Detection</h3>
               <span class="chip">2025 • Bionomeex • Client Research</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Super-Resolution</span>
                 <span class="tag">CNN</span>
                 <span class="tag">Microscopy</span>
@@ -700,7 +886,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- Solar Panel Shadow Simulation -->
-        <article class="project">
+        <article class="project" data-filters="Professional">
           <a href="projects/davele.html">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/davele_ombrage.png" alt="Solar Panel Shadow Simulation" width="1000" height="405"
@@ -710,7 +896,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>Solar Panel Shadow Simulation</h3>
               <span class="chip">2025 • Bionomeex • Client Software</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Geometric Modeling</span>
                 <span class="tag">Agronomy</span>
                 <span class="tag">Python</span>
@@ -725,7 +911,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- Aicet -->
-        <article class="project">
+        <article class="project" data-filters="Professional">
           <a href="projects/aicet.html">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/ai7_main.png" alt="Aicet: Custom AI Framework" width="821" height="745"
@@ -735,7 +921,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>Aicet</h3>
               <span class="chip">2025 • Bionomeex • Internal tool</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Automation</span>
                 <span class="tag">Python</span>
                 <span class="tag">DevOps</span>
@@ -749,7 +935,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- JTT -->
-        <article class="project">
+        <article class="project" data-filters="Personal">
           <a href="https://apps.apple.com/fr/app/js-timetable/id6477736560?l=en-GB" target="_blank" rel="noopener">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/jtt_home.jpg" alt="JTT: Task Tracking Tool" width="932" height="932" decoding="async"
@@ -759,7 +945,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>J's TimeTable</h3>
               <span class="chip">2024 • Personal • AppStore</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Time Tracking</span>
                 <span class="tag">Swift</span>
               </div>
@@ -774,7 +960,7 @@ $ <span class="cursor">&nbsp;</span></pre>
 
 
         <!-- Universe Simulation -->
-        <article class="project">
+        <article class="project" data-filters="Academic|Open source">
           <a href="https://github.com/ChadEstoupStreiff/EMA-GalaTablePlacer">
             <div class="thumb" aria-hidden="true">
               <img src="assets/img/ema_galatableplacer.png" alt="EMA-GalaTablePlacer" width="1000" height="779"
@@ -784,7 +970,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>EMA-GalaTablePlacer</h3>
               <span class="chip">2023 • IMT Ales • OpenSource</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Optimization</span>
                 <span class="tag">Python</span>
               </div>
@@ -797,7 +983,7 @@ $ <span class="cursor">&nbsp;</span></pre>
         </article>
 
         <!-- Universe Simulation -->
-        <article class="project">
+        <article class="project" data-filters="Personal|Open source">
           <a href="https://github.com/ChadEstoupStreiff/UniverseSimulator">
             <div class="thumb" aria-hidden="true">
               <!-- External 5 MB animated GIF, served from GitHub on purpose so the
@@ -809,7 +995,7 @@ $ <span class="cursor">&nbsp;</span></pre>
               <h3>Universe Simulation</h3>
               <span class="chip">2022 • Personal • OpenSource</span>
               <hr class="hidden" />
-              <div>
+              <div class="tags">
                 <span class="tag">Physics Simulation</span>
                 <span class="tag">Python</span>
                 <span class="tag">OpenGL</span>
